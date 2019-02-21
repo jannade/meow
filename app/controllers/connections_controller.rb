@@ -1,4 +1,5 @@
 class ConnectionsController < ApplicationController
+
   def show
     @connection = Connection.find(params[:id])
   end
@@ -16,7 +17,19 @@ class ConnectionsController < ApplicationController
     #   redirect_to
   end
 
+  def edit
+  end
+
+  def update
+  end
+
   def destroy
+  end
+
+  def mentor_connections
+  end
+
+  def mentee_connections
   end
 
   private
