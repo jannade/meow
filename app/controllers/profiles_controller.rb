@@ -1,5 +1,7 @@
 class ProfilesController < ApplicationController
+
   def index
+    @mentors = Profile.where(is_mentor: true)
   end
 
   def new
