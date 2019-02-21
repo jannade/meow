@@ -1,14 +1,34 @@
 class MessagesController < ApplicationController
   def index
+    @messages = Message.where(user: current_user)
   end
 
   def show
   end
 
   def new
+    @message = Message.new
   end
 
   def create
+    @message = Message.new(message_params)
+    @message.user = current_user
+
+    @mentor = Profile.find(session[:mentor_profile])
+    @mentee = Profile.find(id: current_user)
+
+    if connection_exists?
+      @message.connection = existing_connection
+    else
+      new_connection = Connection.new(mentor: @mentor, mentee: @mentee)
+      @message.connection = new_connection if new_connection.save
+    end
+
+    if message.save
+      redirect_to message_path
+    else
+      render :new
+    end
   end
 
   def destroy
@@ -16,7 +36,17 @@ class MessagesController < ApplicationController
 
   private
 
+  def connection_exists?
+    Connection.where(mentor: @mentor, mentee: @mentee).exists?
+  end
+
+  def existing_connection
+    Connection.where(mentor: @mentor, mentee: @mentee)
+  end
+
   def message_params
+    params.require(:message).permit(:content, :is_read)
+
   end
 
 end
