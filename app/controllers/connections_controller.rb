@@ -9,12 +9,6 @@ class ConnectionsController < ApplicationController
   end
 
   def create
-    # @connection = Connection.new(connection_params)
-    # @connection.mentee =
-    # @connection.mentor =
-
-    # if @connection.save
-    #   redirect_to
   end
 
   def edit
@@ -35,6 +29,6 @@ class ConnectionsController < ApplicationController
   private
 
   def connection_params
-    params.require(:connection).permit(:status, :mentee_id, :mentor_id)
+    params.require(:connection).permit(:status)
   end
 end
