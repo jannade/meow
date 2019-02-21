@@ -1,2 +1,16 @@
-<h1>Profiles#index</h1>
-<p>Find me in app/views/profiles/index.html.erb</p>
+<h1></h1>
+
+<div class="main-container">
+  <div class="card-container">
+    <div class="search-bar">
+      <p>Filter=</p>
+      <%= form_tag(mentors_path, method: 'get') do %>
+      <% categories = ["Sales", "Marketing", "Computer Programming", "Linux", "MacOS", "Windows", "Operations",
+          "Devops", "Product Management", "Project Management", "Artificial Inteligence", "Data Science", "IoT"] %>
+      <%= select_tag :category, options_for_select(categories)%>
+      <%#= collection_select :category %>
+      <%= text_field_tag :query, params[:query], placeholder: 'Location or Name'%>
+      <%= submit_tag 'Search'%>
+      <% end %>
+    </div>
+  </div>
