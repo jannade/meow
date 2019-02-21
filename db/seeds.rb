@@ -21,8 +21,10 @@ professional_interests.each do |interest|
   Interest.create(name: interest, category: "professional")
 end
 
+Connection.destroy_all
 User.destroy_all
-Profile.destory_all
+Profile.destroy_all
+
 
 
 puts "Creating users"

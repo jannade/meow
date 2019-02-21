@@ -15,16 +15,16 @@ class MessagesController < ApplicationController
     @message.user = current_user
 
     @mentor = Profile.find(session[:mentor_profile])
-    @mentee = Profile.find(id: current_user)
+    @mentee = Profile.where(user: current_user).first
 
     if connection_exists?
       @message.connection = existing_connection
     else
-      new_connection = Connection.new(mentor: @mentor, mentee: @mentee)
+      new_connection = Connection.new(mentor_id: @mentor.id, mentee_id: @mentee.id)
       @message.connection = new_connection if new_connection.save
     end
 
-    if message.save
+    if @message.save
       redirect_to message_path
     else
       render :new
@@ -37,16 +37,15 @@ class MessagesController < ApplicationController
   private
 
   def connection_exists?
-    Connection.where(mentor: @mentor, mentee: @mentee).exists?
+    Connection.where(mentor_id: @mentor.id, mentee_id: @mentee.id).exists?
   end
 
   def existing_connection
-    Connection.where(mentor: @mentor, mentee: @mentee)
+    Connection.where(mentor_id: @mentor.id, mentee_id: @mentee.id)
   end
 
   def message_params
-    params.require(:message).permit(:content, :is_read)
-
+    params.require(:message).permit(:content)
   end
 
 end
