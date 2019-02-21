@@ -32,7 +32,7 @@ ActiveRecord::Schema.define(version: 2019_02_21_035106) do
   end
 
   create_table "profiles", force: :cascade do |t|
-    t.string "character"
+    t.boolean "is_mentor"
     t.string "description"
     t.bigint "user_id"
     t.datetime "created_at", null: false
