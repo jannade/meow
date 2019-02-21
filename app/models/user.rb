@@ -5,6 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :profiles
+  has_many :messages
 
 
   def mentor_profile
