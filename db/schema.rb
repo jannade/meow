@@ -91,6 +91,7 @@ ActiveRecord::Schema.define(version: 2019_02_21_052236) do
     t.string "last_name"
     t.string "company"
     t.string "job_title"
+    t.string "photo"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
