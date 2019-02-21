@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_02_21_035751) do
+ActiveRecord::Schema.define(version: 2019_02_21_052236) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,11 +25,40 @@ ActiveRecord::Schema.define(version: 2019_02_21_035751) do
     t.index ["mentor_id"], name: "index_connections_on_mentor_id"
   end
 
+  create_table "goals", force: :cascade do |t|
+    t.string "description"
+    t.boolean "is_active"
+    t.bigint "connection_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["connection_id"], name: "index_goals_on_connection_id"
+  end
+
   create_table "interests", force: :cascade do |t|
     t.string "name"
     t.string "category"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "messages", force: :cascade do |t|
+    t.string "content"
+    t.boolean "is_read"
+    t.bigint "user_id"
+    t.bigint "connection_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["connection_id"], name: "index_messages_on_connection_id"
+    t.index ["user_id"], name: "index_messages_on_user_id"
+  end
+
+  create_table "milestones", force: :cascade do |t|
+    t.string "description"
+    t.boolean "is_completed"
+    t.bigint "goal_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["goal_id"], name: "index_milestones_on_goal_id"
   end
 
   create_table "profile_interests", force: :cascade do |t|
@@ -62,12 +91,17 @@ ActiveRecord::Schema.define(version: 2019_02_21_035751) do
     t.string "last_name"
     t.string "company"
     t.string "job_title"
+    t.string "photo"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
   add_foreign_key "connections", "profiles", column: "mentee_id"
   add_foreign_key "connections", "profiles", column: "mentor_id"
+  add_foreign_key "goals", "connections"
+  add_foreign_key "messages", "connections"
+  add_foreign_key "messages", "users"
+  add_foreign_key "milestones", "goals"
   add_foreign_key "profile_interests", "interests"
   add_foreign_key "profile_interests", "profiles"
   add_foreign_key "profiles", "users"
