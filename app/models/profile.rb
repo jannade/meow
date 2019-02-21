@@ -5,6 +5,7 @@ class Profile < ApplicationRecord
   has_many :mentors, class_name: "Connection", foreign_key: "mentee_id"
 
   validates :description, presence:true, length: { maximum: 140 }
+
   def all_my_mentees
     self.mentees.map do |connection|
       connection.mentee.user
