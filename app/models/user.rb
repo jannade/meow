@@ -5,6 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :profiles
+  has_many :messages
 
 
   def mentor_profile
@@ -20,6 +21,6 @@ class User < ApplicationRecord
   end
 
   def mentors
-    self.mentee_profile.all_my_mentors.
+    self.mentee_profile.all_my_mentors
   end
 end
