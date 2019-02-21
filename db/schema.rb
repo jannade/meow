@@ -15,8 +15,6 @@ ActiveRecord::Schema.define(version: 2019_02_21_050541) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-
-
   create_table "connections", force: :cascade do |t|
     t.string "status"
     t.bigint "mentee_id"
