@@ -39,5 +39,3 @@ class User < ApplicationRecord
     self.mentee_profile.all_my_mentors
   end
 end
-
-
