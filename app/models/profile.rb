@@ -4,6 +4,8 @@ class Profile < ApplicationRecord
   has_many :mentees, class_name: "Connection", foreign_key: "mentor_id"
   has_many :mentors, class_name: "Connection", foreign_key: "mentee_id"
 
+  validates :description, presence: true
+
   def all_my_mentees
     self.mentees.map do |connection|
       connection.mentee.user
