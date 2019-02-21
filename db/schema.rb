@@ -9,7 +9,6 @@
 # you'll amass, the slower it'll run and the greater likelihood for issues).
 #
 # It's strongly recommended that you check this file into your version control system.
-
 ActiveRecord::Schema.define(version: 2019_02_21_035106) do
 
   # These are extensions that must be enabled in order to support this database
@@ -32,7 +31,7 @@ ActiveRecord::Schema.define(version: 2019_02_21_035106) do
   end
 
   create_table "profiles", force: :cascade do |t|
-    t.string "character"
+    t.boolean "is_mentor"
     t.string "description"
     t.bigint "user_id"
     t.datetime "created_at", null: false
