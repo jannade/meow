@@ -21,9 +21,11 @@ professional_interests.each do |interest|
   Interest.create(name: interest, category: "professional")
 end
 
+Message.destroy_all
 Connection.destroy_all
 User.destroy_all
 Profile.destroy_all
+
 
 
 

@@ -13,7 +13,6 @@ class MessagesController < ApplicationController
   def create
     @message = Message.new(message_params)
     @message.user = current_user
-
     @mentor = Profile.find(session[:mentor_profile])
     @mentee = Profile.where(user: current_user).first
 
@@ -25,7 +24,8 @@ class MessagesController < ApplicationController
     end
 
     if @message.save
-      redirect_to message_path(@message)
+      flash[:notice] = "Message sent"
+      redirect_to profile_path(@mentor)
     else
       render :new
     end
@@ -47,5 +47,4 @@ class MessagesController < ApplicationController
   def message_params
     params.require(:message).permit(:content)
   end
-
 end

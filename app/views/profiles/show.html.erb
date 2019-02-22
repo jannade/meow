@@ -1,4 +1,6 @@
 <h1>Profiles#show</h1>
+<% if flash[:notice] %>
+    <div class="notice"><%= flash[:notice] %></div>
+  <% end %>
 <p>Find me in app/views/profiles/show.html.erb</p>
-<%= link_to "connect", connections_path, method: :post %></br>
-<%= link_to "Message", new_message_path %>
+<%= link_to "Connect", new_message_path %>
