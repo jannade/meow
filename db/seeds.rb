@@ -43,6 +43,12 @@ george.save
 lorenzo = User.new(email: "lorenzo@email.com", password: "12341234")
 lorenzo.save
 
+john = User.new(email: "john@email.com", password: "12341234")
+john.save
+
+charles = User.new(email: "charles@email.com", password: "12341234")
+charles.save
+
 puts "Users created"
 
 puts "Creating profiles"
@@ -62,7 +68,45 @@ george_mentee_profile.save
 lorenzo_mentee_profile = Profile.new(user: lorenzo, is_mentor: false)
 lorenzo_mentee_profile.save
 
+john_mentor_profile = Profile.new(user: john, is_mentor: true)
+john_mentor_profile.save
+
+charles_mentor_profile = Profile.new(user: charles, is_mentor: true)
+charles_mentor_profile
+
 puts "Profiles created"
+
+puts "Set interests for profiles"
+
+ashwin_mentor_profile.interests << Interest.first
+ashwin_mentor_profile.interests << Interest.last
+
+ashwin_mentor_profile.save
+
+george_mentor_profile.interests << Interest.find(2)
+george_mentor_profile.interests << Interest.find(3)
+
+george_mentor_profile.save
+
+peter_mentee_profile.interests << Interest.first
+peter_mentee_profile.interests << Interest.find(3)
+
+peter_mentee_profile.save
+
+john_mentor_profile.interests << Interest.first
+john_mentor_profile.interests << Interest.find(4)
+john_mentor_profile.interests << Interest.find(3)
+john_mentor_profile.save
+
+charles_mentor_profile.interests << Interest.find(2)
+charles_mentor_profile.interests << Interest.find(4)
+charles_mentor_profile.save
+
+
+
+puts "Interests created"
+
+
 
 
 

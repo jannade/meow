@@ -1,13 +1,7 @@
 class ProfilesController < ApplicationController
   def index
-
-    # First time user go to browse page, they will see their recommended mentors
-    # if professional interest is all and personal interest is not all, show mentors with any professional interest with the filtered personal interest
-    # if personal interest is all and professional interest is not all, show mentors with any personal interest with the filtered professional interest
-    # if personal interest and professional interest is all show all mentors
-
-    # matchmaking algorithm
-    # match mentors and user based on the percentage in their interest match
+    find_mentor_by_interests((params[:professional_interests]), (params[:personal_interests]))
+    raise
   end
 
   def new
@@ -41,6 +35,17 @@ class ProfilesController < ApplicationController
     (matched_interest.count/mentee_array.count)*100
   end
 
+  def find_mentor_by_interests(first_interest, second_interest)
+    if first_interest == "All" && second_interest != "All"
+      Profile.joins(:interests).where(interests: { name: second_interest}).where(is_mentor: true)
+    elsif first_interest != "All" && second_interest == "All"
+      Profile.joins(:interests).where(interests: { name: first_interest}).where(is_mentor: true)
+    elsif first_interest == "All" && second_interest == "All"
+      Profile.all.where(is_mentor: true)
+    else
+      Profile.joins(:interests).where(interests: { name: first_interest}).or(Profile.joins(:interests).where(interests: {name: second_interest })).where(is_mentor: true)
+    end
+  end
   # create a list in the browser page
   # the higher the number of percentage, put the mentor in the top for recommended mentor
   # create a button for clear filter

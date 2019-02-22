@@ -5,11 +5,12 @@
     <div class="search-bar">
       <p>Filter=</p>
       <%= form_tag(mentors_path, method: 'get') do %>
-      <% categories = ["Sales", "Marketing", "Computer Programming", "Linux", "MacOS", "Windows", "Operations",
+      <% professional_interests = ["All", "Sales", "Marketing", "Computer Programming", "Linux", "MacOS", "Windows", "Operations",
           "Devops", "Product Management", "Project Management", "Artificial Inteligence", "Data Science", "IoT"] %>
-      <%= select_tag :category, options_for_select(categories)%>
+      <%= select_tag :professional_interests, options_for_select(professional_interests)%>
       <%#= collection_select :category %>
-      <%= text_field_tag :query, params[:query], placeholder: 'Location or Name'%>
+      <% personal_interests = ["All", "Work-life balance", "Family", "Reading", "Volunteer work", "Sports & activities", "Cooking", "Arts & music"] %>
+      <%= select_tag :personal_interests, options_for_select(personal_interests)%>
       <%= submit_tag 'Search'%>
       <% end %>
     </div>

@@ -18,4 +18,12 @@ class Profile < ApplicationRecord
       connection.mentor.user
     end
   end
+
+  def self.find_by_interests(first_interest, second_interest)
+    Profile.joins(:interests).where(interests: { name: first_interest}).or(Profile.joins(:interests).where(interests: {name: second_interest }))
+  end
+
+  def self.find_mentor_by_interests(first_interest, second_interest)
+    Profile.joins(:interests).where(interests: { name: first_interest}).or(Profile.joins(:interests).where(interests: {name: second_interest })).where(is_mentor: true)
+  end
 end
