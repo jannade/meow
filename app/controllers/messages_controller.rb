@@ -25,7 +25,7 @@ class MessagesController < ApplicationController
     end
 
     if @message.save
-      redirect_to message_path
+      redirect_to message_path(@message)
     else
       render :new
     end
@@ -41,7 +41,7 @@ class MessagesController < ApplicationController
   end
 
   def existing_connection
-    Connection.where(mentor_id: @mentor.id, mentee_id: @mentee.id)
+    Connection.where(mentor_id: @mentor.id, mentee_id: @mentee.id).first
   end
 
   def message_params
