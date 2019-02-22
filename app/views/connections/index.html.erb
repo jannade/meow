@@ -16,9 +16,15 @@
     <div class="tab-content">
       <div id="mentor-connections" class="tab-pane active">
         <% @mentor_connections.each do |connection| %>
-          <%= connection.mentor.user.email %>
+          <div class="card-connection">
+            <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg">
+            <div class="card-connection-infos">
+              <h2><%= connection.mentor.user.email %></h2>
+            </div>
+          </div>
         <% end  %>
       </div>
+
       <div id="mentee-connections" class="tab-pane">
         <% @mentee_connections.each do |connection| %>
           <%= connection.mentee.user.email %>
