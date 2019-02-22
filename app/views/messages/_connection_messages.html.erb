@@ -1,0 +1,7 @@
+<% connections.each do |connection| %>
+  <% unless connection.messages.blank? %>
+    <% connection.messages.each do |msg| %>
+      <%= msg.content %>
+    <% end %>
+  <% end %>
+<% end  %>

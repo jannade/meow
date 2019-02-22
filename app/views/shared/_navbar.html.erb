@@ -19,12 +19,12 @@
           <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
             <% if current_user.mentee_profile %>
               <li>
-                <%= link_to "Mentors", mentorconnections_path %>
+                <%= link_to "Your Mentors", mentorconnections_path %>
               </li>
             <% end %>
             <% if current_user.mentor_profile %>
               <li>
-                <%= link_to "Mentees", menteeconnections_path %>
+                <%= link_to "Your Mentees", menteeconnections_path %>
               </li>
             <% end %>
           </ul>
