@@ -12,23 +12,8 @@
       <!-- Links when logged in -->
       <%= link_to "Find a mentor", "#", class: "navbar-wagon-item navbar-wagon-link" %>
       <%= link_to "Messages", messages_path, class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to "Connections", connections_path, class: "navbar-wagon-item navbar-wagon-link" %>
 
-     <!-- Links to connections -->
-      <div class="dropdown">
-        <%= link_to "Connections", "#", class: "navbar-wagon-item navbar-wagon-link", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
-          <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-            <% if current_user.mentee_profile %>
-              <li>
-                <%= link_to "Mentors", mentorconnections_path %>
-              </li>
-            <% end %>
-            <% if current_user.mentor_profile %>
-              <li>
-                <%= link_to "Mentees", menteeconnections_path %>
-              </li>
-            <% end %>
-          </ul>
-      </div>
 
       <!-- Avatar with dropdown menu -->
         <div class="dropdown">
@@ -55,8 +40,8 @@
     <% else %>
       <!-- Login link (when logged out) -->
       <%= link_to t(".sign_in", default: "Find a mentor"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
-      <%= link_to t(".sign_in", default: "Sign up"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
-      <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to t(".sign_up", default: "Sign up"), new_user_registration_path, class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to t(".sign_in", default: "Login"), user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
     <% end %>
   </div>
 
