@@ -93,6 +93,9 @@ janna_ashwin_message.save
 lorenzo_janna_message = Message.new(content: "hellow", user: lorenzo, is_read: true, connection: lorenzo_janna_connection)
 lorenzo_janna_message.save
 
+peter_janna_message = Message.new(content: "arigato", user: peter, is_read: true, connection: peter_janna_connection)
+peter_janna_message.save
+
 
 
 
