@@ -28,8 +28,8 @@ Profile.destroy_all
 
 puts "Creating users"
 
-ashwin = User.new(first_name: "ashwin", last_name: "Smith", email: "ashwin@email.com", password: "12341234", company: "Grab", job_title: "Director of Marketing", photo:
-  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ9tZfxTZdOmXszV0gq4Q4L6XeNTsGENvUNF59NaDlCsr86TEa0_w")
+ashwin = User.new(first_name: "ashwin", last_name: "Smith", email: "ashwin@email.com", password: "12341234", company: "Grab", job_title: "Director of Marketing")
+ashwin.remote_photo_url = "https://ichef.bbci.co.uk/onesport/cps/624/cpsprodpb/9AC9/production/_102652693_raviashwinrex.jpg"
 ashwin.save
 
 peter = User.new(email: "peter@email.com", password: "12341234")
@@ -41,7 +41,6 @@ george.save
 lorenzo = User.new(email: "lorenzo@email.com", password: "12341234")
 lorenzo.save
 
-<<<<<<< HEAD
 john = User.new(email: "john@email.com", password: "12341234")
 john.save
 

@@ -17,13 +17,26 @@
       <div id="mentor-connections" class="tab-pane active">
         <% @mentor_connections.each do |connection| %>
           <div class="card-connection">
-            <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg">
-            <div class="card-connection-infos">
-              <h2><%= connection.mentor.user.email %></h2>
+            <div class="card-connection-profile">
+              <%= cl_image_tag 'sywiru4vjnq2zqwttial.jpg' %>
+              <div class="card-connection-infos">
+                <h2><%= connection.mentor.user.email %></h2>
+              </div>
+            </div>
+            <div class="card-connection-progress">
+
+
             </div>
           </div>
         <% end  %>
       </div>
+
+
+
+
+
+
+
 
       <div id="mentee-connections" class="tab-pane">
         <% @mentee_connections.each do |connection| %>
