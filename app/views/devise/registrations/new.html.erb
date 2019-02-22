@@ -1,6 +1,6 @@
 <div class="container">
   <div class="row">
-    <div class="col-sm-6 col-sm-offset-4">
+    <div class="col-xs-12 col-sm-4 col-sm-offset-4">
 
      <h2>Sign up</h2>
      <hr>
@@ -12,22 +12,22 @@
       <%= f.input :first_name,
       required: true,
       autofocus: true,
-      input_html: { autocomplete: "first_name", style: 'width: 50%' }%>
+      input_html: { autocomplete: "first_name" }%>
       <%= f.input :last_name,
       required: true,
       autofocus: true,
-      input_html: { autocomplete: "last_name", style: 'width: 50%' }%>
+      input_html: { autocomplete: "last_name" }%>
       <%= f.input :email,
       required: true,
       autofocus: true,
-      input_html: { autocomplete: "email", rows: 10, style: 'width: 50%' }%>
+      input_html: { autocomplete: "email", rows: 10 }%>
       <%= f.input :password,
       required: true,
       hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
-      input_html: { autocomplete: "new-password", style: 'width: 50%' } %>
+      input_html: { autocomplete: "new-password" } %>
       <%= f.input :password_confirmation,
       required: true,
-      input_html: { autocomplete: "new-password", style: 'width: 50%' } %>
+      input_html: { autocomplete: "new-password" } %>
     </div>
 
     <div class="form-actions">
