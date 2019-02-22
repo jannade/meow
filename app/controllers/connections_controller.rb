@@ -25,9 +25,12 @@ class ConnectionsController < ApplicationController
   end
 
   def mentor_connections
+    @mentors = current_user.mentors
+    # find the mentors of the current user
   end
 
   def mentee_connections
+    @mentees = current_user.mentees
   end
 
   private

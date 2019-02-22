@@ -32,6 +32,8 @@ class MessagesController < ApplicationController
   end
 
   def destroy
+    @message.delete
+    redirect_to messages_path
   end
 
   private
