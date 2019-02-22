@@ -17,6 +17,8 @@ class ProfilesController < ApplicationController
   end
 
   def show
+    @profile = Profile.find(params[:id])
+    session[:mentor_profile] = params[:id]
   end
 
   def update

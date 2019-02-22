@@ -21,4 +21,51 @@ professional_interests.each do |interest|
   Interest.create(name: interest, category: "professional")
 end
 
+Message.destroy_all
+Connection.destroy_all
+User.destroy_all
+Profile.destroy_all
+
+
+
+
+puts "Creating users"
+
+ashwin = User.new(email: "ashwin@email.com", password: "12341234")
+ashwin.save
+
+peter = User.new(email: "peter@email.com", password: "12341234")
+peter.save
+
+george = User.new(email: "george@email.com", password: "12341234")
+george.save
+
+lorenzo = User.new(email: "lorenzo@email.com", password: "12341234")
+lorenzo.save
+
+puts "Users created"
+
+puts "Creating profiles"
+
+ashwin_mentor_profile = Profile.new(user: ashwin, is_mentor: true)
+ashwin_mentor_profile.save
+
+peter_mentee_profile = Profile.new(user: peter, is_mentor: false)
+peter_mentee_profile.save
+
+george_mentor_profile = Profile.new(user: george, is_mentor: true)
+george_mentor_profile.save
+
+george_mentee_profile = Profile.new(user: george, is_mentor: false)
+george_mentee_profile.save
+
+lorenzo_mentee_profile = Profile.new(user: lorenzo, is_mentor: false)
+lorenzo_mentee_profile.save
+
+puts "Profiles created"
+
+
+
+
+
 
