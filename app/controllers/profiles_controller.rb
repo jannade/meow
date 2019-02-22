@@ -15,15 +15,12 @@ class ProfilesController < ApplicationController
   end
 
   def new
-    #the third page in the signup form
   end
 
   def create
-    #the third page in the signup form
   end
 
   def show
-    @profile = Profile.find(params[:id])
   end
 
   def update
