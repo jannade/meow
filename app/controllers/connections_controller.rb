@@ -1,5 +1,4 @@
 class ConnectionsController < ApplicationController
-
   def show
     @connection = Connection.find(params[:id])
   end
@@ -9,10 +8,6 @@ class ConnectionsController < ApplicationController
   end
 
   def create
-    # @connection = Connection.new
-    # @connection.mentor = Profile.find(session[:mentor_profile])
-    # @connection.mentee = Profile.where(user: current_user.id, is_mentor: false)
-    # redirect_to new_message_path
   end
 
   def edit
