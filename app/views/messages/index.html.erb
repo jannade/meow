@@ -1,27 +1,39 @@
-<h1>Messages</h1>
+<div class="container">
+  <h1>Messages</h1>
 
-<p>Find me in app/views/messages/index.html.erb</p>
-  <button id="toggle">Click</button>
+  <ul class="nav nav-tabs">
+    <% if @mentor_connections.exists? && @mentee_connections.exists? %>
+      <li class="active"><a href="#mentor-inbox" data-toggle="tab">Mentor messages</a></li>
+      <li><a href="#mentee-inbox" data-toggle="tab">Mentee messages</a></li>
+    <% elsif @mentor_connections.exists? && @mentee_connections.blank? %>
+      <li class="active"><a href="#mentor-inbox" data-toggle="tab">Mentor messages</a></li>
+    <% elsif @mentee_connections.exists? && @mentor_connections.blank? %>
+      <li><a href="#mentee-inbox" data-toggle="tab">Mentee messages</a></li>
+    <% end %>
+  </ul>
 
-<% if @mentor_connections.exists? && @mentee_connections.exists? %>
-  <!-- show the button -->
-
-
-<% elsif @mentor_connections.exists? && @mentee_connections.blank? %>
-  <div id="mentee-inbox">
-    <h1>Mentor messages</h1>
-    <%= render "connection_messages", connections: @mentor_connections %>
+  <% if @mentor_connections.exists? && @mentee_connections.exists? %>
+    <div class="tab-content">
+      <div id="mentor-inbox" class="tab-pane active">
+        <%= render "connection_messages", connections: @mentor_connections %>
+      </div>
+      <div id="mentee-inbox" class="tab-pane">
+        <%= render "connection_messages", connections: @mentee_connections %>
+      </div>
+  <% elsif @mentor_connections.exists? && @mentee_connections.blank? %>
+    <div id="mentor-inbox" class="tab-pane active">
+      <%= render "connection_messages", connections: @mentor_connections %>
+    </div>
+  <% elsif @mentee_connections.exists? && @mentor_connections.blank? %>
+    <div id="mentee-inbox" class="tab-pane">
+      <%= render "connection_messages", connections: @mentee_connections %>
+    </div>
+  <% else %>
+    <h1>Sorry you dont have any messages yet</h1>
+  <% end %>
   </div>
+</div>
 
-<% elsif @mentee_connections.exists? && @mentor_connections.blank? %>
-  <div id="mentee-inbox">
-    <h1>Mentee messages</h1>
-    <%= render "connection_messages", connections: @mentee_connections %>
-  </div>
-
-<% else %>
-  <h1>Sorry you dont have any messages yet</h1>
-<% end %>
 
 
 
