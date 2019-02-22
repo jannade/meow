@@ -5,13 +5,35 @@
     <div class="search-bar">
       <p>Filter=</p>
       <%= form_tag(mentors_path, method: 'get') do %>
-      <% professional_interests = ["All", "Sales", "Marketing", "Computer Programming", "Linux", "MacOS", "Windows", "Operations",
-          "Devops", "Product Management", "Project Management", "Artificial Inteligence", "Data Science", "IoT"] %>
+      <% professional_interests = ["All", "Sales", "Marketing", "Computer Programming", "Linux", "MacOS", "Windows", "Operations", "Devops", "Product Management", "Project Management", "Artificial Inteligence", "Data Science", "IoT"] %>
       <%= select_tag :professional_interests, options_for_select(professional_interests)%>
-      <%#= collection_select :category %>
       <% personal_interests = ["All", "Work-life balance", "Family", "Reading", "Volunteer work", "Sports & activities", "Cooking", "Arts & music"] %>
       <%= select_tag :personal_interests, options_for_select(personal_interests)%>
       <%= submit_tag 'Search'%>
       <% end %>
     </div>
   </div>
+  <div class="box-header">
+    <h1>Showing mentors with <%= params[:professional_interests] %> professional interest and <%= params[:personal_interests] personal interest%></h1>
+  </div>
+  <div class="container-margin">
+    <div class="row">
+      <% @profiles.each do |profile| %>
+        <div class="col-xs-12 col-sm-6 col-md-4">
+          <%= link_to space_path(space.id), class: "card-link" do %>
+            <div class="card-trip">
+              <%= image_tag space.photo.url %>
+              <div class="card-trip-infos">
+                <div>
+                  <h2><%= space.name %></h2>
+                  <p><%= space.location %></p>
+                </div>
+                <h2 class="card-trip-pricing">$<%= space.price %></h2>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

@@ -1,7 +1,6 @@
 class ProfilesController < ApplicationController
   def index
-    find_mentor_by_interests((params[:professional_interests]), (params[:personal_interests]))
-    raise
+    @profiles = find_mentor_by_interests((params[:professional_interests]), (params[:personal_interests]))
   end
 
   def new
@@ -32,7 +31,7 @@ class ProfilesController < ApplicationController
       matched_interest << if element.include? mentee_interest
       end
     end
-    (matched_interest.count/mentee_array.count)*100
+    (matched_interest.count/mentor_array.count)*100
   end
 
   def find_mentor_by_interests(first_interest, second_interest)

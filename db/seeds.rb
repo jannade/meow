@@ -40,7 +40,6 @@ george.save
 lorenzo = User.new(email: "lorenzo@email.com", password: "12341234")
 lorenzo.save
 
-<<<<<<< HEAD
 john = User.new(email: "john@email.com", password: "12341234")
 john.save
 
