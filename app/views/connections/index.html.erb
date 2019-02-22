@@ -1,0 +1,45 @@
+<div class="container">
+  <h1>Connections</h1>
+
+  <ul class="nav nav-tabs">
+    <% if @mentor_connections.exists? && @mentee_connections.exists? %>
+      <li class="active"><a href="#mentor-connections" data-toggle="tab">Your Mentors</a></li>
+      <li><a href="#mentee-connections" data-toggle="tab">Your Mentees</a></li>
+    <% elsif @mentor_connections.exists? && @mentee_connections.blank? %>
+      <li class="active"><a href="#mentor-connections" data-toggle="tab">Your Mentors</a></li>
+    <% elsif @mentee_connections.exists? && @mentor_connections.blank? %>
+      <li><a href="#mentee-connections" data-toggle="tab">Your Mentees</a></li>
+    <% end %>
+  </ul>
+
+  <% if @mentor_connections.exists? && @mentee_connections.exists? %>
+    <div class="tab-content">
+      <div id="mentor-connections" class="tab-pane active">
+        <% @mentor_connections.each do |connection| %>
+          <%= connection.mentor.user.email %>
+        <% end  %>
+      </div>
+      <div id="mentee-connections" class="tab-pane">
+        <% @mentee_connections.each do |connection| %>
+          <%= connection.mentee.user.email %>
+        <% end  %>
+      </div>
+    </div>
+  <% elsif @mentor_connections.exists? && @mentee_connections.blank? %>
+    <div id="mentor-connections" class="tab-pane active">
+      <% @mentor_connections.each do |connection| %>
+        <%= connection.mentor.user.email %>
+      <% end  %>
+    </div>
+  <% elsif @mentee_connections.exists? && @mentor_connections.blank? %>
+    <div id="mentee-connections" class="tab-pane">
+      <% @mentee_connections.each do |connection| %>
+        <%= connection.mentee.user.email %>
+      <% end  %>
+    </div>
+  <% else %>
+    <h1>Sorry you dont have any messages yet</h1>
+  <% end %>
+</div>
+
+

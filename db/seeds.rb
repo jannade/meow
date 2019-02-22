@@ -26,9 +26,6 @@ Connection.destroy_all
 User.destroy_all
 Profile.destroy_all
 
-
-
-
 puts "Creating users"
 
 ashwin = User.new(email: "ashwin@email.com", password: "12341234")
@@ -43,11 +40,15 @@ george.save
 lorenzo = User.new(email: "lorenzo@email.com", password: "12341234")
 lorenzo.save
 
+<<<<<<< HEAD
 john = User.new(email: "john@email.com", password: "12341234")
 john.save
 
 charles = User.new(email: "charles@email.com", password: "12341234")
 charles.save
+
+janna = User.new(email: "janna@email.com", password: "12341234")
+janna.save
 
 puts "Users created"
 
@@ -73,6 +74,12 @@ john_mentor_profile.save
 
 charles_mentor_profile = Profile.new(user: charles, is_mentor: true)
 charles_mentor_profile
+
+janna_mentor_profile = Profile.new(user: janna, is_mentor: true)
+janna_mentor_profile.save
+
+janna_mentee_profile = Profile.new(user: janna, is_mentor: false)
+janna_mentee_profile.save
 
 puts "Profiles created"
 
@@ -106,10 +113,27 @@ charles_mentor_profile.save
 
 puts "Interests created"
 
+puts "Creating connections"
 
+janna_ashwin_connection = Connection.new(mentor: ashwin_mentor_profile, mentee: janna_mentee_profile)
+janna_ashwin_connection.save
 
+lorenzo_janna_connection = Connection.new(mentor: janna_mentor_profile, mentee: lorenzo_mentee_profile)
+lorenzo_janna_connection.save
 
+peter_janna_connection = Connection.new(mentor: janna_mentor_profile, mentee: peter_mentee_profile)
+peter_janna_connection.save
+puts "Connections created"
 
+puts "Creating messages"
+janna_ashwin_message = Message.new(content: "new message", user: janna, is_read: false, connection: janna_ashwin_connection)
+janna_ashwin_message.save
+
+lorenzo_janna_message = Message.new(content: "hellow", user: lorenzo, is_read: true, connection: lorenzo_janna_connection)
+lorenzo_janna_message.save
+
+peter_janna_message = Message.new(content: "arigato", user: peter, is_read: true, connection: peter_janna_connection)
+peter_janna_message.save
 
 
 

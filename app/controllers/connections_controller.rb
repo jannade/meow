@@ -1,4 +1,9 @@
 class ConnectionsController < ApplicationController
+  def index
+    @mentor_connections = Connection.where(mentee: current_user.mentee_profile)
+    @mentee_connections = Connection.where(mentor: current_user.mentor_profile)
+  end
+
   def show
     @connection = Connection.find(params[:id])
   end
@@ -17,15 +22,6 @@ class ConnectionsController < ApplicationController
   end
 
   def destroy
-  end
-
-  def mentor_connections
-    @mentors = current_user.mentors
-    # find the mentors of the current user
-  end
-
-  def mentee_connections
-    @mentees = current_user.mentees
   end
 
   private
