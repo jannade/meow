@@ -1,2 +1,73 @@
-<h1>Messages#index</h1>
-<p>Find me in app/views/messages/index.html.erb</p>
+<div class="container">
+  <h1>Messages</h1>
+
+  <ul class="nav nav-tabs">
+    <% if @mentor_connections.exists? && @mentee_connections.exists? %>
+      <li class="active"><a href="#mentor-inbox" data-toggle="tab">Messages from Mentors</a></li>
+      <li><a href="#mentee-inbox" data-toggle="tab">Messages from Mentees</a></li>
+    <% elsif @mentor_connections.exists? && @mentee_connections.blank? %>
+      <li class="active"><a href="#mentor-inbox" data-toggle="tab">Messages from Mentors</a></li>
+    <% elsif @mentee_connections.exists? && @mentor_connections.blank? %>
+      <li><a href="#mentee-inbox" data-toggle="tab">Messages from Mentees</a></li>
+    <% end %>
+  </ul>
+
+  <% if @mentor_connections.exists? && @mentee_connections.exists? %>
+    <div class="tab-content">
+      <div id="mentor-inbox" class="tab-pane active">
+        <% @mentor_connections.each do |connection| %>
+          <%= connection.mentor.user.email %>
+          <% unless connection.messages.blank? %>
+            <% connection.messages.each do |msg| %>
+              <%= msg.content %>
+            <% end %>
+          <% end %>
+        <% end  %>
+      </div>
+      <div id="mentee-inbox" class="tab-pane">
+        <% @mentee_connections.each do |connection| %>
+          <%= connection.mentee.user.email %>
+          <% unless connection.messages.blank? %>
+            <% connection.messages.each do |msg| %>
+              <%= msg.content %>
+            <% end %>
+          <% end %>
+        <% end  %>
+      </div>
+  <% elsif @mentor_connections.exists? && @mentee_connections.blank? %>
+    <div id="mentor-inbox" class="tab-pane active">
+      <% @mentor_connections.each do |connection| %>
+        <%= connection.mentor.user.email %>
+        <% unless connection.messages.blank? %>
+          <% connection.messages.each do |msg| %>
+            <%= msg.content %>
+          <% end %>
+        <% end %>
+      <% end  %>
+    </div>
+  <% elsif @mentee_connections.exists? && @mentor_connections.blank? %>
+    <div id="mentee-inbox" class="tab-pane">
+     ]<% @mentee_connections.each do |connection| %>
+        <%= connection.mentee.user.email %>
+        <% unless connection.messages.blank? %>
+          <% connection.messages.each do |msg| %>
+            <%= msg.content %>
+          <% end %>
+        <% end %>
+      <% end  %>
+    </div>
+  <% else %>
+    <h1>Sorry you dont have any messages yet</h1>
+  <% end %>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
