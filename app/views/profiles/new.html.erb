@@ -18,6 +18,7 @@
   <p>Tell us a bit about yourself and what you love about mentorship</p>
   <form> <textarea name="message" rows="5" cols="30" placeholder="As a mentor, I love ..."></textarea> </form>
 
+  <hr>
   <p>Select your professional and personal interests below. This will help us match you
   with a suitable mentee</p>
   <h4><strong>Professional Interests</strong></h4>
@@ -33,16 +34,29 @@
 
   <h4><strong>Personal Interests</strong></h4>
   <div class="interest-options">
-  <% @personal_interests.each do |per_interest| %>
-    <form>
-    <label class="checkbox-inline interest-item">
-      <input type="checkbox" name="<%= per_interest.name %>"><%= per_interest.name %>
-    </label>
-  </form>
-  <% end %>
+    <% @personal_interests.each do |per_interest| %>
+      <form>
+        <label class="checkbox-inline interest-item">
+          <input type="checkbox" name="<%= per_interest.name %>"><%= per_interest.name %>
+        </label>
+      </form>
+    <% end %>
   </div>
 
+  <hr>
   <h4><strong>Work details</strong></h4>
+
+  <form>
+    Company<br><input type="text" name="company"><br>
+    Title<br><input type="text" name="title">
+  </form>
+  <br>
+
+  <form>
+    <input type="file" name="pic" accept="image/*">
+    <br>
+    <input type="submit">
+  </form>
 
 </body>
 </html>

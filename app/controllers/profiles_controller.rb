@@ -1,12 +1,14 @@
 class ProfilesController < ApplicationController
   def index
-    find_mentor_by_interests((params[:professional_interests]), (params[:personal_interests]))
+    find_mentor_by_interests(params[:professional_interests], params[:personal_interests])
     raise
   end
 
   def new
     @professional_interests = Interest.where(category: 'professional')
     @personal_interests = Interest.where(category: 'personal')
+
+    @professional_interests.map! { |interest| }
   end
 
   def create
