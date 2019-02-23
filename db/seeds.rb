@@ -29,7 +29,7 @@ Profile.destroy_all
 puts "Creating users"
 
 ashwin = User.new(first_name: "ashwin", last_name: "Smith", email: "ashwin@email.com", password: "12341234", company: "Grab", job_title: "Director of Marketing")
-ashwin.remote_photo_url = "https://ichef.bbci.co.uk/onesport/cps/624/cpsprodpb/9AC9/production/_102652693_raviashwinrex.jpg"
+# ashwin.remote_photo_url = "https://ichef.bbci.co.uk/onesport/cps/624/cpsprodpb/9AC9/production/_102652693_raviashwinrex.jpg"
 ashwin.save
 
 peter = User.new(email: "peter@email.com", password: "12341234")
@@ -128,7 +128,7 @@ ashwin_mentor_profile.interests << Interest.find(10)
 ashwin_mentor_profile.interests << Interest.find(11)
 ashwin_mentor_profile.save
 
-george_mentor_profile.interests << Interest.find(0)
+george_mentor_profile.interests << Interest.first
 george_mentor_profile.interests << Interest.find(1)
 george_mentor_profile.interests << Interest.find(3)
 george_mentor_profile.interests << Interest.find(5)

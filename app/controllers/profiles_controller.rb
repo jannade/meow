@@ -3,7 +3,6 @@ class ProfilesController < ApplicationController
     @profiles = find_mentor_by_interests((params[:professional_interests]), (params[:personal_interests]))
 
     @recommended_profiles = recommended_profiles
-    raise
   end
 
   def new
@@ -25,8 +24,6 @@ class ProfilesController < ApplicationController
 
   def destroy
   end
-
-
 
   def recommended_profiles
     matched_interest = []
