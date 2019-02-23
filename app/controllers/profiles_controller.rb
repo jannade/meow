@@ -28,11 +28,13 @@ class ProfilesController < ApplicationController
   def percentage(mentor_interest, mentee_interest)
     matched_interest = []
     mentor_interest.each do |element|
-      matched_interest << if element.include? mentee_interest
-      end
+      matched_interest << element if mentee_interest.include? element
     end
-    (matched_interest.count/mentor_array.count)*100
+    (matched_interest.count / mentor_array.count) * 100
   end
+  # iterate through each profile with the percentage function
+
+  # the one with the higher function wll be appended to the top
 
   def find_mentor_by_interests(first_interest, second_interest)
     if first_interest == "All" && second_interest != "All"
@@ -45,7 +47,4 @@ class ProfilesController < ApplicationController
       Profile.joins(:interests).where(interests: { name: first_interest}).or(Profile.joins(:interests).where(interests: {name: second_interest })).where(is_mentor: true)
     end
   end
-  # create a list in the browser page
-  # the higher the number of percentage, put the mentor in the top for recommended mentor
-  # create a button for clear filter
 end
