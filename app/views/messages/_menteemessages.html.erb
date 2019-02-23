@@ -1,0 +1,8 @@
+<% connections.each do |connection| %>
+  <%= connection.mentee.user.email %>
+  <% unless connection.messages.blank? %>
+    <% connection.messages.each do |msg| %>
+      <%= msg.content %>
+    <% end %>
+  <% end %>
+<% end  %>
