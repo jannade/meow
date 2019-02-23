@@ -1,0 +1,82 @@
+$blue: #1b4e88;
+$red: #8c0714;
+$lightgrey: #F8F8F8;
+
+
+.card-connection {
+  overflow: hidden;
+  height: 250px;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+  margin: 20px;
+}
+
+.card-connection h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.card-connection p {
+  font-size: 12px;
+  line-height: 1.4;
+  opacity: .7;
+  margin-bottom: 0;
+  margin-top: 8px;
+}
+
+.card-connection-profile {
+  width: 30vw;
+  height: 250px;
+  margin: 0 auto;
+  text-decoration: none;
+}
+
+.image-container {
+  background: $red;
+  height: 60%;
+  display: flex;
+}
+
+.image-container img {
+  height: 140px;
+  width: 140px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid $lightgrey;
+  margin: auto;
+}
+
+.card-connection-infos {
+  height: 40%;
+  text-align: center;
+}
+
+.card-connection .card-connection-infos {
+  padding: 16px;
+  margin-top: 10px;
+}
+
+.card-connection-progress {
+  width: 70vw;
+  height: 100%;
+  background: $lightgrey;
+  display: flex
+}
+
+.card-connection-progress > h1 {
+  margin: 10px;
+  font-size: 16px;
+  margin-left: 30px;
+  position: absolute
+}
+
+.card-connection-progress .card-connection-btn {
+  position: relative;
+  top: 210px;
+  left: 493px;
+}
+
+

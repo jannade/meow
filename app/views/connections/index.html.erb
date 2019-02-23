@@ -11,35 +11,31 @@
       <li><a href="#mentee-connections" data-toggle="tab">Your Mentees</a></li>
     <% end %>
   </ul>
-
   <% if @mentor_connections.exists? && @mentee_connections.exists? %>
     <div class="tab-content">
       <div id="mentor-connections" class="tab-pane active">
-        <% @mentor_connections.each do |connection| %>
-          <%= connection.mentor.user.email %>
-        <% end  %>
+        <%= render "mentorconnection_card", connections: @mentor_connections %>
       </div>
       <div id="mentee-connections" class="tab-pane">
-        <% @mentee_connections.each do |connection| %>
-          <%= connection.mentee.user.email %>
-        <% end  %>
+        <%= render "menteeconnection_card", connections: @mentee_connections %>
       </div>
     </div>
   <% elsif @mentor_connections.exists? && @mentee_connections.blank? %>
     <div id="mentor-connections" class="tab-pane active">
-      <% @mentor_connections.each do |connection| %>
-        <%= connection.mentor.user.email %>
-      <% end  %>
+      <%= render "mentorconnection_card", connections: @mentor_connections %>
     </div>
   <% elsif @mentee_connections.exists? && @mentor_connections.blank? %>
     <div id="mentee-connections" class="tab-pane">
-      <% @mentee_connections.each do |connection| %>
-        <%= connection.mentee.user.email %>
-      <% end  %>
+      <%= render "menteeconnection_card", connections: @mentee_connections %>
     </div>
   <% else %>
     <h1>Sorry you dont have any messages yet</h1>
   <% end %>
 </div>
+
+
+
+
+
 
 
