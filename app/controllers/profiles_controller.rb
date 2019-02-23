@@ -1,6 +1,9 @@
 class ProfilesController < ApplicationController
   def index
     @profiles = find_mentor_by_interests((params[:professional_interests]), (params[:personal_interests]))
+
+    @recommended_profiles = recommended_profiles
+    raise
   end
 
   def new
@@ -23,18 +26,27 @@ class ProfilesController < ApplicationController
   def destroy
   end
 
-  private
 
-  def percentage(mentor_interest, mentee_interest)
+
+  def recommended_profiles
     matched_interest = []
-    mentor_interest.each do |element|
-      matched_interest << element if mentee_interest.include? element
-    end
-    (matched_interest.count / mentor_array.count) * 100
-  end
-  # iterate through each profile with the percentage function
+    recommended = []
+    Profile.where(is_mentor: true).map do |profile|
 
-  # the one with the higher function wll be appended to the top
+      profile.interests.each do |interest|
+
+      matched_interest << interest.name if current_user.interests.include? interest
+      end
+    match_percentage = (matched_interest.count / current_user.interests.count) * 100
+    if match_percentage > 50
+      recommended << profile
+    end
+    recommended
+  end
+
+  end
+
+  private
 
   def find_mentor_by_interests(first_interest, second_interest)
     if first_interest == "All" && second_interest != "All"
