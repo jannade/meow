@@ -38,7 +38,7 @@ peter.save
 george = User.new(email: "george@email.com", password: "12341234")
 george.save
 
-lorenzo = User.new(email: "lorenzo@email.com", password: "12341234")
+lorenzo = User.new(first_name: "Lorenzo", last_name: "Curley", email: "lorenzo@email.com", password: "12341234", company: "The World", job_title: "Chief Marketing Officer")
 lorenzo.save
 
 john = User.new(email: "john@email.com", password: "12341234")
