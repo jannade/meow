@@ -1,13 +1,48 @@
-<h4>Please fill out more information to know you better</h4>
+<html>
+<body>
+  <h4>Please fill out more information to know you better</h4>
+  <h5>I'm interested in being a </h5>
 
+  <form>
+    <label class="checkbox-inline">
+      <input type="checkbox" name="mentor">Mentor
+    </label>
+    <label class="checkbox-inline">
+      <input type="checkbox" name="mentee">Mentee
+    </label>
+    <label class="checkbox-inline">
+      <input type="checkbox" name="both">Both
+    </label>
+  </form>
 
-<h3>I'm interested in being a </h3>
+  <p>Tell us a bit about yourself and what you love about mentorship</p>
+  <form> <textarea name="message" rows="5" cols="30" placeholder="As a mentor, I love ..."></textarea> </form>
 
-<form>
-  <label class="radio-inline">
-    <input type="radio" name="optradio">Mentor
-  </label>
-  <label class="radio-inline">
-    <input type="radio" name="optradio">Mentee
-  </label>
-</form>
+  <p>Select your professional and personal interests below. This will help us match you
+  with a suitable mentee</p>
+  <h4><strong>Professional Interests</strong></h4>
+  <div class="interest-options">
+  <% @professional_interests.each do |pro_interest| %>
+    <form>
+    <label class="checkbox-inline interest-item">
+      <input type="checkbox" name="<%= pro_interest.name %>"><%= pro_interest.name %>
+    </label>
+  </form>
+  <% end %>
+  </div>
+
+  <h4><strong>Personal Interests</strong></h4>
+  <div class="interest-options">
+  <% @personal_interests.each do |per_interest| %>
+    <form>
+    <label class="checkbox-inline interest-item">
+      <input type="checkbox" name="<%= per_interest.name %>"><%= per_interest.name %>
+    </label>
+  </form>
+  <% end %>
+  </div>
+
+  <h4><strong>Work details</strong></h4>
+
+</body>
+</html>

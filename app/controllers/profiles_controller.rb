@@ -5,6 +5,8 @@ class ProfilesController < ApplicationController
   end
 
   def new
+    @professional_interests = Interest.where(category: 'professional')
+    @personal_interests = Interest.where(category: 'personal')
   end
 
   def create

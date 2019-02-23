@@ -1,14 +1,16 @@
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
+Message.destroy_all
+Connection.destroy_all
+User.destroy_all
+Profile.destroy_all
 
-personal_interests = [
-  "Work-life balance", "Family", "Reading", "Volunteer work", "Sports & activities", "Cooking",
-  "Arts & music"
-]
+personal_interests = ["Work-life balance", "Family", "Reading", "Volunteer work",
+  "Sports & activities", "Cooking", "Arts & music"]
 
-professional_interests = [
-"Sales", "Marketing", "Computer Programming", "Linux", "MacOS", "Windows", "Operations",
-"Devops", "Product Management", "Project Management", "Artificial Inteligence", "Data Science", "IoT" ]
+professional_interests = ["Sales", "Marketing", "Finance", "Computer Programming", "Linux",
+"MacOS", "Windows", "Operations", "Devops", "Product Management", "Project Management",
+"Artificial Inteligence", "Data Science", "IoT"]
 
 puts "Creating Personal interests"
 
@@ -16,15 +18,14 @@ personal_interests.each do |interest|
   Interest.create(name: interest, category: "personal")
 end
 
+puts "Personal interests created"
+
 puts "Creating Professional interests"
 professional_interests.each do |interest|
   Interest.create(name: interest, category: "professional")
 end
 
-Message.destroy_all
-Connection.destroy_all
-User.destroy_all
-Profile.destroy_all
+puts "Professional interests created"
 
 puts "Creating users"
 
@@ -40,7 +41,6 @@ george.save
 lorenzo = User.new(email: "lorenzo@email.com", password: "12341234")
 lorenzo.save
 
-<<<<<<< HEAD
 john = User.new(email: "john@email.com", password: "12341234")
 john.save
 
@@ -83,21 +83,18 @@ janna_mentee_profile.save
 
 puts "Profiles created"
 
-puts "Set interests for profiles"
+puts "Creating interests for profiles"
 
 ashwin_mentor_profile.interests << Interest.first
 ashwin_mentor_profile.interests << Interest.last
-
 ashwin_mentor_profile.save
 
 george_mentor_profile.interests << Interest.find(2)
 george_mentor_profile.interests << Interest.find(3)
-
 george_mentor_profile.save
 
 peter_mentee_profile.interests << Interest.first
 peter_mentee_profile.interests << Interest.find(3)
-
 peter_mentee_profile.save
 
 john_mentor_profile.interests << Interest.first
@@ -108,8 +105,6 @@ john_mentor_profile.save
 charles_mentor_profile.interests << Interest.find(2)
 charles_mentor_profile.interests << Interest.find(4)
 charles_mentor_profile.save
-
-
 
 puts "Interests created"
 
@@ -135,5 +130,4 @@ lorenzo_janna_message.save
 peter_janna_message = Message.new(content: "arigato", user: peter, is_read: true, connection: peter_janna_connection)
 peter_janna_message.save
 
-
-
+puts "Messages created"
