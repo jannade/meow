@@ -1,18 +1,55 @@
-<div class="messages-container">
-
+<div class="inbox-container">
   <ul class= "nav nav-tabs tab-horizontal">
-    <% connections.each do |connection| %>
-      <li class="active"><a href="#connection#<%=connection.id%>" data-toggle="tab"><%= connection.mentor.user.first_name %></a></li>
+    <% connections.each_with_index do |connection, index| %>
+      <% if index == 0 %>
+        <li class="active">
+      <% else %>
+        <li>
+      <% end %>
+        <a href="#connection-<%=connection.id%>" data-toggle="tab" class="inbox_chat">
+          <div class="chat_img">
+            <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg">
+          </div>
+          <div class="chat_ib">
+            <h5><%= connection.mentor.user.first_name %> <%= connection.mentor.user.last_name %></h5>
+          </div>
+        </a>
+      </li>
     <% end %>
   </ul>
 
-  <div class="tab-content">
-    <% connections.each do |connection| %>
-      <div id="connection#<%=connection.id%>" class="tab-pane active"><%= connection.mentor.user.email %></div>
+  <div class="tab-content messages-container">
+    <% connections.each_with_index do |connection, index| %>
+      <% if index == 0 %>
+        <div id="connection-<%=connection.id%>" class="tab-pane active">
+      <% else %>
+        <div id="connection-<%=connection.id%>" class="tab-pane">
+      <% end %>
+        <div class="message-box">
+          <% connection.messages.each do |message| %>
+          <div class="one-message-box">
+            <% if message.user == current_user %>
+              <div class="right-message">
+                <p class="message-content"><%= message.content %></p>
+                <p class="message-time"><%= message.created_at %></p>
+              </div>
+            <% else %>
+              <div class="left-message">
+                <p class="message-content"><%= message.content %></p>
+                <p class="message-time"><%= message.created_at %></p>
+              </div>
+            <% end %>
+          </div>
+          <% end  %>
+        </div>
+        <div class="new-message-box">
+          <%= simple_form_for(@message) do |f| %>
+            <%= f.input :content, label: false, placeholder: "Type your message here", as: :text, autofocus: true, input_html: {style: 'width: 100%', rows: 4, class: 'response-project'} %>
+            <%= f.submit "Reply", class: "new-message-btn" %>
+          <% end %>
+        </div>
+      </div>
     <% end %>
   </div>
 </div>
-
-
-
 
