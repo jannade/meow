@@ -1,5 +1,8 @@
 $pink: #FC407C;
 $grey: #999999;
+$blue: #1b4e88;
+$red: #8c0714;
+
 
 .nav-tabs {
   border: none;
@@ -7,6 +10,7 @@ $grey: #999999;
 
 .nav-tabs.tab-vertical {
   border-bottom: none !important;
+  margin-bottom: 30px;
 }
 
 .nav-tabs.tab-vertical > li.active > a, .nav-tabs > li.active > a:hover {
@@ -16,9 +20,12 @@ $grey: #999999;
 
 .nav-tabs.tab-vertical > li > a {
   color: $grey !important;
+  padding-left: 0px;
+  padding-right: 0px;
+  margin-right: 25px;
 }
 
 .nav-tabs.tab-vertical > li.active > a {
-  color: black !important;
+  color: $blue !important;
 }
 

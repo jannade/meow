@@ -10,6 +10,7 @@ class MessagesController < ApplicationController
 
   def new
     @message = Message.new
+    @mentor = Profile.find(session[:mentor_profile])
   end
 
   def create

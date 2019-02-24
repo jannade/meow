@@ -1,14 +1,14 @@
-<div class="container">
+<div class="container narrow-container">
   <h1>Messages</h1>
 
   <ul class="nav nav-tabs tab-vertical">
     <% if @mentor_connections.exists? && @mentee_connections.exists? %>
-      <li class="active"><a href="#mentor-inbox" data-toggle="tab">Messages from Mentors</a></li>
-      <li><a href="#mentee-inbox" data-toggle="tab">Messages from Mentees</a></li>
+      <li class="active"><a href="#mentor-inbox" data-toggle="tab">From Mentors</a></li>
+      <li><a href="#mentee-inbox" data-toggle="tab">From Mentees</a></li>
     <% elsif @mentor_connections.exists? && @mentee_connections.blank? %>
-      <li class="active"><a href="#mentor-inbox" data-toggle="tab">Messages from Mentors</a></li>
+      <li class="active"><a href="#mentor-inbox" data-toggle="tab">From Mentors</a></li>
     <% elsif @mentee_connections.exists? && @mentor_connections.blank? %>
-      <li><a href="#mentee-inbox" data-toggle="tab">Messages from Mentees</a></li>
+      <li><a href="#mentee-inbox" data-toggle="tab">From Mentees</a></li>
     <% end %>
   </ul>
 

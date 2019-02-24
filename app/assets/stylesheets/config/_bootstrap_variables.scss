@@ -6,7 +6,7 @@
 // General style
 $font-family-sans-serif:  $body-font;
 $headings-font-family:    $headers-font;
-$body-bg:                 #faf0e4;
+$body-bg:                 #FBFBFB;
 $font-size-base: 18px;
 
 // Colors
@@ -51,3 +51,12 @@ $border-radius-small: 2px;
 }
 
 // Override other variables below!
+
+h1 {
+  font-size: 30px !important;
+  margin-top: 30px !important;
+  margin-bottom: 15.5px !important;
+  color: #1b4e88 !important;
+}
+
+

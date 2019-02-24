@@ -4,7 +4,7 @@ $cream: #faf0e4;
 
 .inbox-container {
   width: 100%;
-  background: white;
+  background: $lightgrey;
   display: flex;
   margin-top: 20px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
@@ -48,13 +48,13 @@ $cream: #faf0e4;
   margin-top: 6px;
 }
 
-.chat_ib {
-  font-size: 12px;
+.chat_ib h5 {
+  font-size: 15px;
   margin-left: 10px;
 }
 
 .messages-container {
-  background: $lightgrey;
+  background: white;
   width: 70vw;
   padding: 20px;
   display: flex;
@@ -87,15 +87,17 @@ $cream: #faf0e4;
 }
 
 .message-box .right-message .message-content {
-  background: rgba(27,78,136,0.4);
+  background: rgba(27,78,136,0.2);
   padding: 10px;
   border-radius: 3px;
+  font-size: 10px;
 }
 
 .message-box .left-message .message-content {
   background: $cream;
   padding: 10px;
   border-radius: 3px;
+  font-size: 10px;
 }
 
 .message-box .message-time {
@@ -109,6 +111,7 @@ $cream: #faf0e4;
 
 .new-message-btn {
   position: relative;
+  font-size: 12px;
 }
 
 .simple_form div.input .message-input {
