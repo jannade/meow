@@ -2,6 +2,7 @@ class MessagesController < ApplicationController
   def index
     @mentor_connections = Connection.where(mentee: current_user.mentee_profile)
     @mentee_connections = Connection.where(mentor: current_user.mentor_profile)
+    @message = Message.new
   end
 
   def show

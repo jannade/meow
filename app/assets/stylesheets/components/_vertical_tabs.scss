@@ -2,21 +2,23 @@ $pink: #FC407C;
 $grey: #999999;
 
 .nav-tabs {
+  border: none;
+}
+
+.nav-tabs.tab-vertical {
   border-bottom: none !important;
 }
 
-.nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {
+.nav-tabs.tab-vertical > li.active > a, .nav-tabs > li.active > a:hover {
   border: none;
   border-bottom: 3px solid $pink;
 }
 
-.nav-tabs > li > a {
+.nav-tabs.tab-vertical > li > a {
   color: $grey !important;
 }
 
-.nav-tabs > li.active > a {
+.nav-tabs.tab-vertical > li.active > a {
   color: black !important;
 }
 
-.nav-tabs a:hover {
-}

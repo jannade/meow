@@ -1,0 +1,120 @@
+$lightgrey: #F8F8F8;
+$blue: #1b4e88;
+$cream: #faf0e4;
+
+.inbox-container {
+  width: 100%;
+  background: white;
+  display: flex;
+  margin-top: 20px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+.nav-tabs.tab-horizontal {
+  display: flex;
+  flex-direction: column;
+  width: 30vw;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.nav-tabs.tab-horizontal > li.active > a, .nav-tabs.tab-horizontal > li.active > a:hover {
+  border: none;
+  background: white;
+}
+
+.nav-tabs.tab-horizontal > a:hover {
+  border: none;
+}
+
+.nav-tabs.tab-horizontal > li.active > a {
+  background: $lightgrey !important;
+}
+
+.inbox-container a.inbox_chat {
+  display: flex;
+}
+
+.inbox-container .inbox-chat {
+  margin: 0;
+}
+
+.inbox_chat img {
+  height: 30px;
+  width: 30px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid $lightgrey;
+  margin-top: 6px;
+}
+
+.chat_ib {
+  font-size: 12px;
+  margin-left: 10px;
+}
+
+.messages-container {
+  background: $lightgrey;
+  width: 70vw;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.message-box {
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.one-message-box {
+  position: relative;
+  height: 100px;
+}
+
+.message-box .right-message {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: inline-block;
+}
+
+.message-box .left-message {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: inline-block;
+}
+
+.message-box .right-message .message-content {
+  background: rgba(27,78,136,0.4);
+  padding: 10px;
+  border-radius: 3px;
+}
+
+.message-box .left-message .message-content {
+  background: $cream;
+  padding: 10px;
+  border-radius: 3px;
+}
+
+.message-box .message-time {
+  font-size: 8px;
+}
+
+.new-message-box {
+  height: 150px;
+  width: 100%;
+}
+
+.new-message-btn {
+  position: relative;
+}
+
+.simple_form div.input .message-input {
+  height: 100px;
+}
+
+
+
+

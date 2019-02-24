@@ -1,8 +1,18 @@
-<% connections.each do |connection| %>
-  <%= connection.mentor.user.email %>
-  <% unless connection.messages.blank? %>
-    <% connection.messages.each do |msg| %>
-      <%= msg.content %>
+<div class="messages-container">
+
+  <ul class= "nav nav-tabs tab-horizontal">
+    <% connections.each do |connection| %>
+      <li class="active"><a href="#connection#<%=connection.id%>" data-toggle="tab"><%= connection.mentor.user.first_name %></a></li>
     <% end %>
-  <% end %>
-<% end  %>
+  </ul>
+
+  <div class="tab-content">
+    <% connections.each do |connection| %>
+      <div id="connection#<%=connection.id%>" class="tab-pane active"><%= connection.mentor.user.email %></div>
+    <% end %>
+  </div>
+</div>
+
+
+
+
