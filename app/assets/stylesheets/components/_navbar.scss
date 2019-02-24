@@ -8,7 +8,7 @@ $pink: #fc407c;
 .navbar-wagon {
   background: white;
   transition: all 0.3s ease;
-  height: 70px;
+  height: 45px;
   padding: 0px 30px;
   display: flex;
   align-items: center;
@@ -23,8 +23,8 @@ $pink: #fc407c;
 
 /* User Avatar */
 .navbar-wagon .avatar {
-  height: 35px;
-  width: 35px;
+  height: 30px;
+  width: 30px;
   border-radius: 50%;
   margin-left: 20px;
 }
@@ -45,7 +45,7 @@ $pink: #fc407c;
 /* Navbar link */
 .navbar-wagon-link {
   color: $blue;
-  font-size: 14px;
+  font-size: 12px;
 }
 .navbar-wagon-link:hover {
   color: $pink;
