@@ -25,6 +25,7 @@ Message.destroy_all
 Connection.destroy_all
 User.destroy_all
 Profile.destroy_all
+Interest.destroy_all
 
 puts "Creating users"
 
@@ -268,6 +269,9 @@ janna_ashwin_message.save
 
 lorenzo_janna_message = Message.new(content: "hellow", user: lorenzo, is_read: true, connection: lorenzo_janna_connection)
 lorenzo_janna_message.save
+
+janna_lorenzo_message = Message.new(content: "Lets go have some fun at tannelot", user: janna, is_read: true, connection: lorenzo_janna_connection)
+janna_lorenzo_message.save
 
 peter_janna_message = Message.new(content: "arigato", user: peter, is_read: true, connection: peter_janna_connection)
 peter_janna_message.save
