@@ -6,6 +6,11 @@ class ConnectionsController < ApplicationController
 
   def show
     @connection = Connection.find(params[:id])
+    @mentor = @connection.mentor.user
+    @mentee = @connection.mentee.user
+
+    @goals = Goal.where(connection: @connection)
+
   end
 
   def new
