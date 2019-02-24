@@ -8,6 +8,7 @@ $cream: #faf0e4;
   display: flex;
   margin-top: 20px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  border-radius: 5px;
 }
 
 .nav-tabs.tab-horizontal {
@@ -59,6 +60,7 @@ $cream: #faf0e4;
   padding: 20px;
   display: flex;
   flex-direction: column;
+  border-radius: 0px 5px 5px 0px;
 }
 
 .message-box {
