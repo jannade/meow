@@ -1,9 +1,13 @@
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
+
+Milestone.destroy_all
+Goal.destroy_all
 Message.destroy_all
 Connection.destroy_all
-User.destroy_all
 Profile.destroy_all
+User.destroy_all
+Interest.destroy_all
 
 personal_interests = ["Work-life balance", "Family", "Reading", "Volunteer work",
   "Sports & activities", "Cooking", "Arts & music"]
@@ -27,13 +31,6 @@ end
 
 puts "Professional interests created"
 
-Milestone.destroy_all
-Goal.destroy_all
-Message.destroy_all
-Connection.destroy_all
-Profile.destroy_all
-User.destroy_all
-Interest.destroy_all
 
 puts "Creating users"
 
