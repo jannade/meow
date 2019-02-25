@@ -3,6 +3,8 @@ class MessagesController < ApplicationController
     @mentor_connections = Connection.where(mentee: current_user.mentee_profile)
     @mentee_connections = Connection.where(mentor: current_user.mentor_profile)
     @message = Message.new
+
+    @goal = Goal.new
   end
 
   def show

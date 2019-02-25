@@ -6,8 +6,33 @@
       <div class="card-goal-descr">
         <h2><%= goal.description %></h2>
       </div>
+      <div class="card-milestones">
+        <% goal.milestones.each do |milestone| %>
+          <div class="card-ms">
+            <% if milestone.is_completed == true %>
+              <i class="fas fa-check-square check"></i>
+              <p class="ms-descr"><%= milestone.description %></p>
+              <div class="ms-edits">
+                <a href="" class="edit-ms">Edit</a>
+                <a href="" class="complete-ms">Undo</a>
+              </div>
+            <% else %>
+              <i class="far fa-square check"></i>
+              <p class="ms-descr"><%= milestone.description %></p>
+              <div class="ms-edits">
+                <a href="" class="edit-ms">Edit</a>
+                <a href="" class="complete-ms">Done</a>
+              </div>
+            <% end %>
+          </div>
+        <% end %>
+      </div>
+    <%= link_to "Add new milestone", new_connection_goal_milestone_path(@connection, @connection.goals), class:"add-ms-btn btn btn-default" %>
     </div>
   <% end %>
+
+  <%= link_to "Add new goal", new_connection_goal_path(@connection), class:"btn btn-default new-goal-btn" %>
+
 </div>
 
 

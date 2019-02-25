@@ -21,6 +21,8 @@ professional_interests.each do |interest|
   Interest.create(name: interest, category: "professional")
 end
 
+Milestone.destroy_all
+Goal.destroy_all
 Message.destroy_all
 Connection.destroy_all
 User.destroy_all
@@ -139,6 +141,9 @@ janna_lorenzo_message.save
 peter_janna_message = Message.new(content: "arigato", user: peter, is_read: true, connection: peter_janna_connection)
 peter_janna_message.save
 
+ashwin_janna_message = Message.new(content: "reply to new message", user: ashwin, is_read: false, connection: janna_ashwin_connection)
+ashwin_janna_message.save
+
 puts "Creating goals"
 
 goal1 = Goal.new(description: "Win the lottery every week of the year", connection: janna_ashwin_connection)
@@ -153,5 +158,17 @@ goal3.save
 
 puts "Goals created"
 
+puts "Creating milestones"
+
+ms1 = Milestone.new(description: "Buy lottery tickets", goal: goal1, is_completed: true)
+ms1.save
+
+ms2 = Milestone.new(description: "Make a spreadsheet with historical winning numbers", goal: goal1, is_completed: false)
+ms2.save
+
+ms3 = Milestone.new(description: "Build a crazy algorithm to predict winning numbers", goal: goal1, is_completed: false)
+ms3.save
+
+puts "Milestones created"
 
 
