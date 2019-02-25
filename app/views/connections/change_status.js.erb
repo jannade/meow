@@ -1,0 +1,12 @@
+console.log("trippy")
+
+acceptBtn = document.querySelector(".accept-request");
+acceptBtn.remove();
+
+acceptBox = document.querySelector(".new-mentor-request");
+acceptedMsg = '<%= j render "messages/connection_accept" %>';
+
+acceptBox.insertAdjacentHTML('afterbegin', acceptedMsg);
+
+
+

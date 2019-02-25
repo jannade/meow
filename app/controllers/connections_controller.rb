@@ -11,7 +11,6 @@ class ConnectionsController < ApplicationController
 
     @goals = Goal.where(connection: @connection)
 
-
   end
 
   def new
@@ -22,9 +21,18 @@ class ConnectionsController < ApplicationController
   end
 
   def edit
+    @connection = Connection.find(connection_params)
   end
 
   def update
+    @connection.update(connection_params)
+    raise
+  end
+
+  def change_status
+    @connection = Connection.find(params[:format])
+    @connection.status = "confirmed"
+    @connection.save
   end
 
   def destroy

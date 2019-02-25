@@ -25,6 +25,13 @@
       <% else %>
         <div id="connection-<%=connection.id%>" class="tab-pane">
       <% end %>
+        <div class="new-mentor-request">
+          <% if connection.status == "Pending" %>
+            <div class="accept-request">
+             <%= link_to "Accept Invite", change_status_path(connection), method: :patch, remote: true %>
+            </div>
+          <% end %>
+        </div>
         <div class="message-box" data-message-id=<%= connection.id %>>
           <% connection.messages.each do |message| %>
           <div class="one-message-box">
@@ -41,9 +48,6 @@
             <% end %>
           </div>
           <% end  %>
-        </div>
-        <div class="new-connection-request">
-
         </div>
         <div class="new-message-box">
           <%= simple_form_for([connection, @message], remote: true) do |f| %>
