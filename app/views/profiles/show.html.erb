@@ -6,7 +6,7 @@
       <div class="notice"><%= flash[:notice] %></div>
     <% end %>
 
-  <% if Connection.find_by(mentor: @profile, mentee: @mentee_profile.present? %>
+  <% if Connection.where(mentor: @profile, mentee: @mentee_profile).first.present?%>
     <p> Request pending</p>
   <% else  %>
     <%= link_to "Connect", new_message_path %>
