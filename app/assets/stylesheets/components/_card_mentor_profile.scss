@@ -1,0 +1,58 @@
+.card-mentor-profile {
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  display: flex;
+  padding: 20px;
+  padding-left: 40px;
+  margin-top: 40px;
+  width: 75%;
+  position: relative
+}
+
+.card-mentor h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.card-mentor p {
+  font-size: 14px;
+  opacity: .7;
+  margin: 0;
+}
+
+.card-mentor .card-mentor-infos {
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  position: relative;
+}
+
+.card-mentor-info {
+  width: 30vw;
+  text-align: center;
+}
+
+.card-mentor-infos .card-mentor-user {
+  position: absolute;
+  right: 16px;
+  top: -20px;
+  width: 40px;
+}
+
+.card-mentor-img {
+  border-radius: 50%;
+  height: 200px;
+  width: 200px;
+  margin-right: 20px;
+}
+
+.connect-btn {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+}
+
+
