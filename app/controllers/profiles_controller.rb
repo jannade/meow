@@ -13,13 +13,16 @@ class ProfilesController < ApplicationController
     @user = current_user
     @profile = Profile.new(profile_params)
     @profile.user = @user
+    @profile.user.company = params[:user][:company]
+    @profile.user.job_title = params[:user][:job_title]
+
     if @profile.save
-      redirect_to root_path
+      redirect_to mentors_path
     else
       render :new
     end
 
-    # @profile_interest = Profile_interest.new(profile_interest_params)
+    add_profile_interests(params[:profile][:interests])
   end
 
   def show
@@ -42,8 +45,11 @@ class ProfilesController < ApplicationController
     params.require(:profile).permit(:is_mentor, :description, :user_id)
   end
 
-  def profile_interest_params
-    params.require(:profile_interest).permit(:interest_id)
+  def add_profile_interests(interest_ids)
+    interest_ids.each do |id|
+      interest = Interest.find(id)
+      ProfileInterest.create!(profile: @profile, interest: interest)
+    end
   end
 
   def percentage(mentor_interest, mentee_interest)
@@ -66,7 +72,4 @@ class ProfilesController < ApplicationController
       Profile.joins(:interests).where(interests: { name: first_interest}).or(Profile.joins(:interests).where(interests: {name: second_interest })).where(is_mentor: true)
     end
   end
-  # create a list in the browser page
-  # the higher the number of percentage, put the mentor in the top for recommended mentor
-  # create a button for clear filter
 end

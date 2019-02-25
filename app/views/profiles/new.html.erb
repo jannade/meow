@@ -1,15 +1,43 @@
 <h4>Are you interested in being :</h4>
 
 <%= simple_form_for @profile do |f| %>
-  <%= f.input :is_mentor, as: :boolean, label: "A Mentor", as: :radio_buttons %>
+  <%= f.input :is_mentor,
+              as: :boolean,
+              label: "A Mentor",
+              as: :radio_buttons,
+              style: "display:inline" %>
+
   <%= f.input :description, as: :text %>
 
-  <%= f.input :interests, label: 'Professional interests', item_wrapper_class: 'inline', as: :check_boxes, collection: Interest.where(category: 'professional'), input_html: { multiple: true } %>
-  <%= f.input :interests, label: 'Personal interests',  as: :check_boxes, collection: Interest.where(category: 'personal'), input_html: { multiple: true } %>
+  <%= f.input :interests,
+              label: 'Professional interests',
+              style: "display:inline",
+              as: :check_boxes,
+              collection: Interest.where(category: 'professional'),
+              input_html: { multiple: true },
+              include_blank: false,
+              include_hidden: false %>
+
+  <%= f.input :interests,
+              label: 'Personal interests',
+              item_wrapper_class: 'inline',
+              as: :check_boxes,
+              collection: Interest.where(category: 'personal'),
+              input_html: { multiple: true },
+              include_blank: false,
+              include_hidden: false %>
 
   <br><h4><strong>Work details</strong></h4>
 
 
+  <%= simple_fields_for :user do |o| %>
+    <%= o.input :company, label: 'Company' %>
+    <%= o.input :job_title, label: 'Job Title' %>
+  <% end %>
+
+
+  <%#= f.input :company, label: "Company" %>
+  <%#= f.input :job_title, label: "Job Title" %>
 
   <%= f.button :submit %>
 <% end %>
