@@ -7,7 +7,8 @@
               as: :radio_buttons,
               style: "display:inline" %>
 
-  <%= f.input :description, as: :text %>
+  <%= f.input :description,
+              as: :text %>
 
   <%= f.input :interests,
               label: 'Professional interests',
@@ -29,77 +30,10 @@
 
   <br><h4><strong>Work details</strong></h4>
 
-
-  <%= simple_fields_for :user do |o| %>
-    <%= o.input :company, label: 'Company' %>
-    <%= o.input :job_title, label: 'Job Title' %>
+  <%= simple_fields_for :user do |f| %>
+    <%= f.input :company, label: 'Company' %>
+    <%= f.input :job_title, label: 'Job Title' %>
   <% end %>
-
-
-  <%#= f.input :company, label: "Company" %>
-  <%#= f.input :job_title, label: "Job Title" %>
 
   <%= f.button :submit %>
 <% end %>
-
-
-  <!--
-  <form>
-    <label class="checkbox-inline">
-      <input type="checkbox" name="mentor">Mentor
-    </label>
-    <label class="checkbox-inline">
-      <input type="checkbox" name="mentee">Mentee
-    </label>
-
-    <p>Tell us a bit about yourself and what you love about mentorship</p>
-
-    <textarea name="message" rows="5" cols="30" placeholder="As a mentor, I love ..."></textarea><br>
-    <input type="submit">
-  </form>
-
-
-
-
-  <hr>
-  <p>Select your professional and personal interests below. This will help us match you
-  with a suitable mentee</p>
-  <h4><strong>Professional Interests</strong></h4>
-  <div class="interest-options">
-  <%# @professional_interests.each do |pro_interest| %>
-    <form>
-    <label class="checkbox-inline interest-item">
-      <input type="checkbox" name="<%#= pro_interest.name %>"><%#= pro_interest.name %>
-    </label>
-  </form>
-  <%# end %>
-  </div>
-
-  <h4><strong>Personal Interests</strong></h4>
-  <div class="interest-options">
-    <#% @personal_interests.each do |per_interest| %>
-      <form>
-        <label class="checkbox-inline interest-item">
-          <input type="checkbox" name="<#%= per_interest.name %>"><#%= per_interest.name %>
-        </label>
-      </form>
-    <#% end %>
-  </div>
-
-  <hr>
-  <h4><strong>Work details</strong></h4>
-
-  <form>
-    Company<br><input type="text" name="company"><br>
-    Title<br><input type="text" name="title">
-  </form>
-  <br>
-
-  <form>
-    <input type="file" name="pic" accept="image/*">
-    <br>
-    <input type="submit">
-  </form>
-
--->
-

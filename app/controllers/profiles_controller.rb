@@ -13,8 +13,9 @@ class ProfilesController < ApplicationController
     @user = current_user
     @profile = Profile.new(profile_params)
     @profile.user = @user
-    @profile.user.company = params[:user][:company]
-    @profile.user.job_title = params[:user][:job_title]
+    @user.company = params[:user][:company]
+    @user.job_title = params[:user][:job_title]
+    @user.save
 
     if @profile.save
       redirect_to mentors_path
