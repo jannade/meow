@@ -32,7 +32,7 @@ ashwin = User.new(first_name: "ashwin", last_name: "Smith", email: "ashwin@email
 # ashwin.remote_photo_url = "https://ichef.bbci.co.uk/onesport/cps/624/cpsprodpb/9AC9/production/_102652693_raviashwinrex.jpg"
 ashwin.save
 
-peter = User.new(first_name: "ashwin", last_name: "Smith", email: "peter@email.com", password: "12341234", company: "Google", job_title: "Director of Marketing")
+peter = User.new(first_name: "Peter", last_name: "Smith", email: "peter@email.com", password: "12341234", company: "Google", job_title: "Director of Marketing")
 peter.save
 
 george = User.new(first_name: "George", last_name: "Smith", email: "george@email.com", password: "12341234", company: "Le Wagon", job_title: "Director of Marketing")
@@ -59,7 +59,7 @@ vilson.save
 romain = User.new(first_name: "Romain", last_name: "Smith", email: "romain@email.com", password: "12341234", company: "Samsung", job_title: "Director of Marketing")
 romain.save
 
-guido = User.new(first_name: "Guidp", last_name: "Smith", email: "guido@email.com", password: "12341234", company: "Nokia", job_title: "Director of Marketing")
+guido = User.new(first_name: "Guido", last_name: "Smith", email: "guido@email.com", password: "12341234", company: "Nokia", job_title: "Director of Marketing")
 guido.save
 
 melissa = User.new(first_name: "Melissa", last_name: "Smith", email: "melissa@email.com", password: "12341234", company: "Spotify", job_title: "Director of Marketing")
