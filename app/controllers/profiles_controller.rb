@@ -1,7 +1,6 @@
 class ProfilesController < ApplicationController
   def index
     find_mentor_by_interests(params[:professional_interests], params[:personal_interests])
-    raise
   end
 
   def new
@@ -11,12 +10,16 @@ class ProfilesController < ApplicationController
   end
 
   def create
+    @user = current_user
     @profile = Profile.new(profile_params)
+    @profile.user = @user
     if @profile.save
-      redirect_to profile_path
+      redirect_to root_path
     else
       render :new
     end
+
+    # @profile_interest = Profile_interest.new(profile_interest_params)
   end
 
   def show
@@ -37,6 +40,10 @@ class ProfilesController < ApplicationController
 
   def profile_params
     params.require(:profile).permit(:is_mentor, :description, :user_id)
+  end
+
+  def profile_interest_params
+    params.require(:profile_interest).permit(:interest_id)
   end
 
   def percentage(mentor_interest, mentee_interest)

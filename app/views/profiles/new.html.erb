@@ -1,12 +1,19 @@
-<h4>Please fill out more information to know you better</h4>
-<h5>I'm interested in being a </h5>
+<h4>Are you interested in being :</h4>
 
-<%= simple_form_for(@profile) do |f| %>
-  <%= f.input :is_mentor, label: 'Mentor' %>
-  <%= f.text_area :description, label: ": ", input_html: { style: 'width: 50%;', :rows => 6} %>
-  <%= f.input :interests, collection: Interest.where(category: 'professional'), input_html: { multiple: true } %>
-  <%= f.submit "Create your Profile", class: "btn btn-primary" %>
-<% end  %>
+<%= simple_form_for @profile do |f| %>
+  <%= f.input :is_mentor, as: :boolean, label: "A Mentor", as: :radio_buttons %>
+  <%= f.input :description, as: :text %>
+
+  <%= f.input :interests, label: 'Professional interests', item_wrapper_class: 'inline', as: :check_boxes, collection: Interest.where(category: 'professional'), input_html: { multiple: true } %>
+  <%= f.input :interests, label: 'Personal interests',  as: :check_boxes, collection: Interest.where(category: 'personal'), input_html: { multiple: true } %>
+
+  <br><h4><strong>Work details</strong></h4>
+
+
+
+  <%= f.button :submit %>
+<% end %>
+
 
   <!--
   <form>

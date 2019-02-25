@@ -18,6 +18,10 @@ class User < ApplicationRecord
   # validates :company, presence: true
   # validates :job_title, presence: true
 
+  def create
+  end
+
+
   def is_password_nil?
     password.nil?
   end
