@@ -29,7 +29,7 @@ class MessagesController < ApplicationController
       end
     else
       @mentor = Profile.find(session[:mentor_profile])
-      @mentee = Profile.find_by(user: current_user)
+      @mentee = Profile.find_by(user: current_user, is_mentor: false)
       new_connection = Connection.new(mentor_id: @mentor.id, mentee_id: @mentee.id)
       @message.connection = new_connection if new_connection.save
       if @message.save
