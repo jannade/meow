@@ -294,14 +294,9 @@ peter_janna_connection.save
 puts "Connections created"
 
 puts "Creating messages"
-janna_ashwin_message = Message.new(content: "new message", user: janna, is_read: false, connection: janna_ashwin_connection)
-janna_ashwin_message.save
 
-lorenzo_janna_message = Message.new(content: "hellow", user: lorenzo, is_read: true, connection: lorenzo_janna_connection)
+lorenzo_janna_message = Message.new(content: "hellow I'd love to connect and learn", user: lorenzo, is_read: true, connection: lorenzo_janna_connection)
 lorenzo_janna_message.save
-
-janna_lorenzo_message = Message.new(content: "Lets go have some fun at tannelot", user: janna, is_read: true, connection: lorenzo_janna_connection)
-janna_lorenzo_message.save
 
 peter_janna_message = Message.new(content: "arigato", user: peter, is_read: true, connection: peter_janna_connection)
 peter_janna_message.save
@@ -321,7 +316,7 @@ goal2.save
 goal3 = Goal.new(description: "Ride a motorcycle like a king on wheels", connection: lorenzo_janna_connection)
 goal3.save
 
-goalLJ = Goal.new(description: "Become the best coders in the world", connection: lorenzo_janna_connection)
+goalLJ = Goal.new(description: "Win the lottery", connection: lorenzo_janna_connection)
 goalLJ.save
 
 goalLJ2 = Goal.new(description: "Get as fit as dede the bootcamp trainer", connection: lorenzo_janna_connection)
@@ -331,22 +326,22 @@ puts "Goals created"
 
 puts "Creating milestones"
 
-ms1 = Milestone.new(description: "Buy lottery tickets", goal: goal1, is_completed: true)
+ms1 = Milestone.new(description: "Buy lottery tickets", is_completed: true, goal: goalLJ)
 ms1.save
 
-ms2 = Milestone.new(description: "Make a spreadsheet with historical winning numbers", goal: goal1, is_completed: false)
+ms2 = Milestone.new(description: "Make a spreadsheet with historical winning numbers", goal: goalLJ, is_completed: false)
 ms2.save
 
-ms3 = Milestone.new(description: "Build a crazy algorithm to predict winning numbers", goal: goal1, is_completed: false)
+ms3 = Milestone.new(description: "Build a crazy algorithm to predict winning numbers", goal: goalLJ, is_completed: false)
 ms3.save
 
-mslj1 = Milestone.new(description: "Sign-up for Le Wagon Bootcamp", is_completed: true)
+mslj1 = Milestone.new(description: "Sign-up for Le Wagon Bootcamp", is_completed: true, goal: goalLJ)
 mslj1.save
 
-mslj2 = Milestone.new(description: "Complete Le Wagon Bootcamp", is_completed: false)
+mslj2 = Milestone.new(description: "Complete Le Wagon Bootcamp", is_completed: false, goal: goalLJ)
 mslj2.save
 
-mslj3 = Milestone.new(description: "Do 50 hours of freelancing", is_completed: false)
+mslj3 = Milestone.new(description: "Do 50 hours of freelancing", is_completed: false, goal: goalLJ)
 mslj3.save
 
 
