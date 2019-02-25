@@ -32,37 +32,37 @@ ashwin = User.new(first_name: "ashwin", last_name: "Smith", email: "ashwin@email
 # ashwin.remote_photo_url = "https://ichef.bbci.co.uk/onesport/cps/624/cpsprodpb/9AC9/production/_102652693_raviashwinrex.jpg"
 ashwin.save
 
-peter = User.new(email: "peter@email.com", password: "12341234")
+peter = User.new(first_name: "ashwin", last_name: "Smith", email: "peter@email.com", password: "12341234", company: "Google", job_title: "Director of Marketing")
 peter.save
 
-george = User.new(email: "george@email.com", password: "12341234")
+george = User.new(first_name: "George", last_name: "Smith", email: "george@email.com", password: "12341234", company: "Le Wagon", job_title: "Director of Marketing")
 george.save
 
 lorenzo = User.new(first_name: "Lorenzo", last_name: "Curley", email: "lorenzo@email.com", password: "12341234", company: "The World", job_title: "Chief Marketing Officer")
 lorenzo.save
 
-john = User.new(email: "john@email.com", password: "12341234")
+john = User.new(first_name: "John", last_name: "Smith", email: "john@email.com", password: "12341234", company: "Go-Jek", job_title: "Director of Marketing")
 john.save
 
-charles = User.new(email: "charles@email.com", password: "12341234")
+charles = User.new(first_name: "Charles", last_name: "Smith", email: "charles@email.com", password: "12341234", company: "Coffee and Coconuts", job_title: "Director of Marketing")
 charles.save
 
-janna = User.new(email: "janna@email.com", password: "12341234")
+janna = User.new(first_name: "Janna", last_name: "Smith", email: "janna@email.com", password: "12341234", company: "Apple", job_title: "Director of Marketing")
 janna.save
 
-kane = User.new(email: "kane@email.com", password: "12341234")
+kane = User.new(first_name: "Kane", last_name: "Smith", email: "kane@email.com", password: "12341234", company: "Mocca", job_title: "Director of Marketing")
 kane.save
 
-vilson = User.new(email: "vilson@email.com", password: "12341234")
+vilson = User.new(first_name: "Vilson", last_name: "Smith", email: "vilson@email.com", password: "12341234", company: "FaceBook", job_title: "Director of Marketing")
 vilson.save
 
-romain = User.new(email: "romain@email.com", password: "12341234")
+romain = User.new(first_name: "Romain", last_name: "Smith", email: "romain@email.com", password: "12341234", company: "Samsung", job_title: "Director of Marketing")
 romain.save
 
-guido = User.new(email: "guido@email.com", password: "12341234")
+guido = User.new(first_name: "Guidp", last_name: "Smith", email: "guido@email.com", password: "12341234", company: "Nokia", job_title: "Director of Marketing")
 guido.save
 
-melissa = User.new(email: "melissa@email.com", password: "12341234")
+melissa = User.new(first_name: "Melissa", last_name: "Smith", email: "melissa@email.com", password: "12341234", company: "Spotify", job_title: "Director of Marketing")
 melissa.save
 
 puts "Users created"

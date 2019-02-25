@@ -13,26 +13,17 @@
       <% end %>
     </div>
   </div>
-  <div class="box-header">
-  </div>
-  <div class="container-margin">
-    <div class="row">
-      <% @profiles.each do |profile| %>
-        <div class="col-xs-12 col-sm-6 col-md-4">
-          <%= link_to space_path(space.id), class: "card-link" do %>
-            <div class="card-trip">
-              <%= image_tag space.photo.url %>
-              <div class="card-trip-infos">
-                <div>
-                  <h2><%= space.name %></h2>
-                  <p><%= space.location %></p>
-                </div>
-                <h2 class="card-trip-pricing">$<%= space.price %></h2>
-              </div>
-            </div>
-          <% end %>
-        </div>
-      <% end %>
+  <div class="card-profile">
+  <%= link_to profile_path(connection.mentor) do  %>
+    <div class="card-profile">
+      <div class="image-container">
+        <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg">
+      </div>
+      <div class="card-profile-infos">
+        <h2><%= profile.user.first_name %> <%= profile.user.last_name %></h2>
+        <p><%= profile.user.job_title%> at <%=profile.user.job_title %></p>
+      </div>
     </div>
+  <% end %>
   </div>
 </div>
