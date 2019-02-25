@@ -1,3 +1,5 @@
+$lightgrey: #C4C4C4;
+
 .card-mentor-profile {
   overflow: hidden;
   background: white;
@@ -54,5 +56,45 @@
   bottom: 20px;
   right: 20px;
 }
+
+.card-mentor-header h4 {
+  font-size: 17px;
+}
+
+.card-mentor-description {
+  background: $lightgrey;
+  margin: 20px;
+  height: 100px;
+}
+
+.card-mentor-profile-body {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  display: flex;
+  padding: 20px;
+  padding-left: 40px;
+  margin-top: 40px;
+  width: 75%;
+  position: relative
+}
+
+.card-mentor-all-interests {
+  background: $lightgrey;
+  margin: 20px;
+  padding: 20px;
+  height: 100px;
+  font-size: 10px;
+  height: 100%;
+}
+
+.card-more-details {
+  background: $lightgrey;
+  margin: 20px;
+  height: 100px;
+}
+
 
 

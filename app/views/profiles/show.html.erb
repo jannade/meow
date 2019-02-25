@@ -20,8 +20,8 @@
     </div>
   </div>
 
-  <div class="card-mentor-profile">
-    <div class="card-mentor-description-header">
+  <div class="card-mentor-profile-body">
+    <div class="card-mentor-header">
       <h4>About me</h4>
     </div>
     <div class="card-mentor-description">
@@ -29,22 +29,30 @@
     </div>
   </div>
 
-  <div class="card-mentor-profile">
-    <div class="card-mentor-interests-header">
+  <div class="card-mentor-profile-body">
+    <div class="card-mentor-header">
       <h4>Interests</h4>
     </div>
     <div class="card-mentor-all-interests">
       <% @profile_interests.each do |profile_i| %>
         <% if profile_i.interest.category == "professional" %>
           <div class="card-mt-interest professional-interests">
-              <%= profile_i.interest.name %>
+              <p><%= profile_i.interest.name %></p>
           </div>
         <% else %>
           <div class="card-mt-interest personal-interests">
-            <%= profile_i.interest.name %>
+            <p><%= profile_i.interest.name %></p>
           </div>
         <% end %>
       <% end %>
+    </div>
+  </div>
+  <div class="card-mentor-profile-body">
+    <div class="card-mentor-header">
+      <h4>More details</h4>
+    </div>
+    <div class="card-more-details">
+
     </div>
   </div>
 
