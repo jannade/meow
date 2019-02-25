@@ -5,6 +5,7 @@ class ProfilesController < ApplicationController
 
   def new
     @profile = Profile.new
+    @user = current_user
     @pro_interests = Interest.where(category: 'professional')
     @personal_interests = Interest.where(category: 'personal')
   end
@@ -15,7 +16,8 @@ class ProfilesController < ApplicationController
     @profile.user = @user
     @user.company = params[:user][:company]
     @user.job_title = params[:user][:job_title]
-    @user.save
+    @user.photo = params[:user][:photo]
+    @user.update(user_params)
 
     if @profile.save
       redirect_to mentors_path
@@ -44,6 +46,10 @@ class ProfilesController < ApplicationController
 
   def profile_params
     params.require(:profile).permit(:is_mentor, :description, :user_id)
+  end
+
+  def user_params
+   params.require(:user).permit(:company, :job_title, :photo)
   end
 
   def add_profile_interests(interest_ids)
