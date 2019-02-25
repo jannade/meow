@@ -1,8 +1,14 @@
-<html>
-<body>
-  <h4>Please fill out more information to know you better</h4>
-  <h5>I'm interested in being a </h5>
+<h4>Please fill out more information to know you better</h4>
+<h5>I'm interested in being a </h5>
 
+<%= simple_form_for(@profile) do |f| %>
+  <%= f.input :is_mentor, label: 'Mentor' %>
+  <%= f.text_area :description, label: ": ", input_html: { style: 'width: 50%;', :rows => 6} %>
+  <%= f.input :interests, collection: Interest.where(category: 'professional'), input_html: { multiple: true } %>
+  <%= f.submit "Create your Profile", class: "btn btn-primary" %>
+<% end  %>
+
+  <!--
   <form>
     <label class="checkbox-inline">
       <input type="checkbox" name="mentor">Mentor
@@ -10,37 +16,39 @@
     <label class="checkbox-inline">
       <input type="checkbox" name="mentee">Mentee
     </label>
-    <label class="checkbox-inline">
-      <input type="checkbox" name="both">Both
-    </label>
+
+    <p>Tell us a bit about yourself and what you love about mentorship</p>
+
+    <textarea name="message" rows="5" cols="30" placeholder="As a mentor, I love ..."></textarea><br>
+    <input type="submit">
   </form>
 
-  <p>Tell us a bit about yourself and what you love about mentorship</p>
-  <form> <textarea name="message" rows="5" cols="30" placeholder="As a mentor, I love ..."></textarea> </form>
+
+
 
   <hr>
   <p>Select your professional and personal interests below. This will help us match you
   with a suitable mentee</p>
   <h4><strong>Professional Interests</strong></h4>
   <div class="interest-options">
-  <% @professional_interests.each do |pro_interest| %>
+  <%# @professional_interests.each do |pro_interest| %>
     <form>
     <label class="checkbox-inline interest-item">
-      <input type="checkbox" name="<%= pro_interest.name %>"><%= pro_interest.name %>
+      <input type="checkbox" name="<%#= pro_interest.name %>"><%#= pro_interest.name %>
     </label>
   </form>
-  <% end %>
+  <%# end %>
   </div>
 
   <h4><strong>Personal Interests</strong></h4>
   <div class="interest-options">
-    <% @personal_interests.each do |per_interest| %>
+    <#% @personal_interests.each do |per_interest| %>
       <form>
         <label class="checkbox-inline interest-item">
-          <input type="checkbox" name="<%= per_interest.name %>"><%= per_interest.name %>
+          <input type="checkbox" name="<#%= per_interest.name %>"><#%= per_interest.name %>
         </label>
       </form>
-    <% end %>
+    <#% end %>
   </div>
 
   <hr>
@@ -58,5 +66,5 @@
     <input type="submit">
   </form>
 
-</body>
-</html>
+-->
+

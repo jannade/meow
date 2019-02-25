@@ -5,13 +5,18 @@ class ProfilesController < ApplicationController
   end
 
   def new
-    @professional_interests = Interest.where(category: 'professional')
+    @profile = Profile.new
+    @pro_interests = Interest.where(category: 'professional')
     @personal_interests = Interest.where(category: 'personal')
-
-    @professional_interests.map! { |interest| }
   end
 
   def create
+    @profile = Profile.new(profile_params)
+    if @profile.save
+      redirect_to profile_path
+    else
+      render :new
+    end
   end
 
   def show
@@ -29,6 +34,10 @@ class ProfilesController < ApplicationController
   end
 
   private
+
+  def profile_params
+    params.require(:profile).permit(:is_mentor, :description, :user_id)
+  end
 
   def percentage(mentor_interest, mentee_interest)
     matched_interest = []
