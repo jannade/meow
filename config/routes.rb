@@ -13,4 +13,7 @@ Rails.application.routes.draw do
 
   resources :messages, except: [:edit, :update]
 
+  resources :connections do
+    resources :messages, only: [:create]
+  end
 end
