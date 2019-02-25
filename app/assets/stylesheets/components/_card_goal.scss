@@ -1,0 +1,80 @@
+$lightgrey: #C4C4C4;
+
+.card-goal {
+  overflow: hidden;
+  height: 250px;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+  border-radius: 5px;
+  position: relative
+}
+
+.card-goal h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.card-goal .card-goal-descr {
+  padding: 16px;
+}
+
+.card-goal-descr {
+  border-bottom: 1px solid $lightgrey;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 10;
+}
+
+.card-milestones {
+  width: 100%;
+}
+
+.card-ms {
+  border-bottom: 1px dotted $lightgrey;
+  width: 100%;
+  padding: 5px 25px 10px 25px;
+  display: flex;
+  a, p {
+    font-size: 14px;
+    line-height: 1.4;
+    opacity: .7;
+    margin-bottom: 0;
+    margin-top: 8px;
+  }
+  .check {
+    margin-bottom: 0;
+    margin-top: 8px;
+  }
+}
+
+.ms-descr {
+  margin-left: 20px;
+}
+
+.card-ms .ms-edits {
+  margin-left: auto;
+}
+
+.card-ms a {
+  margin-left: 10px;
+}
+
+.add-ms-btn {
+  position: absolute;
+  bottom: 0;
+  left: 10;
+  margin-bottom: 10px;
+  margin-left: 25px;
+  font-size: 14px;
+}
+
+.new-goal-btn {
+  margin: 20px;
+}
+
+

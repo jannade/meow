@@ -1,0 +1,16 @@
+
+messageBox = document.querySelector("[data-message-id ='<%= params[:connection_id] %>']");
+newMessage = '<%= j render "messages/show", message: @message %>';
+console.log(newMessage);
+
+messageBox.insertAdjacentHTML('beforeend', newMessage);
+
+// function refreshForm(innerHTML) {
+//   const newReviewForm = document.getElementById('new_review');
+//   newReviewForm.innerHTML = innerHTML;
+// }
+
+// function addReview(reviewHTML) {
+//   const reviews = document.getElementById('reviews');
+//   reviews.insertAdjacentHTML('beforeend', reviewHTML);
+// }

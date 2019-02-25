@@ -1,16 +1,17 @@
-<div class="container">
-  <h1>Connections</h1>
+<div class="container narrow-container">
+    <h1>Connections</h1>
 
-  <ul class="nav nav-tabs">
-    <% if @mentor_connections.exists? && @mentee_connections.exists? %>
-      <li class="active"><a href="#mentor-connections" data-toggle="tab">Your Mentors</a></li>
-      <li><a href="#mentee-connections" data-toggle="tab">Your Mentees</a></li>
-    <% elsif @mentor_connections.exists? && @mentee_connections.blank? %>
-      <li class="active"><a href="#mentor-connections" data-toggle="tab">Your Mentors</a></li>
-    <% elsif @mentee_connections.exists? && @mentor_connections.blank? %>
-      <li><a href="#mentee-connections" data-toggle="tab">Your Mentees</a></li>
-    <% end %>
-  </ul>
+    <ul class="nav nav-tabs tab-vertical">
+      <% if @mentor_connections.exists? && @mentee_connections.exists? %>
+        <li class="active"><a href="#mentor-connections" data-toggle="tab">Your Mentors</a></li>
+        <li><a href="#mentee-connections" data-toggle="tab">Your Mentees</a></li>
+      <% elsif @mentor_connections.exists? && @mentee_connections.blank? %>
+        <li class="active"><a href="#mentor-connections" data-toggle="tab">Your Mentors</a></li>
+      <% elsif @mentee_connections.exists? && @mentor_connections.blank? %>
+        <li><a href="#mentee-connections" data-toggle="tab">Your Mentees</a></li>
+      <% end %>
+    </ul>
+
   <% if @mentor_connections.exists? && @mentee_connections.exists? %>
     <div class="tab-content">
       <div id="mentor-connections" class="tab-pane active">
