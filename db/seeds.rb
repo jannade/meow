@@ -1,14 +1,16 @@
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
+Message.destroy_all
+Connection.destroy_all
+User.destroy_all
+Profile.destroy_all
 
-personal_interests = [
-  "Work-life balance", "Family", "Reading", "Volunteer work", "Sports & activities", "Cooking",
-  "Arts & music"
-]
+personal_interests = ["Work-life balance", "Family", "Reading", "Volunteer work",
+  "Sports & activities", "Cooking", "Arts & music"]
 
-professional_interests = [
-"Sales", "Marketing", "Computer Programming", "Linux", "MacOS", "Windows", "Operations",
-"Devops", "Product Management", "Project Management", "Artificial Inteligence", "Data Science", "IoT" ]
+professional_interests = ["Sales", "Marketing", "Finance", "Computer Programming", "Linux",
+"MacOS", "Windows", "Operations", "Devops", "Product Management", "Project Management",
+"Artificial Inteligence", "Data Science", "IoT"]
 
 puts "Creating Personal interests"
 
@@ -16,10 +18,14 @@ personal_interests.each do |interest|
   Interest.create(name: interest, category: "personal")
 end
 
+puts "Personal interests created"
+
 puts "Creating Professional interests"
 professional_interests.each do |interest|
   Interest.create(name: interest, category: "professional")
 end
+
+puts "Professional interests created"
 
 Milestone.destroy_all
 Goal.destroy_all
@@ -116,6 +122,146 @@ melissa_mentor_profile.save
 
 puts "Profiles created"
 
+puts "Creating interests for profiles"
+
+ashwin_mentor_profile.interests << Interest.first
+ashwin_mentor_profile.interests << Interest.last
+ashwin_mentor_profile.interests << Interest.find(2)
+ashwin_mentor_profile.interests << Interest.find(3)
+ashwin_mentor_profile.interests << Interest.find(4)
+ashwin_mentor_profile.interests << Interest.find(5)
+ashwin_mentor_profile.interests << Interest.find(6)
+ashwin_mentor_profile.interests << Interest.find(9)
+ashwin_mentor_profile.interests << Interest.find(10)
+ashwin_mentor_profile.interests << Interest.find(11)
+ashwin_mentor_profile.interests << Interest.find(12)
+ashwin_mentor_profile.interests << Interest.find(13)
+ashwin_mentor_profile.save
+
+george_mentor_profile.interests << Interest.first
+george_mentor_profile.interests << Interest.find(2)
+george_mentor_profile.interests << Interest.find(3)
+george_mentor_profile.interests << Interest.find(4)
+george_mentor_profile.interests << Interest.find(6)
+george_mentor_profile.interests << Interest.find(7)
+george_mentor_profile.interests << Interest.find(12)
+george_mentor_profile.interests << Interest.find(14)
+george_mentor_profile.interests << Interest.find(18)
+george_mentor_profile.interests << Interest.find(19)
+george_mentor_profile.interests << Interest.find(20)
+george_mentor_profile.save
+
+peter_mentee_profile.interests << Interest.first
+peter_mentee_profile.interests << Interest.find(2)
+peter_mentee_profile.interests << Interest.find(3)
+
+peter_mentee_profile.interests << Interest.find(6)
+peter_mentee_profile.interests << Interest.find(7)
+peter_mentee_profile.interests << Interest.find(8)
+peter_mentee_profile.interests << Interest.find(10)
+peter_mentee_profile.interests << Interest.find(12)
+peter_mentee_profile.interests << Interest.find(14)
+peter_mentee_profile.interests << Interest.find(16)
+peter_mentee_profile.save
+
+john_mentor_profile.interests << Interest.first
+john_mentor_profile.interests << Interest.find(3)
+john_mentor_profile.interests << Interest.find(4)
+john_mentor_profile.interests << Interest.find(6)
+john_mentor_profile.interests << Interest.find(7)
+john_mentor_profile.interests << Interest.find(16)
+john_mentor_profile.interests << Interest.find(17)
+john_mentor_profile.interests << Interest.find(18)
+john_mentor_profile.interests << Interest.find(19)
+john_mentor_profile.interests << Interest.find(20)
+john_mentor_profile.save
+
+charles_mentor_profile.interests << Interest.find(3)
+charles_mentor_profile.interests << Interest.find(4)
+charles_mentor_profile.interests << Interest.find(5)
+charles_mentor_profile.interests << Interest.find(6)
+charles_mentor_profile.interests << Interest.find(7)
+charles_mentor_profile.interests << Interest.find(11)
+charles_mentor_profile.interests << Interest.find(13)
+charles_mentor_profile.interests << Interest.find(15)
+charles_mentor_profile.interests << Interest.find(17)
+charles_mentor_profile.interests << Interest.find(19)
+charles_mentor_profile.save
+
+janna_mentor_profile.interests << Interest.find(3)
+janna_mentor_profile.interests << Interest.find(4)
+janna_mentor_profile.interests << Interest.find(5)
+janna_mentor_profile.interests << Interest.find(6)
+janna_mentor_profile.interests << Interest.find(7)
+janna_mentor_profile.interests << Interest.find(8)
+janna_mentor_profile.interests << Interest.find(10)
+janna_mentor_profile.interests << Interest.find(12)
+janna_mentor_profile.interests << Interest.find(14)
+janna_mentor_profile.interests << Interest.find(16)
+janna_mentor_profile.save
+
+kane_mentor_profile.interests << Interest.first
+kane_mentor_profile.interests << Interest.find(2)
+kane_mentor_profile.interests << Interest.find(3)
+kane_mentor_profile.interests << Interest.find(6)
+kane_mentor_profile.interests << Interest.find(7)
+kane_mentor_profile.interests << Interest.find(8)
+kane_mentor_profile.interests << Interest.find(10)
+kane_mentor_profile.interests << Interest.find(12)
+kane_mentor_profile.interests << Interest.find(14)
+kane_mentor_profile.interests << Interest.find(16)
+kane_mentor_profile.save
+
+vilson_mentor_profile.interests << Interest.find(3)
+vilson_mentor_profile.interests << Interest.find(4)
+vilson_mentor_profile.interests << Interest.find(5)
+vilson_mentor_profile.interests << Interest.find(6)
+vilson_mentor_profile.interests << Interest.find(7)
+vilson_mentor_profile.interests << Interest.find(8)
+vilson_mentor_profile.interests << Interest.find(9)
+vilson_mentor_profile.interests << Interest.find(10)
+vilson_mentor_profile.interests << Interest.find(11)
+vilson_mentor_profile.interests << Interest.find(12)
+vilson_mentor_profile.save
+
+romain_mentor_profile.interests << Interest.first
+romain_mentor_profile.interests << Interest.find(4)
+romain_mentor_profile.interests << Interest.find(5)
+romain_mentor_profile.interests << Interest.find(6)
+romain_mentor_profile.interests << Interest.find(7)
+romain_mentor_profile.interests << Interest.find(10)
+romain_mentor_profile.interests << Interest.find(17)
+romain_mentor_profile.interests << Interest.find(18)
+romain_mentor_profile.interests << Interest.find(19)
+romain_mentor_profile.interests << Interest.find(20)
+romain_mentor_profile.save
+
+guido_mentor_profile.interests << Interest.find(2)
+guido_mentor_profile.interests << Interest.find(3)
+guido_mentor_profile.interests << Interest.find(4)
+guido_mentor_profile.interests << Interest.find(5)
+guido_mentor_profile.interests << Interest.find(6)
+guido_mentor_profile.interests << Interest.find(11)
+guido_mentor_profile.interests << Interest.find(13)
+guido_mentor_profile.interests << Interest.find(15)
+guido_mentor_profile.interests << Interest.find(17)
+guido_mentor_profile.interests << Interest.find(19)
+guido_mentor_profile.save
+
+melissa_mentor_profile.interests << Interest.first
+melissa_mentor_profile.interests << Interest.find(3)
+melissa_mentor_profile.interests << Interest.find(4)
+melissa_mentor_profile.interests << Interest.find(6)
+melissa_mentor_profile.interests << Interest.find(7)
+melissa_mentor_profile.interests << Interest.find(10)
+melissa_mentor_profile.interests << Interest.find(14)
+melissa_mentor_profile.interests << Interest.find(16)
+melissa_mentor_profile.interests << Interest.find(17)
+melissa_mentor_profile.interests << Interest.find(18)
+melissa_mentor_profile.save
+
+puts "Interests created"
+
 puts "Creating connections"
 
 janna_ashwin_connection = Connection.new(mentor: ashwin_mentor_profile, mentee: janna_mentee_profile)
@@ -140,6 +286,7 @@ janna_lorenzo_message.save
 
 peter_janna_message = Message.new(content: "arigato", user: peter, is_read: true, connection: peter_janna_connection)
 peter_janna_message.save
+
 
 ashwin_janna_message = Message.new(content: "reply to new message", user: ashwin, is_read: false, connection: janna_ashwin_connection)
 ashwin_janna_message.save
@@ -171,4 +318,5 @@ ms3.save
 
 puts "Milestones created"
 
+puts "Messages created"
 
