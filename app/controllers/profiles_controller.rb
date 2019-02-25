@@ -1,7 +1,7 @@
 class ProfilesController < ApplicationController
   def index
     @profiles = find_mentor_by_interests((params[:professional_interests]), (params[:personal_interests]))
-
+    @user = current_user
     @recommended_profiles = recommended_profiles
   end
 
@@ -28,18 +28,18 @@ class ProfilesController < ApplicationController
   def recommended_profiles
     matched_interest = []
     recommended = []
-    Profile.where(is_mentor: true).map do |profile|
-
-      profile.interests.each do |interest|
-
-      matched_interest << interest.name if current_user.interests.include? interest
+    Profile.where(is_mentor: true).each do |profile|
+      profile.user.interests.each do |interest|
+        matched_interest << interest if current_user.interests.include? interest
       end
-    match_percentage = (matched_interest.count / current_user.interests.count) * 100
-    if match_percentage >= 50
-      recommended << profile
+
+      match_percentage = (matched_interest.count.to_f / current_user.interests.count.to_f) * 100
+      recommended << profile if match_percentage >= 50
+
+      matched_interest = []
     end
+
     recommended
-  end
   end
 
   private
@@ -56,3 +56,41 @@ class ProfilesController < ApplicationController
     end
   end
 end
+
+
+
+
+    # matched_interest = []
+    # recommended = []
+    # Profile.where(is_mentor: true).each do |profile|
+    #   User.find(Profile.where(is_mentor:true).pluck(:user_id)).each do |mentoruser|
+    #     mentoruser.interests.each do |interest|
+    #       matched_interest << interest.name if peter.interests.include? interest
+    #     end
+    #   end
+    # match_percentage = (matched_interest.count.to_f / peter.interests.count.to_f) * 100
+    # recommended << profile if match_percentage >= 80
+    # end
+    # recommended
+
+
+
+    #     ashwin.interests.each do |interest|
+    #       matched_interest << interest.name if peter.interests.include? interest
+    #     end
+    # match_percentage = (matched_interest.count.to_f / peter.interests.count.to_f) * 100
+
+    #         george.interests.each do |interest|
+    #       matched_interest << interest.name if peter.interests.include? interest
+    #     end
+    # match_percentage = (matched_interest.count.to_f / peter.interests.count.to_f) * 100
+
+
+
+
+
+
+
+
+
+
