@@ -50,29 +50,52 @@ george.save
 lorenzo = User.new(first_name: "Lorenzo", last_name: "Curley", email: "lorenzo@email.com", password: "12341234", company: "The World", job_title: "Chief Marketing Officer")
 lorenzo.save
 
-# john = User.new(first_name: "John", last_name: "J-hon", email: "john@email.com", password: "12341234", company: "Go-Jek", job_title: "Director of Marketing")
-# john.save
+nancy = User.new(first_name: "Nancy", last_name: "Flores", email: "nancy@email.com", password: "12341234", company: "Google", job_title: "Chief Operating Officer")
+nancy.save
 
-# charles = User.new(first_name: "Charles", last_name: "Babe", email: "charles@email.com", password: "12341234", company: "Coffee and Coconuts", job_title: "Director of Marketing")
-# charles.save
+susan = User.new(first_name: "Susan", last_name: "Cooper", email: "susan@email.com", password: "12341234", company: "FaceBook", job_title: "Senior Technical Supervisor")
+susan.save
+
+joyce = User.new(first_name: "Joyce", last_name: "Allen", email: "joyce@email.com", password: "12341234", company: "Airbnb", job_title: "Financial Analyst")
+joyce.save
 
 jane = User.new(first_name: "Jane", last_name: "De Vos", email: "jane@email.com", password: "12341234", company: "Apple", job_title: "Director of Marketing")
 jane.save
 
-# kane = User.new(first_name: "Kane", last_name: "Handsome", email: "kane@email.com", password: "12341234", company: "Mocca", job_title: "Director of Marketing")
-# kane.save
+lilian = User.new(first_name: "Lilian", last_name: "Perez", email: "lilian@email.com", password: "12341234", company: "Ernst and Young", job_title: "Chief Auditor")
+lilian.save
 
-# vilson = User.new(first_name: "Vilson", last_name: "Hulk", email: "vilson@email.com", password: "12341234", company: "FaceBook", job_title: "Director of Marketing")
-# vilson.save
+erica = User.new(first_name: "Erica", last_name: "Webb", email: "erica@email.com", password: "12341234", company: "Deloitte", job_title: "Actuarial Supervisor")
+erica.save
 
-# romain = User.new(first_name: "Romain", last_name: "Beach Body", email: "romain@email.com", password: "12341234", company: "Samsung", job_title: "Director of Marketing")
-# romain.save
+tiffany = User.new(first_name: "Tiffany", last_name: "Young", email: "tiffany@email.com", password: "12341234", company: "Louis Vuitton", job_title: "Designer")
+tiffany.save
 
-# guido = User.new(first_name: "Guido", last_name: "Motorbike", email: "guido@email.com", password: "12341234", company: "Nokia", job_title: "Director of Marketing")
-# guido.save
+madeline = User.new(first_name: "Madeline", last_name: "Fultz", email: "madeline@email.com", password: "12341234", company: "Volkswagen", job_title: "Head of Supply Chain Development")
+madeline.save
 
-# melissa = User.new(first_name: "Melissa", last_name: "Berribi", email: "melissa@email.com", password: "12341234", company: "Spotify", job_title: "Director of Marketing")
-# melissa.save
+julia = User.new(first_name: "Julia", last_name: "De Jong", email: "julia@email.com", password: "12341234", company: "Disney", job_title: "Lead Animator")
+julia.save
+
+alice = User.new(first_name: "Alice", last_name: "Laurent", email: "alice@email.com", password: "12341234", company: "University of Paris", job_title: "Economics Professor")
+alice.save
+
+minji = User.new(first_name: "Min Ji", last_name: "Kim", email: "minji@email.com", password: "12341234", company: "Samsung", job_title: "Senior Software Engineer")
+minji.save
+
+jihye = User.new(first_name: "Ji Hye", last_name: "Song", email: "jihye@email.com", password: "12341234", company: "KIA", job_title: "Chief Technology Officer")
+jihye.save
+
+xuying = User.new(first_name: "Xu Ying", last_name: "Xian", email: "xuying@email.com", password: "12341234", company: "Xian Beijing Florist", job_title: "Owner")
+xuying.save
+
+aisha = User.new(first_name: "A'isha", last_name: "Maalouf", email: "aisha@email.com", password: "12341234", company: "Emirates", job_title: "Pilot")
+aisha.save
+
+elane = User.new(first_name: "Elane", last_name: "Proctor", email: "elane@email.com", password: "12341234", company: "Procter and Gamble", job_title: "Customer Intelligence Analyst")
+elane.save
+
+
 
 puts "Users created"
 
@@ -83,14 +106,50 @@ puts "Creating users that are just mentors"
 ashwin_mentor_profile = Profile.new(user: ashwin, is_mentor: true, description: "I have more than 15 years of experience in Marketing and Product, and have lead teams across the world. I was lucky enough to have a mentor at the start of my career. I wish to give the same to my mentees as my mentor gave to me")
 ashwin_mentor_profile.save
 
-george_mentor_profile = Profile.new(user: george, is_mentor: true)
+george_mentor_profile = Profile.new(user: george, is_mentor: true, description: "Chief Technology Officer of Heroleads" )
 george_mentor_profile.save
 
-# john_mentor_profile = Profile.new(user: john, is_mentor: true)
-# john_mentor_profile.save
+nancy_mentor_profile = Profile.new(user: nancy, is_mentor: true, description: "I have 2 years of experience in the IT field and currently working as the COO of Google. I have passion in helping other women achieve success in whatever they do either personally or professionally." )
+nancy_mentor_profile.save
 
-# charles_mentor_profile = Profile.new(user: charles, is_mentor: true)
-# charles_mentor_profile
+susan_mentor_profile = Profile.new(user: susan, is_mentor: true, description: "I have 6 years of experience in the IT field and currently working as the Senior Technical Supervisor of FaceBook. I have passion in helping other women achieve success in whatever they do either personally or professionally." )
+susan_mentor_profile.save
+
+joyce_mentor_profile = Profile.new(user: joyce, is_mentor: true, description: "I have 2 years of experience in the Finance field and currently working as the financial analyst of Airbnb. I have passion in helping other women achieve success in whatever they do either personally or professionally." )
+joyce_mentor_profile.save
+
+lilian_mentor_profile = Profile.new(user: lilian, is_mentor: true, description: "I have 5 years of experience in the finance field and currently working as the chief auditor of Ernst and Young. I have passion in helping other women achieve success in whatever they do either personally or professionally." )
+lilian_mentor_profile.save
+
+erica_mentor_profile = Profile.new(user: erica, is_mentor: true, description: "I have 10 years of experience in the finance field and currently working as the actuarial supervisor of Deloitte. I have passion in helping other women achieve success in whatever they do either personally or professionally." )
+erica_mentor_profile.save
+
+tiffany_mentor_profile = Profile.new(user: tiffany, is_mentor: true, description: "I have 2 years of experience in the design field and currently working as the designer of Louis Vuitton. I have passion in helping other women achieve success in whatever they do either personally or professionally." )
+tiffany_mentor_profile.save
+
+madeline_mentor_profile = Profile.new(user: madeline, is_mentor: true, description: "I have 8 years of experience in the management field and currently working as the head of supply chain development of Volkswagen. I have passion in helping other women achieve success in whatever they do either personally or professionally." )
+madeline_mentor_profile.save
+
+julia_mentor_profile = Profile.new(user: julia, is_mentor: true, description: "I have 8 years of experience in the management field and currently working as the head of supply chain development of Volkswagen. I have passion in helping other women achieve success in whatever they do either personally or professionally." )
+julia_mentor_profile.save
+
+alice_mentor_profile = Profile.new(user: alice, is_mentor: true, description: "I have 7 years of experience in the animation field and currently working as the lead animator of Disney. I have passion in helping other women achieve success in whatever they do either personally or professionally." )
+alice_mentor_profile.save
+
+minji_mentor_profile = Profile.new(user: minji, is_mentor: true, description: "I have 12 years of experience in the IT field and currently working as the senior software engineer of Samsung. I have passion in helping other women achieve success in whatever they do either personally or professionally." )
+minji_mentor_profile.save
+
+jihye_mentor_profile = Profile.new(user: jihye, is_mentor: true, description: "I have 15 years of experience in the IT field and currently working as the chief technology officer of KIA. I have passion in helping other women achieve success in whatever they do either personally or professionally." )
+jihye_mentor_profile.save
+
+xuying_mentor_profile = Profile.new(user: xuying, is_mentor: true, description: "I have 15 years of experience in the IT field and I currently runa business called Xian Beijing Florist. I have passion in helping other women achieve success in whatever they do either personally or professionally." )
+xuying_mentor_profile.save
+
+aisha_mentor_profile = Profile.new(user: aisha, is_mentor: true, description: "I have 6 years of experience as a pilot and currently working as the pilot of Emirates. I have passion in helping other women achieve success in whatever they do either personally or professionally." )
+aisha_mentor_profile.save
+
+elane_mentor_profile = Profile.new(user: elane, is_mentor: true, description: "I have 8 years of experience in the finance field and currently working as the customer intelligence analyst of Procter and Gamble. I have passion in helping other women achieve success in whatever they do either personally or professionally." )
+elane_mentor_profile.save
 
 puts "Creating users that are just mentees"
 
@@ -110,20 +169,6 @@ jane_mentor_profile.save
 jane_mentee_profile = Profile.new(user: jane, is_mentor: false)
 jane_mentee_profile.save
 
-# kane_mentor_profile = Profile.new(user: kane, is_mentor: true)
-# kane_mentor_profile.save
-
-# vilson_mentor_profile = Profile.new(user: vilson, is_mentor: true)
-# vilson_mentor_profile.save
-
-# romain_mentor_profile = Profile.new(user: romain, is_mentor: true)
-# romain_mentor_profile.save
-
-# guido_mentor_profile = Profile.new(user: guido, is_mentor: true)
-# guido_mentor_profile.save
-
-# melissa_mentor_profile = Profile.new(user: melissa, is_mentor: true)
-# melissa_mentor_profile.save
 
 puts "Profiles created"
 
@@ -135,7 +180,6 @@ ashwin_mentor_i3 = ProfileInterest.create(profile: ashwin_mentor_profile, intere
 ashwin_mentor_i4 = ProfileInterest.create(profile: ashwin_mentor_profile, interest: pr1)
 ashwin_mentor_i5 = ProfileInterest.create(profile: ashwin_mentor_profile, interest: pr2)
 ashwin_mentor_i6 = ProfileInterest.create(profile: ashwin_mentor_profile, interest: pr3)
-
 
 george_mentor_i1 = ProfileInterest.create(profile: george_mentor_profile, interest: pe4)
 george_mentor_i2 = ProfileInterest.create(profile: george_mentor_profile, interest: pe5)
@@ -171,6 +215,104 @@ jane_mentee_i3 = ProfileInterest.create(profile: jane_mentee_profile, interest: 
 jane_mentee_i4 = ProfileInterest.create(profile: jane_mentee_profile, interest: pe5)
 jane_mentee_i5 = ProfileInterest.create(profile: jane_mentee_profile, interest: pe6)
 jane_mentee_i6 = ProfileInterest.create(profile: jane_mentee_profile, interest: pe7)
+
+nancy_mentor_i1 = ProfileInterest.create(profile: ashwin_mentor_profile, interest: pe2)
+nancy_mentor_i2 = ProfileInterest.create(profile: ashwin_mentor_profile, interest: pe4)
+nancy_mentor_i3 = ProfileInterest.create(profile: ashwin_mentor_profile, interest: pe7)
+nancy_mentor_i4 = ProfileInterest.create(profile: ashwin_mentor_profile, interest: pr3)
+nancy_mentor_i5 = ProfileInterest.create(profile: ashwin_mentor_profile, interest: pr5)
+nancy_mentor_i6 = ProfileInterest.create(profile: ashwin_mentor_profile, interest: pr6)
+
+susan_mentor_i1 = ProfileInterest.create(profile: ashwin_mentor_profile, interest: pe1)
+susan_mentor_i2 = ProfileInterest.create(profile: ashwin_mentor_profile, interest: pe3)
+susan_mentor_i3 = ProfileInterest.create(profile: ashwin_mentor_profile, interest: pe4)
+susan_mentor_i4 = ProfileInterest.create(profile: ashwin_mentor_profile, interest: pr5)
+susan_mentor_i5 = ProfileInterest.create(profile: ashwin_mentor_profile, interest: pr6)
+susan_mentor_i6 = ProfileInterest.create(profile: ashwin_mentor_profile, interest: pr7)
+
+joyce_mentor_i1 = ProfileInterest.create(profile: ashwin_mentor_profile, interest: pe4)
+joyce_mentor_i2 = ProfileInterest.create(profile: ashwin_mentor_profile, interest: pe5)
+joyce_mentor_i3 = ProfileInterest.create(profile: ashwin_mentor_profile, interest: pe6)
+joyce_mentor_i4 = ProfileInterest.create(profile: ashwin_mentor_profile, interest: pr4)
+joyce_mentor_i5 = ProfileInterest.create(profile: ashwin_mentor_profile, interest: pr5)
+joyce_mentor_i6 = ProfileInterest.create(profile: ashwin_mentor_profile, interest: pr6)
+
+lilian_mentor_i1 = ProfileInterest.create(profile: ashwin_mentor_profile, interest: pe2)
+lilian_mentor_i2 = ProfileInterest.create(profile: ashwin_mentor_profile, interest: pe4)
+lilian_mentor_i3 = ProfileInterest.create(profile: ashwin_mentor_profile, interest: pe7)
+lilian_mentor_i4 = ProfileInterest.create(profile: ashwin_mentor_profile, interest: pr4)
+lilian_mentor_i5 = ProfileInterest.create(profile: ashwin_mentor_profile, interest: pr5)
+lilian_mentor_i6 = ProfileInterest.create(profile: ashwin_mentor_profile, interest: pr7)
+
+erica_mentor_i1 = ProfileInterest.create(profile: ashwin_mentor_profile, interest: pe4)
+erica_mentor_i2 = ProfileInterest.create(profile: ashwin_mentor_profile, interest: pe5)
+erica_mentor_i3 = ProfileInterest.create(profile: ashwin_mentor_profile, interest: pe6)
+erica_mentor_i4 = ProfileInterest.create(profile: ashwin_mentor_profile, interest: pr4)
+erica_mentor_i5 = ProfileInterest.create(profile: ashwin_mentor_profile, interest: pr6)
+erica_mentor_i6 = ProfileInterest.create(profile: ashwin_mentor_profile, interest: pr7)
+
+tiffany_mentor_i1 = ProfileInterest.create(profile: ashwin_mentor_profile, interest: pe2)
+tiffany_mentor_i2 = ProfileInterest.create(profile: ashwin_mentor_profile, interest: pe4)
+tiffany_mentor_i3 = ProfileInterest.create(profile: ashwin_mentor_profile, interest: pe6)
+tiffany_mentor_i4 = ProfileInterest.create(profile: ashwin_mentor_profile, interest: pr3)
+tiffany_mentor_i5 = ProfileInterest.create(profile: ashwin_mentor_profile, interest: pr5)
+tiffany_mentor_i6 = ProfileInterest.create(profile: ashwin_mentor_profile, interest: pr7)
+
+madeline_mentor_i1 = ProfileInterest.create(profile: ashwin_mentor_profile, interest: pe1)
+madeline_mentor_i2 = ProfileInterest.create(profile: ashwin_mentor_profile, interest: pe3)
+madeline_mentor_i3 = ProfileInterest.create(profile: ashwin_mentor_profile, interest: pe5)
+madeline_mentor_i4 = ProfileInterest.create(profile: ashwin_mentor_profile, interest: pr4)
+madeline_mentor_i5 = ProfileInterest.create(profile: ashwin_mentor_profile, interest: pr6)
+madeline_mentor_i6 = ProfileInterest.create(profile: ashwin_mentor_profile, interest: pr7)
+
+julia_mentor_i1 = ProfileInterest.create(profile: ashwin_mentor_profile, interest: pe2)
+julia_mentor_i2 = ProfileInterest.create(profile: ashwin_mentor_profile, interest: pe4)
+julia_mentor_i3 = ProfileInterest.create(profile: ashwin_mentor_profile, interest: pe6)
+julia_mentor_i4 = ProfileInterest.create(profile: ashwin_mentor_profile, interest: pr3)
+julia_mentor_i5 = ProfileInterest.create(profile: ashwin_mentor_profile, interest: pr5)
+julia_mentor_i6 = ProfileInterest.create(profile: ashwin_mentor_profile, interest: pr7)
+
+alice_mentor_i1 = ProfileInterest.create(profile: ashwin_mentor_profile, interest: pe1)
+alice_mentor_i2 = ProfileInterest.create(profile: ashwin_mentor_profile, interest: pe2)
+alice_mentor_i3 = ProfileInterest.create(profile: ashwin_mentor_profile, interest: pe3)
+alice_mentor_i4 = ProfileInterest.create(profile: ashwin_mentor_profile, interest: pr1)
+alice_mentor_i5 = ProfileInterest.create(profile: ashwin_mentor_profile, interest: pr2)
+alice_mentor_i6 = ProfileInterest.create(profile: ashwin_mentor_profile, interest: pr3)
+
+minji_mentor_i1 = ProfileInterest.create(profile: ashwin_mentor_profile, interest: pe2)
+minji_mentor_i2 = ProfileInterest.create(profile: ashwin_mentor_profile, interest: pe4)
+minji_mentor_i3 = ProfileInterest.create(profile: ashwin_mentor_profile, interest: pe7)
+minji_mentor_i4 = ProfileInterest.create(profile: ashwin_mentor_profile, interest: pr3)
+minji_mentor_i5 = ProfileInterest.create(profile: ashwin_mentor_profile, interest: pr5)
+minji_mentor_i6 = ProfileInterest.create(profile: ashwin_mentor_profile, interest: pr7)
+
+jihye_mentor_i1 = ProfileInterest.create(profile: ashwin_mentor_profile, interest: pe4)
+jihye_mentor_i2 = ProfileInterest.create(profile: ashwin_mentor_profile, interest: pe6)
+jihye_mentor_i3 = ProfileInterest.create(profile: ashwin_mentor_profile, interest: pe7)
+jihye_mentor_i4 = ProfileInterest.create(profile: ashwin_mentor_profile, interest: pr1)
+jihye_mentor_i5 = ProfileInterest.create(profile: ashwin_mentor_profile, interest: pr5)
+jihye_mentor_i6 = ProfileInterest.create(profile: ashwin_mentor_profile, interest: pr7)
+
+xuying_mentor_i1 = ProfileInterest.create(profile: ashwin_mentor_profile, interest: pe2)
+xuying_mentor_i2 = ProfileInterest.create(profile: ashwin_mentor_profile, interest: pe4)
+xuying_mentor_i3 = ProfileInterest.create(profile: ashwin_mentor_profile, interest: pe5)
+xuying_mentor_i4 = ProfileInterest.create(profile: ashwin_mentor_profile, interest: pr1)
+xuying_mentor_i5 = ProfileInterest.create(profile: ashwin_mentor_profile, interest: pr6)
+xuying_mentor_i6 = ProfileInterest.create(profile: ashwin_mentor_profile, interest: pr7)
+
+aisha_mentor_i1 = ProfileInterest.create(profile: ashwin_mentor_profile, interest: pe3)
+aisha_mentor_i2 = ProfileInterest.create(profile: ashwin_mentor_profile, interest: pe4)
+aisha_mentor_i3 = ProfileInterest.create(profile: ashwin_mentor_profile, interest: pe5)
+aisha_mentor_i4 = ProfileInterest.create(profile: ashwin_mentor_profile, interest: pr1)
+aisha_mentor_i5 = ProfileInterest.create(profile: ashwin_mentor_profile, interest: pr4)
+aisha_mentor_i6 = ProfileInterest.create(profile: ashwin_mentor_profile, interest: pr6)
+
+elane_mentor_i1 = ProfileInterest.create(profile: ashwin_mentor_profile, interest: pe2)
+elane_mentor_i2 = ProfileInterest.create(profile: ashwin_mentor_profile, interest: pe3)
+elane_mentor_i3 = ProfileInterest.create(profile: ashwin_mentor_profile, interest: pe4)
+elane_mentor_i4 = ProfileInterest.create(profile: ashwin_mentor_profile, interest: pr1)
+elane_mentor_i5 = ProfileInterest.create(profile: ashwin_mentor_profile, interest: pr6)
+elane_mentor_i6 = ProfileInterest.create(profile: ashwin_mentor_profile, interest: pr7)
 
 puts "profiles interests created created"
 
