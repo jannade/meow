@@ -106,56 +106,50 @@ puts "Creating users that are just mentors"
 ashwin_mentor_profile = Profile.new(user: ashwin, is_mentor: true, description: "I have more than 15 years of experience in Marketing and Product, and have lead teams across the world. I was lucky enough to have a mentor at the start of my career. I wish to give the same to my mentees as my mentor gave to me")
 ashwin_mentor_profile.save
 
-george_mentor_profile = Profile.new(user: george, is_mentor: true)
+george_mentor_profile = Profile.new(user: george, is_mentor: true, description: "" )
 george_mentor_profile.save
 
-nancy_mentor_profile = Profile.new(user: nancy, is_mentor: true)
+nancy_mentor_profile = Profile.new(user: nancy, is_mentor: true, description: "I have 2 years of experience in the IT field and currently working as the COO of Google. I have passion in helping other women achieve success in whatever they do either personally or professionally." )
 nancy_mentor_profile.save
 
-susan_mentor_profile = Profile.new(user: susan, is_mentor: true)
+susan_mentor_profile = Profile.new(user: susan, is_mentor: true, description: "I have 6 years of experience in the IT field and currently working as the Senior Technical Supervisor of FaceBook. I have passion in helping other women achieve success in whatever they do either personally or professionally." )
 susan_mentor_profile.save
 
-joyce_mentor_profile = Profile.new(user: joyce, is_mentor: true)
+joyce_mentor_profile = Profile.new(user: joyce, is_mentor: true, description: "I have 2 years of experience in the Finance field and currently working as the financial analyst of Airbnb. I have passion in helping other women achieve success in whatever they do either personally or professionally." )
 joyce_mentor_profile.save
 
-lilian_mentor_profile = Profile.new(user: lilian, is_mentor: true)
+lilian_mentor_profile = Profile.new(user: lilian, is_mentor: true, description: "I have 5 years of experience in the finance field and currently working as the chief auditor of Ernst and Young. I have passion in helping other women achieve success in whatever they do either personally or professionally." )
 lilian_mentor_profile.save
 
-erica_mentor_profile = Profile.new(user: erica, is_mentor: true)
+erica_mentor_profile = Profile.new(user: erica, is_mentor: true, description: "I have 10 years of experience in the finance field and currently working as the actuarial supervisor of Deloitte. I have passion in helping other women achieve success in whatever they do either personally or professionally." )
 erica_mentor_profile.save
 
-tiffany_mentor_profile = Profile.new(user: tiffany, is_mentor: true)
+tiffany_mentor_profile = Profile.new(user: tiffany, is_mentor: true, description: "I have 2 years of experience in the design field and currently working as the designer of Louis Vuitton. I have passion in helping other women achieve success in whatever they do either personally or professionally." )
 tiffany_mentor_profile.save
 
-madeline_mentor_profile = Profile.new(user: madeline, is_mentor: true)
+madeline_mentor_profile = Profile.new(user: madeline, is_mentor: true, description: "I have 8 years of experience in the management field and currently working as the head of supply chain development of Volkswagen. I have passion in helping other women achieve success in whatever they do either personally or professionally." )
 madeline_mentor_profile.save
 
-julia_mentor_profile = Profile.new(user: julia, is_mentor: true)
+julia_mentor_profile = Profile.new(user: julia, is_mentor: true, description: "I have 8 years of experience in the management field and currently working as the head of supply chain development of Volkswagen. I have passion in helping other women achieve success in whatever they do either personally or professionally." )
 julia_mentor_profile.save
 
-alice_mentor_profile = Profile.new(user: alice, is_mentor: true)
+alice_mentor_profile = Profile.new(user: alice, is_mentor: true, description: "I have 7 years of experience in the animation field and currently working as the lead animator of Disney. I have passion in helping other women achieve success in whatever they do either personally or professionally." )
 alice_mentor_profile.save
 
-minji_mentor_profile = Profile.new(user: minji, is_mentor: true)
+minji_mentor_profile = Profile.new(user: minji, is_mentor: true, description: "I have 12 years of experience in the IT field and currently working as the senior software engineer of Samsung. I have passion in helping other women achieve success in whatever they do either personally or professionally." )
 minji_mentor_profile.save
 
-jihye_mentor_profile = Profile.new(user: jihye, is_mentor: true)
+jihye_mentor_profile = Profile.new(user: jihye, is_mentor: true, description: "I have 15 years of experience in the IT field and currently working as the chief technology officer of KIA. I have passion in helping other women achieve success in whatever they do either personally or professionally." )
 jihye_mentor_profile.save
 
-xuying_mentor_profile = Profile.new(user: xuying, is_mentor: true)
+xuying_mentor_profile = Profile.new(user: xuying, is_mentor: true, description: "I have 15 years of experience in the IT field and I currently runa business called Xian Beijing Florist. I have passion in helping other women achieve success in whatever they do either personally or professionally." )
 xuying_mentor_profile.save
 
-aisha_mentor_profile = Profile.new(user: aisha, is_mentor: true)
+aisha_mentor_profile = Profile.new(user: aisha, is_mentor: true, description: "I have 6 years of experience as a pilot and currently working as the pilot of Emirates. I have passion in helping other women achieve success in whatever they do either personally or professionally." )
 aisha_mentor_profile.save
 
-elane_mentor_profile = Profile.new(user: elane, is_mentor: true)
+elane_mentor_profile = Profile.new(user: elane, is_mentor: true, description: "I have 8 years of experience in the finance field and currently working as the customer intelligence analyst of Procter and Gamble. I have passion in helping other women achieve success in whatever they do either personally or professionally." )
 elane_mentor_profile.save
-
-# john_mentor_profile = Profile.new(user: john, is_mentor: true)
-# john_mentor_profile.save
-
-# charles_mentor_profile = Profile.new(user: charles, is_mentor: true)
-# charles_mentor_profile
 
 puts "Creating users that are just mentees"
 
@@ -175,20 +169,6 @@ jane_mentor_profile.save
 jane_mentee_profile = Profile.new(user: jane, is_mentor: false)
 jane_mentee_profile.save
 
-# kane_mentor_profile = Profile.new(user: kane, is_mentor: true)
-# kane_mentor_profile.save
-
-# vilson_mentor_profile = Profile.new(user: vilson, is_mentor: true)
-# vilson_mentor_profile.save
-
-# romain_mentor_profile = Profile.new(user: romain, is_mentor: true)
-# romain_mentor_profile.save
-
-# guido_mentor_profile = Profile.new(user: guido, is_mentor: true)
-# guido_mentor_profile.save
-
-# melissa_mentor_profile = Profile.new(user: melissa, is_mentor: true)
-# melissa_mentor_profile.save
 
 puts "Profiles created"
 
