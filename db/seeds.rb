@@ -106,7 +106,7 @@ puts "Creating users that are just mentors"
 ashwin_mentor_profile = Profile.new(user: ashwin, is_mentor: true, description: "I have more than 15 years of experience in Marketing and Product, and have lead teams across the world. I was lucky enough to have a mentor at the start of my career. I wish to give the same to my mentees as my mentor gave to me")
 ashwin_mentor_profile.save
 
-george_mentor_profile = Profile.new(user: george, is_mentor: true, description: "" )
+george_mentor_profile = Profile.new(user: george, is_mentor: true, description: "Chief Technology Officer of Heroleads" )
 george_mentor_profile.save
 
 nancy_mentor_profile = Profile.new(user: nancy, is_mentor: true, description: "I have 2 years of experience in the IT field and currently working as the COO of Google. I have passion in helping other women achieve success in whatever they do either personally or professionally." )
