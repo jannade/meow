@@ -38,6 +38,14 @@
 
   <div class="card-new-goal">
     <div class="new-goal-btn btn btn-default">Add a new goal</div>
+    <div class="card-goal hidden">
+      <div class="new-goal-container">
+        <%= simple_form_for([@connection, @goal]) do |f| %>
+          <%=f.input :description, label: "Describe your new goal", class:"goal-input"%>
+          <%=f.submit "Submit", class:"add-goal-btn" %>
+        <% end %>
+      </div>
+    </div>
   </div>
 </div>
 
