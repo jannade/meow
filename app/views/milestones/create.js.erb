@@ -1,0 +1,11 @@
+console.log("winning?")
+
+// close the modal
+buttonMilestone = document.querySelector('[data-dismiss="modal"]')
+buttonMilestone.click()
+
+// append the milestone
+milestoneList = document.querySelector('.card-milestones')
+newMilestone = '<%= j render "milestones/newmilestone", milestone: @milestone %>';
+
+milestoneList.insertAdjacentHTML('beforeend', newMilestone);

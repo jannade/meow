@@ -11,6 +11,7 @@ class ConnectionsController < ApplicationController
 
     @goals = Goal.where(connection: @connection)
     @goal = Goal.new
+    @milestone = Milestone.new
   end
 
   def new
