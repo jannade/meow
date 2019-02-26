@@ -26,14 +26,16 @@
       <div id="connection-<%=connection.id%>" class="tab-pane">
     <% end %>
 
+  <div class="new-mentor-request">
+    <% if connection.status == "Pending" %>
       <div class="flash flash-success">
-        <% if connection.status == "Pending" %>
-           <span><strong>Yay!</strong> 🎉 You have a new connection request from <%= connection.mentee.user.first_name %></span>
+           <span> You have a new connection request from <%= connection.mentee.user.first_name %></span>
            <div class="accept-request">
             <%= link_to "Accept Invite", change_status_path(connection), method: :patch, remote: true %>
           </div>
-        <% end %>
       </div>
+    <% end %>
+  </div>
 
       <div class="message-box" data-message-id=<%= connection.id %>>
         <% connection.messages.each do |message| %>

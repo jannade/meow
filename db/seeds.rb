@@ -186,6 +186,13 @@ george_jane_connection = Connection.new(mentor: george_mentor_profile, mentee: j
 george_jane_connection.save
 
 george_peter_connection = Connection.new(mentor: george_mentor_profile, mentee: peter_mentee_profile, status: "confirmed")
+george_peter_connection.save
+
+jane_peter_connection = Connection.new(mentor: jane_mentor_profile, mentee: peter_mentee_profile, status: "Pending")
+jane_peter_connection.save
+
+ashwin_jane_connection = Connection.new(mentor: ashwin_mentor_profile, mentee: jane_mentee_profile, status: "Pending")
+ashwin_jane_connection.save
 
 puts "Connections created"
 
@@ -199,6 +206,7 @@ george_jane_message.save
 
 peter_ashwin_message = Message.new(content: "Hi Ashwin, will you be my mentor?", user: peter, is_read: false, connection: ashwin_peter_connection)
 peter_ashwin_message.save
+
 
 puts "Messages created"
 
