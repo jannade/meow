@@ -7,6 +7,11 @@
         <h2><%= goal.description %></h2>
       </div>
       <div class="card-milestones">
+        <% if goal.milestones.empty? %>
+          <div class="empty-milestones">
+            <p>Oops! Looks like you don't have any milestones yet. Milestones can help you achieve your goals step by step.</br> Go ahead and add some below</p>
+          </div>
+        <% end %>
         <% goal.milestones.each do |milestone| %>
           <div class="card-ms">
             <% if milestone.is_completed == true %>
@@ -27,11 +32,11 @@
           </div>
         <% end %>
       </div>
-    <%= link_to "Add new milestone", new_connection_goal_milestone_path(@connection, @connection.goals), class:"add-ms-btn btn btn-default" %>
+    <%= link_to "Add a milestone", new_connection_goal_milestone_path(@connection, @connection.goals), class:"add-ms-btn" %>
     </div>
   <% end %>
 
-  <%= link_to "Add new goal", new_connection_goal_path(@connection), class:"btn btn-default new-goal-btn" %>
+  <%= link_to "Set a new goal", new_connection_goal_path(@connection), class:"btn btn-default new-goal-btn" %>
 
 </div>
 
