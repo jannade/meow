@@ -141,8 +141,8 @@ george_mentor_i1 = ProfileInterest.create(profile: george_mentor_profile, intere
 george_mentor_i2 = ProfileInterest.create(profile: george_mentor_profile, interest: pe5)
 george_mentor_i3 = ProfileInterest.create(profile: george_mentor_profile, interest: pe6)
 george_mentor_i4 = ProfileInterest.create(profile: george_mentor_profile, interest: pr4)
-george_mentor_i5 = ProfileInterest.create(profile: george_mentor_profile, interest: pr4)
-george_mentor_i6 = ProfileInterest.create(profile: george_mentor_profile, interest: pr4)
+george_mentor_i5 = ProfileInterest.create(profile: george_mentor_profile, interest: pr5)
+george_mentor_i6 = ProfileInterest.create(profile: george_mentor_profile, interest: pr6)
 
 peter_mentee_i1 = ProfileInterest.create(profile: peter_mentee_profile, interest: pe1)
 peter_mentee_i2 = ProfileInterest.create(profile: peter_mentee_profile, interest: pe3)

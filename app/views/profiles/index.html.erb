@@ -26,23 +26,6 @@
               <% end %>
             </div>
           <% end  %>
-        <% else  %>
-        <% if params[:professional_interests] != " " || params[:personal_interests] != " "  %>
-          <% @profiles.each do |profile| %>
-            <div class="col-xs-12 col-sm-6 col-md-4">
-              <%= link_to profile_path(profile.id), class: "card-link" do %>
-                <div class="card-trip">
-                  <div class="card-trip-infos">
-                    <div>
-                      <h2><%= profile.user.first_name %> <%= profile.user.last_name %></h2>
-                      <p><%= profile.user.job_title %></p>
-                    </div>
-                  </div>
-                </div>
-              <% end %>
-            </div>
-          <% end %>
-        <% end %>
       </div>
     </div>
   </div>
