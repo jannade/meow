@@ -2,7 +2,7 @@ $lightgrey: #C4C4C4;
 
 .card-goal {
   min-height: 100px;
-  max-height: 250px;
+  max-height: 300px;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
@@ -39,7 +39,7 @@ $lightgrey: #C4C4C4;
 .card-milestones {
   width: 100%;
   overflow: scroll;
-  max-height: 200px;
+  max-height: 220px;
 }
 
 .card-ms {
