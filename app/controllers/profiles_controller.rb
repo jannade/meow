@@ -1,8 +1,14 @@
 class ProfilesController < ApplicationController
   def index
-    @recommended_profiles = recommended_profiles
+    # @recommended_profiles = recommended_profiles
     @user = current_user
-    @profiles = find_mentor_by_interests((params[:professional_interests]), (params[:personal_interests]))
+
+    if params[:professional_interests] != " " || params[:personal_interests] != " "
+      @profiles = find_mentor_by_interests((params[:professional_interests]), (params[:personal_interests]))
+    else
+      @profiles = recommended_profiles
+    end
+    # raise
   end
 
   def new
@@ -51,7 +57,7 @@ class ProfilesController < ApplicationController
     if first_interest == "All" && second_interest != "All"
       Profile.joins(:interests).where(interests: { name: "#{second_interest}"}).where(is_mentor: true)
     elsif first_interest != "All" && second_interest == "All"
-      Profile.joins(:interests).where(interests: { name: "#{first_interest}"}}).where(is_mentor: true)
+      Profile.joins(:interests).where(interests: { name: "#{first_interest}"}).where(is_mentor: true)
     elsif first_interest == "All" && second_interest == "All"
       Profile.all.where(is_mentor: true)
     else
