@@ -2,3 +2,30 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
 }
+
+.both-interests {
+  display: flex;
+  justify-content: space-between;
+}
+
+.sign-up-container {
+  display: flex;
+  justify-content: center;
+  legend {
+    font-size: 23px;
+  }
+  label {
+  font-size: 13px;
+  }
+}
+
+.sign-up-form {
+  max-width: 600px;
+  min-width: 55vw;
+  margin: 3vh;
+}
+
+.signup-skip-button {
+  text-align: center;
+  margin: 35px;
+}
