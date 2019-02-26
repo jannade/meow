@@ -63,10 +63,12 @@ class ProfilesController < ApplicationController
       profile.user.interests.each do |interest|
         matched_interest << interest if current_user.interests.include? interest
       end
-    end
-
       match_percentage = (matched_interest.count.to_f / current_user.interests.count.to_f) * 100
       recommended << profile if match_percentage >= 50
+
+      matched_interest = []
+    end
+    recommended
   end
 
   def user_params
