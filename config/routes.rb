@@ -3,6 +3,9 @@ Rails.application.routes.draw do
   root to: 'pages#home'
 
   resources :profiles, except: [:index]
+
+  get "/new_mentee", to: "profiles#new_mentee"
+
   get "/mentors", to: "profiles#index"
 
   patch "/change_status", to: "connections#change_status"
