@@ -19,10 +19,6 @@ div {
   color: white;
 }
 
-.home-form{
-  margin-left: 250px;
-}
-
 .container{
   justify-content: space-around;
 }
@@ -50,15 +46,28 @@ div {
   width: 50px;
 }
 
+.home-form {
+  display: flex;
+  justify-content: center;
+}
+
 .home-content {
   margin-left: 130px;
   margin-right: 130px;
 }
 
-// .btn {
-//   width: 175px;
-//   height: 50px;
-//   color: white;
-//   background-color: #8c0714;
-//   border-radius: 5px;
-// }
+.btn-home {
+  text-align: center;
+  background-color: #8c0714;
+  border-radius: 5px;
+  width: 200px;
+  height: 50px;
+  color: white;
+}
+
+
+
+
+
+
+

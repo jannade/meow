@@ -1,11 +1,11 @@
 <div class="home-title">
-  <div class="head" style="background-image: url(<%= image_path 'womenmentorship.jpg' %>)">
+  <div class="head" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= image_path 'womenmentorship.jpg' %>)">
     <div class=form-text>
       <div class="company-text">
         <h1>Goal centric platform which brings mentees and mentors together</h1>
       </div>
       <div class=home-form>
-        <%= link_to "View profile", mentors_path, class:"btn btn-default btn-pink-border" %>
+        <%= link_to "View profile", mentors_path, class:"btn btn-default btn-home" %>
       </div>
     </div>
   </div>
@@ -37,14 +37,14 @@
         </div>
       </div>
       <div class="col-md-4 col-xs-6">
-        <%= image_tag 'calendar.png', class: 'instruction-img' %>
+        <%= image_tag 'chat.png', class: 'instruction-img' %>
         <div class="text-center">
           <p><strong>Chat with mentors</strong></p>
           <p> Message your mentors to talk about your goals and why do you want to be their mentee</p>
         </div>
       </div>
       <div class="col-md-4 col-xs-6">
-        <%= image_tag 'handshake.png', class: 'instruction-img' %>
+        <%= image_tag 'checklist.png', class: 'instruction-img' %>
         <div class="text-center">
           <p><strong>Track your goals</strong></p>
           <p>After you've connected, go through your connections page and track or add to your goals and milestones.</p>
