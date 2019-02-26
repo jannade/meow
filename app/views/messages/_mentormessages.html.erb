@@ -25,7 +25,16 @@
       <% else %>
         <div id="connection-<%=connection.id%>" class="tab-pane">
       <% end %>
-        <div class="message-box">
+
+
+
+      <div class="flash flash-warning">
+          <% if connection.status == "Pending" %>
+            <span><strong>Request pending!</strong> 🤓 looks like your mentor needs a little more time to respond to your request </span>
+          <% end %>
+        </div>
+
+        <div class="message-box data-message-id=<%= connection.id %>" >
           <% connection.messages.each do |message| %>
           <div class="one-message-box">
             <% if message.user == current_user %>
@@ -43,8 +52,8 @@
           <% end  %>
         </div>
         <div class="new-message-box">
-          <%= simple_form_for(@message) do |f| %>
-            <%= f.input :content, label: false, placeholder: "Type your message here", as: :text, autofocus: true, input_html: {style: 'width: 100%; font-size: 10px', rows: 4 } %>
+          <%= simple_form_for([connection, @message], remote: true) do |f| %>
+            <%= f.input :content, label: false, placeholder: "Type your message here", as: :text, autofocus: true, input_html: {style: 'width: 100%; font-size: 10px', rows: 4, class: 'response-project'} %>
             <%= f.submit "Reply", class: "new-message-btn" %>
           <% end %>
         </div>

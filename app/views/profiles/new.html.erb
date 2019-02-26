@@ -35,7 +35,46 @@
     <%= f.input :job_title, label: 'Job Title' %>
     <%= f.input :photo %>
     <%= f.input :photo_cache, as: :hidden %>
-  <% end %>
 
-  <%= f.button :submit %>
-<% end %>
+<div class="container">
+  <h1>Are you interested in being :</h1>
+
+  <%= simple_form_for @profile do |f| %>
+    <%= f.input :is_mentor,
+                as: :boolean,
+                label: "A Mentor",
+                as: :radio_buttons,
+                style: "display:inline" %>
+
+    <%= f.input :description,
+                as: :text, label: "Write a little description about yourself as a mentor" %>
+
+    <%= f.input :interests,
+                label: 'Select your Professional interests',
+                style: "display:inline",
+                as: :check_boxes,
+                collection: Interest.where(category: 'professional'),
+                input_html: { multiple: true },
+                include_blank: false,
+                include_hidden: false %>
+
+    <%= f.input :interests,
+                label: 'Select your Personal interests',
+                item_wrapper_class: 'inline',
+                as: :check_boxes,
+                collection: Interest.where(category: 'personal'),
+                input_html: { multiple: true },
+                include_blank: false,
+                include_hidden: false %>
+
+    <br><h4><strong>Work details</strong></h4>
+
+    <%= simple_fields_for :user do |f| %>
+      <%= f.input :company, label: 'Company' %>
+      <%= f.input :job_title, label: 'Job Title' %>
+    <% end %>
+
+    <%= f.button :submit %>
+  <% end %>
+</div>
+

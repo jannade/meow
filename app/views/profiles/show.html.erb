@@ -1,9 +1,63 @@
-<div class="container">
-  <h1>Profiles#show</h1>
-  <% if flash[:notice] %>
-      <div class="notice"><%= flash[:notice] %></div>
-    <% end %>
-  <p>Find me in app/views/profiles/show.html.erb</p>
-  <%= link_to "Connect", new_message_path %>
+<% if flash[:notice] %>
+  <div class="notice"><%= flash[:notice] %></div>
+<% end %>
+<div class="container narrow-container">
+  <h1>Mentor Profile</h1>
+
+
+<div class="card-mentor-profile">
+    <img src='https://kitt.lewagon.com/placeholder/users/krokrob' class="card-mentor-img avatar-bordered"/>
+    <div class="card-mentor-info">
+      <h3><%= @profile.user.first_name %> <%= @profile.user.last_name %></h3>
+      <p><%= @profile.user.job_title %> at <%= @profile.user.company %></p>
+    </div>
+    <div class="connect-btn ">
+      <% if Connection.where(mentor: @profile, mentee: @mentee_profile).first.present?%>
+        <p>Request pending</p>
+      <% else  %>
+        <%= link_to "Connect", new_message_path, class:"btn btn-default"%>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="card-mentor-profile-body">
+    <div class="card-mentor-header">
+      <h4>About me</h4>
+    </div>
+    <div class="card-mentor-description">
+      <p><%= @profile.description %></p>
+    </div>
+  </div>
+
+  <div class="card-mentor-profile-body">
+    <div class="card-mentor-header">
+      <h4>Interests</h4>
+    </div>
+    <div class="card-mentor-all-interests">
+      <% @profile_interests.each do |profile_i| %>
+        <% if profile_i.interest.category == "professional" %>
+          <div class="card-mt-interest professional-interests">
+              <p><%= profile_i.interest.name %></p>
+          </div>
+        <% else %>
+          <div class="card-mt-interest personal-interests">
+            <p><%= profile_i.interest.name %></p>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+  <div class="card-mentor-profile-body">
+    <div class="card-mentor-header">
+      <h4>More details</h4>
+    </div>
+    <div class="card-more-details">
+
+    </div>
+  </div>
+
+
 </div>
+
+
 

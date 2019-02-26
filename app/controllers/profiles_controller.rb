@@ -1,6 +1,8 @@
 class ProfilesController < ApplicationController
   def index
-    find_mentor_by_interests(params[:professional_interests], params[:personal_interests])
+    @recommended_profiles = recommended_profiles
+    @user = current_user
+    @profiles = find_mentor_by_interests((params[:professional_interests]), (params[:personal_interests]))
   end
 
   def new
@@ -28,9 +30,15 @@ class ProfilesController < ApplicationController
     add_profile_interests(params[:profile][:interests])
   end
 
+  def create
+  end
+
   def show
     @profile = Profile.find(params[:id])
     session[:mentor_profile] = params[:id]
+
+    @mentee_profile = Profile.find_by(user: current_user, is_mentor: false)
+    @profile_interests = ProfileInterest.where(profile: @profile)
   end
 
   def update
@@ -42,10 +50,17 @@ class ProfilesController < ApplicationController
   def destroy
   end
 
-  private
+  def recommended_profiles
+    matched_interest = []
+    recommended = []
+    Profile.where(is_mentor: true).each do |profile|
+      profile.user.interests.each do |interest|
+        matched_interest << interest if current_user.interests.include? interest
+      end
+    end
 
-  def profile_params
-    params.require(:profile).permit(:is_mentor, :description, :user_id)
+      match_percentage = (matched_interest.count.to_f / current_user.interests.count.to_f) * 100
+      recommended << profile if match_percentage >= 50
   end
 
   def user_params
@@ -56,23 +71,18 @@ class ProfilesController < ApplicationController
     interest_ids.each do |id|
       interest = Interest.find(id)
       ProfileInterest.create!(profile: @profile, interest: interest)
+      matched_interest = []
     end
+    recommended
   end
 
-  def percentage(mentor_interest, mentee_interest)
-    matched_interest = []
-    mentor_interest.each do |element|
-      matched_interest << if element.include? mentee_interest
-      end
-    end
-    (matched_interest.count/mentee_array.count)*100
-  end
+  private
 
   def find_mentor_by_interests(first_interest, second_interest)
     if first_interest == "All" && second_interest != "All"
-      Profile.joins(:interests).where(interests: { name: second_interest}).where(is_mentor: true)
+      Profile.joins(:interests).where(interests: { name: "#{second_interest}"}).where(is_mentor: true)
     elsif first_interest != "All" && second_interest == "All"
-      Profile.joins(:interests).where(interests: { name: first_interest}).where(is_mentor: true)
+      Profile.joins(:interests).where(interests: { name: "#{first_interest}"}}).where(is_mentor: true)
     elsif first_interest == "All" && second_interest == "All"
       Profile.all.where(is_mentor: true)
     else

@@ -6,9 +6,16 @@ class GoalsController < ApplicationController
   end
 
   def new
+    @goal = Goal.new(params[:id])
   end
 
   def create
+    @goal = Goal.new(goal_params)
+    if @goal.save
+      redirect_to connection_path(@goal.connection)
+    else
+      render :new
+    end
   end
 
   def edit
@@ -19,4 +26,12 @@ class GoalsController < ApplicationController
 
   def destroy
   end
+
+  private
+
+  def goal_params
+    params.require(:goal).permit(:description, :connection)
+  end
+
+
 end
