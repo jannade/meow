@@ -10,7 +10,7 @@
     <% if user_signed_in? %>
 
       <!-- Links when logged in -->
-      <%= link_to "Find your mentor", "#", class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to "Find your mentor", mentors_path, class: "navbar-wagon-item navbar-wagon-link" %>
       <%= link_to "Messages", messages_path, class: "navbar-wagon-item navbar-wagon-link" %>
       <%= link_to "Connections", connections_path, class: "navbar-wagon-item navbar-wagon-link" %>
 
