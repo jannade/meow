@@ -19,4 +19,11 @@ class MilestonesController < ApplicationController
 
   def destroy
   end
+
+  def mark
+    @milestone = Milestone.find(params[:format])
+    @milestone.is_completed = !@milestone.is_completed
+    @milestone.save
+  end
+
 end

@@ -66,10 +66,13 @@ $lightgrey: #C4C4C4;
 
 .card-ms .ms-edits {
   margin-left: auto;
+  display: flex;
 }
 
 .card-ms a {
   margin-left: 10px;
+  margin-top: 4px;
+  margin-bottom: 0px;
 }
 
 .add-ms-btn {

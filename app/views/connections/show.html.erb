@@ -13,22 +13,26 @@
           </div>
         <% end %>
         <% goal.milestones.each do |milestone| %>
-          <div class="card-ms">
+          <div class="card-ms card-<%= milestone.id %>">
             <% if milestone.is_completed == true %>
               <i class="fas fa-check-square check"></i>
-              <p class="ms-descr"><%= milestone.description %></p>
-              <div class="ms-edits">
-                <a href="" class="edit-ms">Edit</a>
-                <a href="" class="complete-ms">Undo</a>
-              </div>
             <% else %>
               <i class="far fa-square check"></i>
-              <p class="ms-descr"><%= milestone.description %></p>
-              <div class="ms-edits">
-                <a href="" class="edit-ms">Edit</a>
-                <a href="" class="complete-ms">Done</a>
-              </div>
             <% end %>
+
+            <p class="ms-descr"><%= milestone.description %></p>
+            <div class="ms-edits">
+              <a href="" class="edit-ms">Edit</a>
+              <div class="ms-undone">
+                <% if milestone.is_completed == true %>
+                  <%= link_to "Undo", mark_path(milestone),
+                  method: :patch, remote: true, class: "markBtn", data: { milestone_id: milestone.id } %>
+                <% else %>
+                  <%= link_to "Done", mark_path(milestone),
+                  method: :patch, remote: true, class: "markBtn", data: { milestone_id: milestone.id } %>
+                <% end %>
+              </div>
+            </div>
           </div>
         <% end %>
       </div>

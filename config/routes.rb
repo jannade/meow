@@ -9,13 +9,13 @@ Rails.application.routes.draw do
   get "/mentors", to: "profiles#index"
 
   patch "/change_status", to: "connections#change_status"
+  patch "/mark", to: "milestones#mark"
 
   resources :connections do
     resources :goals do
       resources :milestones
     end
   end
-
 
   resources :messages, except: [:edit, :update]
 
