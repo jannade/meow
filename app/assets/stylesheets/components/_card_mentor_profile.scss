@@ -1,4 +1,5 @@
-$lightgrey: #C4C4C4;
+$lightgrey: #F6F6F6;
+$pink: #fc407c;
 
 .card-mentor-profile {
   overflow: hidden;
@@ -9,7 +10,8 @@ $lightgrey: #C4C4C4;
   padding-left: 40px;
   margin-top: 40px;
   width: 75%;
-  position: relative
+  position: relative;
+  border-radius: 5px 5px 0px 0px;
 }
 
 .card-mentor h2 {
@@ -35,6 +37,10 @@ $lightgrey: #C4C4C4;
 .card-mentor-info {
   width: 30vw;
   text-align: center;
+}
+
+.card-mentor-info h3 {
+  border-bottom: 3px solid $pink;
 }
 
 .card-mentor-infos .card-mentor-user {
@@ -63,8 +69,12 @@ $lightgrey: #C4C4C4;
 
 .card-mentor-description {
   background: $lightgrey;
-  margin: 20px;
-  height: 100px;
+  margin: 10px;
+  max-height: 200px;
+  padding: 20px;
+  font-size: 14px;
+  border-radius: 5px;
+  overflow: scroll;
 }
 
 .card-mentor-profile-body {
@@ -83,11 +93,12 @@ $lightgrey: #C4C4C4;
 
 .card-mentor-all-interests {
   background: $lightgrey;
-  margin: 20px;
+  margin: 10px;
   padding: 20px;
   height: 100px;
   font-size: 10px;
   height: 100%;
+  border-radius: 5px;
 }
 
 .card-more-details {
@@ -96,5 +107,8 @@ $lightgrey: #C4C4C4;
   height: 100px;
 }
 
+.last_body {
+  border-radius: 0px 0px 5px 5px;
+}
 
 
