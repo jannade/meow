@@ -163,7 +163,7 @@ lorenzo_mentee_profile.save
 
 puts "Creating users that are both mentee and mentor"
 
-jane_mentor_profile = Profile.new(user: jane, is_mentor: true)
+jane_mentor_profile = Profile.new(user: jane, is_mentor: true, description: "I have 8 years of experience in the marketing field and currently working as the Director of marketing of Apple. I have passion in helping other women achieve success in whatever they do either personally or professionally.")
 jane_mentor_profile.save
 
 jane_mentee_profile = Profile.new(user: jane, is_mentor: false)
