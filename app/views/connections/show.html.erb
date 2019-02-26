@@ -6,7 +6,7 @@
       <div class="card-goal-descr">
         <h2><%= goal.description %></h2>
       </div>
-      <div class="card-milestones">
+      <div class="card-milestones goal-<%= goal.id%>">
         <% if goal.milestones.empty? %>
           <div class="empty-milestones">
             <p>Oops! Looks like you don't have any milestones yet. Milestones can help you achieve your goals step by step.</br> Go ahead and add some below</p>
@@ -36,9 +36,9 @@
           </div>
         <% end %>
       </div>
-      <button type="button" class="btn btn-default" data-toggle="modal" data-target="#exampleModalCenter">Add a milestone</button>
+      <button type="button" class="btn btn-default" data-toggle="modal" data-target="#milestone-modal-<%=goal.id  %>">Add a milestone</button>
 
-      <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+      <div class="modal fade" id="milestone-modal-<%=goal.id  %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
           <div class="modal-content">
             <div class="modal-header">
