@@ -10,7 +10,8 @@ $lightgrey: #F8F8F8;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
   align-items: center;
-  margin: 20px;
+  margin-top: 20px;
+  border-radius: 5px;
 }
 
 .card-connection h2 {
@@ -28,7 +29,7 @@ $lightgrey: #F8F8F8;
 }
 
 .card-connection-profile {
-  width: 30vw;
+  width: 25vw;
   height: 250px;
   margin: 0 auto;
   text-decoration: none;
@@ -76,7 +77,7 @@ $lightgrey: #F8F8F8;
 .card-connection-progress .card-connection-btn {
   position: relative;
   top: 210px;
-  left: 493px;
+  left: 460px;
 }
 
 

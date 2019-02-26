@@ -1,17 +1,56 @@
-<h1></h1>
+<div class="container">
+  <h1>Find your mentor</h1>
 
-<div class="main-container">
-  <div class="card-container">
+  <div class="search-bar-container">
+    <p class="filter-box">Filter</p>
     <div class="search-bar">
-      <p>Filter=</p>
       <%= form_tag(mentors_path, method: 'get') do %>
-      <% professional_interests = ["All", "Sales", "Marketing", "Computer Programming", "Linux", "MacOS", "Windows", "Operations",
-          "Devops", "Product Management", "Project Management", "Artificial Inteligence", "Data Science", "IoT"] %>
-      <%= select_tag :professional_interests, options_for_select(professional_interests)%>
-      <%#= collection_select :category %>
-      <% personal_interests = ["All", "Work-life balance", "Family", "Reading", "Volunteer work", "Sports & activities", "Cooking", "Arts & music"] %>
+      <% professional_interests = [" ", "All", "Sales", "Marketing", "Computer Programming", "Linux", "MacOS", "Windows", "Operations", "Devops", "Product Management", "Project Management", "Artificial Inteligence", "Data Science", "IoT"] %>
+      <%= select_tag :professional_interests, options_for_select(professional_interests) %>
+      <% personal_interests = [" ", "All", "Work-life balance", "Family", "Reading", "Volunteer work", "Sports & activities", "Cooking", "Arts & music"] %>
       <%= select_tag :personal_interests, options_for_select(personal_interests)%>
-      <%= submit_tag 'Search'%>
+      <%= submit_tag 'Search', class:"search-btn"%>
       <% end %>
     </div>
   </div>
+
+  <div class="header-browse">
+    <% if params[:professional_interests].present? || params[:personal_interests].present? %>
+      <h1>Filtered Profiles</h1>
+    <% elsif @current_user.present? %>
+      <h1>Recommended Profiles</h1>
+    <% else %>
+      <h1>All Profiles</h1>
+    <% end %>
+  </div>
+
+  <div class="container-margin">
+      <div class="row">
+        <% @profiles.each do |profile| %>
+          <div class="col-xs-12 col-sm-6 col-md-4">
+            <div class="card-browse">
+              <div class="card-browse-top">
+                <img src='https://kitt.lewagon.com/placeholder/users/krokrob' class="card-browse-user"/>
+                <div class="card-browse-infos">
+                  <h2><%= profile.user.first_name %> <%= profile.user.last_name %></h2>
+                  <h4><%= profile.user.job_title %> at <% profile.user.company %></h4>
+                </div>
+              </div>
+              <div class="card-browse-btm">
+                <p><%= profile.description %></p>
+              </div>
+              <div class="browse-connect-btn">
+                <p>
+                  <%= link_to "View profile", profile_path(profile.id), class:"btn btn-default btn-pink-border" %>
+                </p>
+              </div>
+            </div>
+          </div>
+        <% end  %>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+

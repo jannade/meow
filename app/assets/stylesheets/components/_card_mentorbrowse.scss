@@ -1,0 +1,66 @@
+$pink: #fc407c;
+$lightgrey: #F6F6F6;
+
+
+.card-browse {
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  margin-top: 30px;
+  padding: 10px;
+  border-radius: 5px;
+  height: 320px;
+}
+
+.card-browse h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin-top: 20px;
+  border-bottom: 2px solid $pink;
+}
+
+.card-browse h4 {
+  font-size: 15px;
+  opacity: 0.9;
+}
+
+
+.card-browse p {
+  font-size: 12px;
+  opacity: .7;
+  margin: 0;
+}
+
+.card-browse-top > img {
+  border-radius: 50%;
+  height: 100px;
+  width: 100px;
+  margin: 10px;
+}
+
+.card-browse-top {
+  display: flex;
+}
+
+.card-browse-infos {
+  margin: 10px;
+  text-align: center;
+  width: 50%
+}
+
+.card-browse-btm {
+  margin: 10px;
+  margin-top: 10px;
+  background: $lightgrey;
+  padding: 12px;
+  height: 100px;
+  overflow: scroll;
+}
+.browse-connect-btn {
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
+}
+
+.btn-pink-border {
+}

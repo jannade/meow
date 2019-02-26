@@ -1,2 +1,43 @@
-<h1>Connections#show</h1>
-<p>Find me in app/views/connections/show.html.erb</p>
+<div class="container narrow-container">
+  <h1>Your goals with <%= @mentor.first_name %></h1>
+
+  <% @goals.each do |goal| %>
+    <div class="card-goal">
+      <div class="card-goal-descr">
+        <h2><%= goal.description %></h2>
+      </div>
+      <div class="card-milestones">
+        <% if goal.milestones.empty? %>
+          <div class="empty-milestones">
+            <p>Oops! Looks like you don't have any milestones yet. Milestones can help you achieve your goals step by step.</br> Go ahead and add some below</p>
+          </div>
+        <% end %>
+        <% goal.milestones.each do |milestone| %>
+          <div class="card-ms">
+            <% if milestone.is_completed == true %>
+              <i class="fas fa-check-square check"></i>
+              <p class="ms-descr"><%= milestone.description %></p>
+              <div class="ms-edits">
+                <a href="" class="edit-ms">Edit</a>
+                <a href="" class="complete-ms">Undo</a>
+              </div>
+            <% else %>
+              <i class="far fa-square check"></i>
+              <p class="ms-descr"><%= milestone.description %></p>
+              <div class="ms-edits">
+                <a href="" class="edit-ms">Edit</a>
+                <a href="" class="complete-ms">Done</a>
+              </div>
+            <% end %>
+          </div>
+        <% end %>
+      </div>
+    <%= link_to "Add a milestone", new_connection_goal_milestone_path(@connection, @connection.goals), class:"add-ms-btn" %>
+    </div>
+  <% end %>
+
+  <%= link_to "Set a new goal", new_connection_goal_path(@connection), class:"btn btn-default new-goal-btn" %>
+
+</div>
+
+
