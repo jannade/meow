@@ -1,0 +1,8 @@
+<div class="card-goal">
+  <div class="new-goal-container">
+    <%= simple_form_for([@connection, @goal]) do |f| %>
+      <%=f.input :description, label: "What is your goal?", class:"goal-input"%>
+      <%=f.submit "Submit", class:"add-goal-btn" %>
+    <% end %>
+  </div>
+</div>

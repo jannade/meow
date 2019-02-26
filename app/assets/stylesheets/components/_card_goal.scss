@@ -1,7 +1,6 @@
 $lightgrey: #C4C4C4;
 
 .card-goal {
-  overflow: hidden;
   min-height: 100px;
   max-height: 250px;
   background: white;
@@ -21,6 +20,7 @@ $lightgrey: #C4C4C4;
 
 .card-goal .card-goal-descr {
   padding: 16px;
+  height: 45px;
 }
 
 .empty-milestones {
@@ -31,18 +31,20 @@ $lightgrey: #C4C4C4;
 }
 
 .card-goal-descr {
-  border-bottom: 1px solid $lightgrey;
+  border-bottom: 2px solid $lightgrey;
   width: 100%;
 }
 
 .card-milestones {
   width: 100%;
+  overflow: scroll;
+  max-height: 200px;
 }
 
 .card-ms {
   border-bottom: 1px dotted $lightgrey;
   width: 100%;
-  padding: 5px 25px 10px 25px;
+  padding: 5px 45px 10px 45px;
   display: flex;
   a, p {
     font-size: 14px;
@@ -70,15 +72,27 @@ $lightgrey: #C4C4C4;
 }
 
 .add-ms-btn {
-  margin-bottom: 10px;
   font-size: 14px;
   width: 100%;
   text-align: right;
   padding-right: 16px;
+  height: 45px;
+  padding-top: 10px;
 }
 
 .new-goal-btn {
   margin: 20px;
 }
+
+.new-goal-container {
+  width: 100%;
+  padding: 20px;
+}
+
+.new-goal-container {
+  font-size: 14px;
+}
+
+
 
 
