@@ -14,6 +14,9 @@ class ProfilesController < ApplicationController
   def show
     @profile = Profile.find(params[:id])
     session[:mentor_profile] = params[:id]
+
+    @mentee_profile = Profile.find_by(user: current_user, is_mentor: false)
+    @profile_interests = ProfileInterest.where(profile: @profile)
   end
 
   def update

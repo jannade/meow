@@ -25,11 +25,15 @@
       <% else %>
         <div id="connection-<%=connection.id%>" class="tab-pane">
       <% end %>
-      <div class="new-connection-request">
+
+
+
+      <div class="flash flash-warning">
           <% if connection.status == "Pending" %>
-            <p>Connection still pending request from Mentor</p>
+            <span><strong>Request pending!</strong> 🤓 looks like your mentor needs a little more time to respond to your request </span>
           <% end %>
         </div>
+
         <div class="message-box data-message-id=<%= connection.id %>" >
           <% connection.messages.each do |message| %>
           <div class="one-message-box">

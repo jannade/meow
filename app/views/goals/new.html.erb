@@ -1,2 +1,14 @@
-<h1>Goals#new</h1>
-<p>Find me in app/views/goals/new.html.erb</p>
+<div class="container narrow-container">
+  <h1>Set a new goal</h1>
+
+  <div class="card-goal new-card-goal">
+      <%= simple_form_for @goal, url: new_connection_goal_path do |f| %>
+        <%= f.input :description, label: "Describe your goal" %>
+        <%= f.submit "Add goal" %>
+      <% end %>
+  </div>
+</div>
+
+
+
+
