@@ -6,38 +6,70 @@
       <div class="card-goal-descr">
         <h2><%= goal.description %></h2>
       </div>
-      <div class="card-milestones">
+      <div class="card-milestones goal-<%= goal.id%>">
         <% if goal.milestones.empty? %>
           <div class="empty-milestones">
             <p>Oops! Looks like you don't have any milestones yet. Milestones can help you achieve your goals step by step.</br> Go ahead and add some below</p>
           </div>
         <% end %>
         <% goal.milestones.each do |milestone| %>
-          <div class="card-ms">
+          <div class="card-ms card-<%= milestone.id %>">
             <% if milestone.is_completed == true %>
               <i class="fas fa-check-square check"></i>
-              <p class="ms-descr"><%= milestone.description %></p>
-              <div class="ms-edits">
-                <a href="" class="edit-ms">Edit</a>
-                <a href="" class="complete-ms">Undo</a>
-              </div>
             <% else %>
               <i class="far fa-square check"></i>
-              <p class="ms-descr"><%= milestone.description %></p>
-              <div class="ms-edits">
-                <a href="" class="edit-ms">Edit</a>
-                <a href="" class="complete-ms">Done</a>
-              </div>
             <% end %>
+
+            <p class="ms-descr"><%= milestone.description %></p>
+            <div class="ms-edits">
+              <a href="" class="edit-ms">Edit</a>
+              <div class="ms-undone">
+                <% if milestone.is_completed == true %>
+                  <%= link_to "Undo", mark_path(milestone),
+                  method: :patch, remote: true, class: "markBtn", data: { milestone_id: milestone.id } %>
+                <% else %>
+                  <%= link_to "Done", mark_path(milestone),
+                  method: :patch, remote: true, class: "markBtn", data: { milestone_id: milestone.id } %>
+                <% end %>
+              </div>
+            </div>
           </div>
         <% end %>
       </div>
-    <%= link_to "Add a milestone", new_connection_goal_milestone_path(@connection, @connection.goals), class:"add-ms-btn" %>
+      <button type="button" class="btn btn-default" data-toggle="modal" data-target="#milestone-modal-<%=goal.id  %>">Add a milestone</button>
+
+      <div class="modal fade" id="milestone-modal-<%=goal.id  %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLongTitle">Describe your new milestone</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <%= simple_form_for([@connection, goal, @milestone], remote: true) do |f| %>
+                <%= f.input :description, label: false %>
+                <%= f.submit "Add" %>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   <% end %>
 
-  <%= link_to "Set a new goal", new_connection_goal_path(@connection), class:"btn btn-default new-goal-btn" %>
-
+  <div class="card-new-goal">
+    <div class="new-goal-btn btn btn-default">Add a new goal</div>
+    <div class="card-goal hidden">
+      <div class="new-goal-container">
+        <%= simple_form_for([@connection, @goal]) do |f| %>
+          <%=f.input :description, label: "Describe your new goal", class:"goal-input"%>
+          <%=f.submit "Submit", class:"add-goal-btn" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
 </div>
 
 

@@ -10,7 +10,8 @@ class ConnectionsController < ApplicationController
     @mentee = @connection.mentee.user
 
     @goals = Goal.where(connection: @connection)
-
+    @goal = Goal.new
+    @milestone = Milestone.new
   end
 
   def new

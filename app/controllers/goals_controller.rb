@@ -11,6 +11,8 @@ class GoalsController < ApplicationController
 
   def create
     @goal = Goal.new(goal_params)
+    @goal.connection = Connection.find(params[:connection_id])
+
     if @goal.save
       redirect_to connection_path(@goal.connection)
     else

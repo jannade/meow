@@ -1,0 +1,30 @@
+
+console.log('mark')
+
+doneBtn = document.querySelector(".card-<%=@milestone.id%> .markBtn");
+
+<% if @milestone.is_completed %>
+  doneBtn.innerText =  'Undo'
+<% else %>
+  doneBtn.innerText =  'Done'
+<% end %>
+
+square = document.querySelector(".card-<%=@milestone.id%> .check");
+square.classList.toggle('fa-square');
+square.classList.toggle('far');
+square.classList.toggle('fa-check-square');
+square.classList.toggle('fas');
+
+
+
+
+// acceptBtn = document.querySelector(".accept-request");
+// flashBar = document.querySelector(".flash-success");
+// acceptBtn.remove();
+// flashBar.remove()
+
+// acceptBox = document.querySelector(".new-mentor-request");
+// acceptedMsg = '<%= j render "messages/connection_accept" %>';
+
+// acceptBox.insertAdjacentHTML('afterbegin', acceptedMsg);
+
