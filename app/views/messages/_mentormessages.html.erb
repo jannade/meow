@@ -26,13 +26,11 @@
         <div id="connection-<%=connection.id%>" class="tab-pane">
       <% end %>
 
-
-
+    <% if connection.status == "Pending" %>
       <div class="flash flash-warning">
-          <% if connection.status == "Pending" %>
-            <span><strong>Request pending!</strong> 🤓 looks like your mentor needs a little more time to respond to your request </span>
-          <% end %>
-        </div>
+        <span><strong>Request pending!</strong> 🤓 looks like your mentor needs a little more time to respond to your request </span>
+      </div>
+    <% end %>
 
         <div class="message-box data-message-id=<%= connection.id %>" >
           <% connection.messages.each do |message| %>
