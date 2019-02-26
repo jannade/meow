@@ -6,6 +6,28 @@ class ProfilesController < ApplicationController
   end
 
   def new
+    @profile = Profile.new
+    @user = current_user
+    @pro_interests = Interest.where(category: 'professional')
+    @personal_interests = Interest.where(category: 'personal')
+  end
+
+  def create
+    @user = current_user
+    @profile = Profile.new(profile_params)
+    @profile.user = @user
+    @user.company = params[:user][:company]
+    @user.job_title = params[:user][:job_title]
+    @user.photo = params[:user][:photo]
+    @user.update(user_params)
+
+    if @profile.save
+      redirect_to mentors_path
+    else
+      render :new
+    end
+
+    add_profile_interests(params[:profile][:interests])
   end
 
   def create
@@ -35,13 +57,22 @@ class ProfilesController < ApplicationController
       profile.user.interests.each do |interest|
         matched_interest << interest if current_user.interests.include? interest
       end
+    end
 
       match_percentage = (matched_interest.count.to_f / current_user.interests.count.to_f) * 100
       recommended << profile if match_percentage >= 50
+  end
 
+  def user_params
+   params.require(:user).permit(:company, :job_title, :photo)
+  end
+
+  def add_profile_interests(interest_ids)
+    interest_ids.each do |id|
+      interest = Interest.find(id)
+      ProfileInterest.create!(profile: @profile, interest: interest)
       matched_interest = []
     end
-
     recommended
   end
 
