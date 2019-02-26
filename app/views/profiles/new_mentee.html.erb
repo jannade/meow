@@ -1,3 +1,5 @@
+
+<%= link_to "Skip to home", mentors_path, class: "btn btn-primary" %>
 <h4>Hello Mentee. Please fill out the below information </h4> <br>
 
 <%= simple_form_for @profile do |f| %>
@@ -24,15 +26,15 @@
               include_blank: false,
               include_hidden: false %>
 
-  <br><h4><strong>Work details</strong></h4>
-
+  <% unless current_user.company.present? && current_user.job_title.present? %>
+    <br><h4><strong>Work details</strong></h4>
     <%= simple_fields_for @user do |f| %>
       <%= f.input :company, label: 'Company' %>
       <%= f.input :job_title, label: 'Job Title' %>
       <%= f.input :photo %>
       <%= f.input :photo_cache, as: :hidden %>
     <% end %>
+  <% end %>
 
     <%= f.button :submit %>
   <% end %>
-</div>
