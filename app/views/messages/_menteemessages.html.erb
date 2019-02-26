@@ -29,7 +29,7 @@
   <div class="new-mentor-request">
     <% if connection.status == "Pending" %>
       <div class="flash flash-success">
-           <span><strong>Yay!</strong> 🎉 You have a new connection request from <%= connection.mentee.user.first_name %></span>
+           <span> You have a new connection request from <%= connection.mentee.user.first_name %></span>
            <div class="accept-request">
             <%= link_to "Accept Invite", change_status_path(connection), method: :patch, remote: true %>
           </div>
