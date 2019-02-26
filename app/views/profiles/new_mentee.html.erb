@@ -1,16 +1,13 @@
-<h4>Sign up for Mentor Profile </h4>
+
+<%= link_to "Skip to home", mentors_path, class: "btn btn-primary" %>
+<h4>Hello Mentee. Please fill out the below information </h4> <br>
 
 <%= simple_form_for @profile do |f| %>
-  <div class="skip-mentor">
-    <div class="item">
-      <%= link_to "I don't want to be a mentor", new_mentee_path, class: "btn btn-primary" %>
-    </div>
-
-  </div>
   <%= f.input :description,
-              label: "Tell us why you love to be a Mentor",
+              label: "Tell us why you love to be a Mentee",
               as: :text %>
-
+  <br>
+  <h4>Select your :-</h4>
   <%= f.input :interests,
               label: 'Professional interests',
               style: "display:inline",
@@ -29,7 +26,7 @@
               include_blank: false,
               include_hidden: false %>
 
-
+  <% unless current_user.company.present? && current_user.job_title.present? %>
     <br><h4><strong>Work details</strong></h4>
     <%= simple_fields_for @user do |f| %>
       <%= f.input :company, label: 'Company' %>
@@ -37,9 +34,7 @@
       <%= f.input :photo %>
       <%= f.input :photo_cache, as: :hidden %>
     <% end %>
+  <% end %>
 
-<%= f.input :is_mentor, :as => :hidden, :input_html => { :value => true } %>
-<%= f.button :submit %>
-
-<% end %>
-
+    <%= f.button :submit %>
+  <% end %>
