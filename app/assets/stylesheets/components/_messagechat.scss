@@ -1,6 +1,7 @@
 $lightgrey: #F8F8F8;
 $blue: #1b4e88;
 $cream: #faf0e4;
+$pink: #fc407c;
 
 .inbox-container {
   width: 100%;
@@ -9,6 +10,8 @@ $cream: #faf0e4;
   margin-top: 20px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   border-radius: 5px;
+  max-height: 80vw;
+  overflow: scroll;
 }
 
 .nav-tabs.tab-horizontal {
@@ -58,7 +61,7 @@ $cream: #faf0e4;
   background: white;
   width: 70vw;
   padding: 20px;
-  padding-top: 10px;
+  padding-top: 20px;
   display: flex;
   flex-direction: column;
   border-radius: 0px 5px 5px 0px;
@@ -140,15 +143,15 @@ $cream: #faf0e4;
 }
 
 .flash-success {
-  border: 1px solid #1EDD88;
+  border: 1px solid $pink;
 }
 
 .connection-accepted-box {
-  border: 1px solid #1EDD88;
+  border: 1px solid $pink;
 }
 
 .flash-success a {
-  color: #1EDD88;
+  color: $pink;
   display: flex;
 }
 

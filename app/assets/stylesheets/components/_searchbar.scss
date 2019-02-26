@@ -1,0 +1,30 @@
+$blue: #1b4e88;
+$red: #8c0714;
+$lightgrey: #F8F8F8;
+
+
+.search-bar-container {
+  display: flex;
+  background: $red;
+  padding: 10px;
+  color: white;
+  font-style: bold;
+  border-radius: 5px;
+}
+
+.search-bar {
+  margin-left: 40px;
+  color: $red;
+}
+
+.search-btn {
+  color: black;
+}
+
+.filter-box {
+  margin-left: 10px;
+  margin-bottom: 0;
+}
+
+
+
