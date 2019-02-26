@@ -10,13 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_02_21_052236) do
+ActiveRecord::Schema.define(version: 2019_02_25_043209) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "connections", force: :cascade do |t|
-    t.string "status"
+    t.string "status", default: "Pending"
     t.bigint "mentee_id"
     t.bigint "mentor_id"
     t.datetime "created_at", null: false
@@ -43,7 +43,7 @@ ActiveRecord::Schema.define(version: 2019_02_21_052236) do
 
   create_table "messages", force: :cascade do |t|
     t.string "content"
-    t.boolean "is_read"
+    t.boolean "is_read", default: false
     t.bigint "user_id"
     t.bigint "connection_id"
     t.datetime "created_at", null: false
@@ -54,7 +54,7 @@ ActiveRecord::Schema.define(version: 2019_02_21_052236) do
 
   create_table "milestones", force: :cascade do |t|
     t.string "description"
-    t.boolean "is_completed"
+    t.boolean "is_completed", default: false
     t.bigint "goal_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
