@@ -1,12 +1,16 @@
 class ProfilesController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:index, :show]
   def index
     # @recommended_profiles = recommended_profiles
     # @user = current_user
-
-    if params[:professional_interests].present? || params[:personal_interests].present?
-      @profiles = find_mentor_by_interests((params[:professional_interests]), (params[:personal_interests]))
+    if current_user
+      if params[:professional_interests].present? || params[:personal_interests].present?
+        @profiles = find_mentor_by_interests((params[:professional_interests]), (params[:personal_interests]))
+      else
+        @profiles = recommended_profiles
+      end
     else
-      @profiles = recommended_profiles
+      @profiles = Profile.where(is_mentor:true)
     end
   end
 
@@ -77,9 +81,7 @@ class ProfilesController < ApplicationController
     interest_ids.each do |id|
       interest = Interest.find(id)
       ProfileInterest.create!(profile: @profile, interest: interest)
-      matched_interest = []
     end
-    recommended
   end
 
   private
