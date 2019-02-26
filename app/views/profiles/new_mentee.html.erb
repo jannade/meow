@@ -1,0 +1,38 @@
+<h4>Hello Mentee. Please fill out the below information </h4> <br>
+
+<%= simple_form_for @profile do |f| %>
+  <%= f.input :description,
+              label: "Tell us why you love to be a Mentee",
+              as: :text %>
+  <br>
+  <h4>Select your :-</h4>
+  <%= f.input :interests,
+              label: 'Professional interests',
+              style: "display:inline",
+              as: :check_boxes,
+              collection: Interest.where(category: 'professional'),
+              input_html: { multiple: true },
+              include_blank: false,
+              include_hidden: false %>
+
+  <%= f.input :interests,
+              label: 'Personal interests',
+              item_wrapper_class: 'inline',
+              as: :check_boxes,
+              collection: Interest.where(category: 'personal'),
+              input_html: { multiple: true },
+              include_blank: false,
+              include_hidden: false %>
+
+  <br><h4><strong>Work details</strong></h4>
+
+    <%= simple_fields_for @user do |f| %>
+      <%= f.input :company, label: 'Company' %>
+      <%= f.input :job_title, label: 'Job Title' %>
+      <%= f.input :photo %>
+      <%= f.input :photo_cache, as: :hidden %>
+    <% end %>
+
+    <%= f.button :submit %>
+  <% end %>
+</div>

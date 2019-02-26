@@ -28,7 +28,7 @@ class ProfilesController < ApplicationController
     @user.update(user_params)
 
     if @profile.save
-      redirect_to mentors_path
+      redirect_to new_mentee_path
     else
       render :new
     end
@@ -36,7 +36,11 @@ class ProfilesController < ApplicationController
     add_profile_interests(params[:profile][:interests])
   end
 
-  def create
+  def new_mentee
+    @profile = Profile.new
+    @user = current_user
+    @pro_interests = Interest.where(category: 'professional')
+    @personal_interests = Interest.where(category: 'personal')
   end
 
   def show
@@ -70,7 +74,7 @@ class ProfilesController < ApplicationController
   end
 
   def user_params
-   params.require(:user).permit(:company, :job_title, :photo)
+    params.require(:user).permit(:company, :job_title, :photo)
   end
 
   def add_profile_interests(interest_ids)
