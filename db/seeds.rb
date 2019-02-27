@@ -202,10 +202,10 @@ lorenzo_mentee_i6 = ProfileInterest.create(profile: lorenzo_mentee_profile, inte
 
 jane_mentor_i1 = ProfileInterest.create(profile: jane_mentor_profile, interest: pe1)
 jane_mentor_i2 = ProfileInterest.create(profile: jane_mentor_profile, interest: pe5)
-jane_mentor_i3 = ProfileInterest.create(profile: jane_mentor_profile, interest: pe6)
-jane_mentor_i4 = ProfileInterest.create(profile: jane_mentor_profile, interest: pr1)
-jane_mentor_i5 = ProfileInterest.create(profile: jane_mentor_profile, interest: pr2)
-jane_mentor_i6 = ProfileInterest.create(profile: jane_mentor_profile, interest: pr4)
+jane_mentor_i3 = ProfileInterest.create(profile: jane_mentor_profile, interest: pe7)
+jane_mentor_i4 = ProfileInterest.create(profile: jane_mentor_profile, interest: pr3)
+jane_mentor_i5 = ProfileInterest.create(profile: jane_mentor_profile, interest: pr4)
+jane_mentor_i6 = ProfileInterest.create(profile: jane_mentor_profile, interest: pr7)
 
 jane_mentee_i1 = ProfileInterest.create(profile: jane_mentee_profile, interest: pe5)
 jane_mentee_i2 = ProfileInterest.create(profile: jane_mentee_profile, interest: pe6)
@@ -319,7 +319,7 @@ puts "Creating connections"
 ashwin_peter_connection = Connection.new(mentor: ashwin_mentor_profile, mentee: peter_mentee_profile, status: "Pending")
 ashwin_peter_connection.save
 
-jane_lorenzo_connection = Connection.new(mentor: jane_mentor_profile, mentee: lorenzo_mentee_profile, status: "Pending")
+jane_lorenzo_connection = Connection.new(mentor: jane_mentor_profile, mentee: lorenzo_mentee_profile, status: "confirmed")
 jane_lorenzo_connection.save
 
 george_jane_connection = Connection.new(mentor: george_mentor_profile, mentee: jane_mentee_profile, status: "confirmed")
@@ -338,8 +338,11 @@ puts "Connections created"
 
 puts "Creating messages"
 
-lorenzo_jane_message = Message.new(content: "Hi Jane, I want to connect with you and learn all about your Marketing skills", user: lorenzo, is_read: true, connection: jane_lorenzo_connection)
+lorenzo_jane_message = Message.new(content: "Hi Sheryl, I want to connect with you and learn all about your experience at Facebook. Would you like to connect?", user: lorenzo, is_read: true, connection: jane_lorenzo_connection)
 lorenzo_jane_message.save
+
+lorenzo_jane_message2 = Message.new(content: "Hi Laura, great. I am available tomorrow evening at 8pm. Does that work for you?", user: jane, is_read: true, connection: jane_lorenzo_connection)
+lorenzo_jane_message2.save
 
 george_jane_message = Message.new(content: "Hi Jane, your profile looks amazing. I wanna be just like you", user: george, is_read: true, connection: george_jane_connection)
 george_jane_message.save
