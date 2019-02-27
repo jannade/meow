@@ -34,17 +34,21 @@
       <h4>Interests</h4>
     </div>
     <div class="card-mentor-all-interests">
-      <% @profile_interests.each do |profile_i| %>
-        <% if profile_i.interest.category == "professional" %>
-          <div class="card-mt-interest professional-interests">
-              <p><%= profile_i.interest.name %></p>
-          </div>
+      <div class="professional-interests">
+        <% @profile_interests.each do |profile_i| %>
+          <% if profile_i.interest.category == "professional" %>
+            <div class="card-mt-interest professional-interests">
+                <p><%= profile_i.interest.name %></p>
+            </div>
+      </div>
         <% else %>
+      <div class="personal-interests">
           <div class="card-mt-interest personal-interests">
             <p><%= profile_i.interest.name %></p>
           </div>
         <% end %>
       <% end %>
+      </div>
     </div>
   </div>
   <!-- <div class="card-mentor-profile-body">
