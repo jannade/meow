@@ -1,7 +1,7 @@
 <% if flash[:notice] %>
   <div class="notice"><%= flash[:notice] %></div>
 <% end %>
-<div class="container narrow-container">
+<div class="profile-full-container">
   <h1>Mentor Profile</h1>
 
 
@@ -29,25 +29,30 @@
     </div>
   </div>
 
-  <div class="card-mentor-profile-body last_body">
-    <div class="card-mentor-header">
-      <h4>Interests</h4>
-    </div>
     <div class="card-mentor-all-interests">
-      <div class="professional-interests">
+      <div class="interest">
+        <div class="card-mentor-header">
+          <h4><strong>Professional Interests</strong></h4>
+        </div>
         <% @profile_interests.each do |profile_i| %>
           <% if profile_i.interest.category == "professional" %>
             <div class="card-mt-interest professional-interests">
-                <p><%= profile_i.interest.name %></p>
+              <p><%= profile_i.interest.name %></p>
             </div>
-      </div>
-        <% else %>
-      <div class="personal-interests">
-          <div class="card-mt-interest personal-interests">
-            <p><%= profile_i.interest.name %></p>
-          </div>
+          <% end %>
         <% end %>
-      <% end %>
+      </div>
+      <div class="interest">
+        <div class="card-mentor-header">
+          <h4><strong>Personal Interests</strong></h4>
+        </div>
+        <% @profile_interests.each do |profile_i| %>
+          <% if profile_i.interest.category == "personal" %>
+            <div class="card-mt-interest personal-interests">
+              <p><%= profile_i.interest.name %></p>
+            </div>
+          <% end %>
+        <% end %>
       </div>
     </div>
   </div>
