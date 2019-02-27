@@ -20,6 +20,7 @@ $pink: #fc407c;
   width: 30vw;
   margin-top: 20px;
   margin-bottom: 20px;
+  border-right: 3px solid $pink;
 }
 
 .nav-tabs.tab-horizontal > li.active > a, .nav-tabs.tab-horizontal > li.active > a:hover {
@@ -91,6 +92,10 @@ $pink: #fc407c;
   top: 0;
   left: 0;
   display: inline-block;
+}
+
+.message-content {
+  max-width: 30vw;
 }
 
 .message-box .right-message .message-content {

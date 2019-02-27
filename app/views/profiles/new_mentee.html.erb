@@ -1,13 +1,25 @@
+<div class="sign-up-container">
+  <div class="sign-up-form">
 
-<%= link_to "Skip to home", mentors_path, class: "btn btn-primary" %>
-<h4>Hello Mentee. Please fill out the below information </h4> <br>
+
+<h4 class="text-center"><strong>Sign up for Mentee Profile</strong></h4>
+
+
 
 <%= simple_form_for @profile do |f| %>
+        <div class="skip-mentor">
+        <div class="signup-skip-button">
+          <%= link_to "I don't want to be a Mentee", mentors_path, class: "btn btn-primary" %>
+        </div>
+      </div>
+
   <%= f.input :description,
               label: "Tell us why you love to be a Mentee",
               as: :text %>
   <br>
   <h4>Select your :-</h4>
+  <div class="both-interests">
+    <div>
   <%= f.input :interests,
               label: 'Professional interests',
               style: "display:inline",
@@ -16,7 +28,8 @@
               input_html: { multiple: true },
               include_blank: false,
               include_hidden: false %>
-
+    </div>
+    <div>
   <%= f.input :interests,
               label: 'Personal interests',
               item_wrapper_class: 'inline',
@@ -25,9 +38,11 @@
               input_html: { multiple: true },
               include_blank: false,
               include_hidden: false %>
+    </div>
+  </div>
 
   <% unless current_user.company.present? && current_user.job_title.present? %>
-    <br><h4><strong>Work details</strong></h4>
+    <br><h5><strong>Work details</strong></h5>
     <%= simple_fields_for @user do |f| %>
       <%= f.input :company, label: 'Company' %>
       <%= f.input :job_title, label: 'Job Title' %>
@@ -36,5 +51,7 @@
     <% end %>
   <% end %>
 
-    <%= f.button :submit %>
+    <%= f.button :submit, class: "btn btn-primary" %>
   <% end %>
+  </div>
+</div>

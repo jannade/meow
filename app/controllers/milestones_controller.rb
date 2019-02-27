@@ -6,9 +6,14 @@ class MilestonesController < ApplicationController
   end
 
   def new
+    @milestone = Milestone.new
   end
 
   def create
+    @milestone = Milestone.new(milestone_params)
+    @milestone.description = params[:milestone][:description]
+    @milestone.goal = Goal.find(params[:goal_id])
+    @milestone.save
   end
 
   def edit
@@ -19,4 +24,17 @@ class MilestonesController < ApplicationController
 
   def destroy
   end
+
+  def mark
+    @milestone = Milestone.find(params[:format])
+    @milestone.is_completed = !@milestone.is_completed
+    @milestone.save
+  end
+
+  private
+
+  def milestone_params
+    params.require(:milestone).permit(:description, :is_completed)
+  end
+
 end
