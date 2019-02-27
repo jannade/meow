@@ -4,12 +4,20 @@
   font-size: x-large;
   .interest-item {
     border: 2px solid black;
-    padding: 25px 60px;
+    padding: 25px 80px;
     box-shadow: 10px 10px 8px #888888;
+
+  }
+  .form-group {
+    max-width: 70vw;
   }
   .form-group label {
     font-size: 15px;
     font-weight: lighter;
+  }
+  .form-group label:hover {
+    text-decoration: underline;
+    color: cornflowerblue;
   }
 }
 
