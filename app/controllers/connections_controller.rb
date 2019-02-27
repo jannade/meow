@@ -44,4 +44,6 @@ class ConnectionsController < ApplicationController
   def connection_params
     params.require(:connection).permit(:status)
   end
+
+
 end

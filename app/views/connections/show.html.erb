@@ -5,6 +5,12 @@
     <div class="card-goal">
       <div class="card-goal-descr">
         <h2><%= goal.description %></h2>
+        <% if goal.milestones.count > 0 %>
+         <div class="progress">
+            <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="<%= goal.perc_completed %>" aria-valuemin="0" aria-valuemax="100" style="width: <%= goal.perc_completed %>%">
+            </div>
+          </div>
+        <% end %>
       </div>
       <div class="card-milestones goal-<%= goal.id%>">
         <% if goal.milestones.empty? %>
@@ -36,7 +42,9 @@
           </div>
         <% end %>
       </div>
-      <button type="button" class="btn btn-default" data-toggle="modal" data-target="#milestone-modal-<%=goal.id  %>">Add a milestone</button>
+      <div class="goal-bottom-box">
+        <button type="button" class="add-ms-btn" data-toggle="modal" data-target="#milestone-modal-<%=goal.id  %>">Add a milestone</button>
+      </div>
 
       <div class="modal fade" id="milestone-modal-<%=goal.id  %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
