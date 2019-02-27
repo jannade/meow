@@ -9,12 +9,12 @@
       <% @pro_interests.each do |professionalinterest|  %>
         <% professional_interests << professionalinterest.name  %>
       <%end  %>
-      <%= select_tag :professional_interests, options_for_select(professional_interests, :selected=>params[:professional_interests]), {prompt: "All"} %>
+      <%= select_tag :professional_interests, options_for_select(professional_interests.push("All"), :selected=>params[:professional_interests]), {prompt: "Select professional interest"} %>
       <% personal_interests = [] %>
       <% @personal_interests.each do |personalinterest|  %>
         <% personal_interests << personalinterest.name  %>
       <%end  %>
-      <%= select_tag :personal_interests, options_for_select(personal_interests, :selected=>params[:personal_interests]), {prompt: "All"}%>
+      <%= select_tag :personal_interests, options_for_select(personal_interests.push("All"), :selected=>params[:personal_interests]), {prompt: "Select personal interest"}%>
       <%= submit_tag 'Search', class:"search-btn"%>
       <% end %>
     </div>
