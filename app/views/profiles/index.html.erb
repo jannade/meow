@@ -5,10 +5,16 @@
     <p class="filter-box">Filter</p>
     <div class="search-bar">
       <%= form_tag(mentors_path, method: 'get') do %>
-      <% professional_interests = [" ", "All", "Sales", "Marketing", "Computer Programming", "Linux", "MacOS", "Windows", "Operations", "Devops", "Product Management", "Project Management", "Artificial Inteligence", "Data Science", "IoT"] %>
-      <%= select_tag :professional_interests, options_for_select(professional_interests) %>
-      <% personal_interests = [" ", "All", "Work-life balance", "Family", "Reading", "Volunteer work", "Sports & activities", "Cooking", "Arts & music"] %>
-      <%= select_tag :personal_interests, options_for_select(personal_interests)%>
+      <% professional_interests = [] %>
+      <% @pro_interests.each do |professionalinterest|  %>
+        <% professional_interests << professionalinterest.name  %>
+      <%end  %>
+      <%= select_tag :professional_interests, options_for_select(professional_interests, :selected=>params[:professional_interests]), {prompt: "All"} %>
+      <% personal_interests = [] %>
+      <% @personal_interests.each do |personalinterest|  %>
+        <% personal_interests << personalinterest.name  %>
+      <%end  %>
+      <%= select_tag :personal_interests, options_for_select(personal_interests, :selected=>params[:personal_interests]), {prompt: "All"}%>
       <%= submit_tag 'Search', class:"search-btn"%>
       <% end %>
     </div>
@@ -33,7 +39,7 @@
                 <img src='https://kitt.lewagon.com/placeholder/users/krokrob' class="card-browse-user"/>
                 <div class="card-browse-infos">
                   <h2><%= profile.user.first_name %> <%= profile.user.last_name %></h2>
-                  <h4><%= profile.user.job_title %> at <% profile.user.company %></h4>
+                  <h4><%= profile.user.job_title %> at <%= profile.user.company %></h4>
                 </div>
               </div>
               <div class="card-browse-btm">
@@ -51,6 +57,3 @@
     </div>
   </div>
 </div>
-
-
-

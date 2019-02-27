@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   get "/mentors", to: "profiles#index"
 
   patch "/change_status", to: "connections#change_status"
-  patch "/mark", to: "milestones#mark"
+  patch "/mark/:id", to: "milestones#mark", as: 'mark'
 
   resources :connections do
     resources :goals do
