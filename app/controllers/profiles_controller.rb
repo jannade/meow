@@ -6,6 +6,8 @@ class ProfilesController < ApplicationController
     else
       current_user ? @profiles = recommended_profiles : @profiles = Profile.where(is_mentor: true)
     end
+    @pro_interests = Interest.where(category: 'professional')
+    @personal_interests = Interest.where(category: 'personal')
   end
 
   def new
@@ -107,7 +109,6 @@ class ProfilesController < ApplicationController
     end
   end
 end
-
 
 
 
