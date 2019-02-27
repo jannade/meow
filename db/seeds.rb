@@ -38,16 +38,16 @@ puts "Interests created"
 
 puts "Creating users"
 
-ashwin = User.new(first_name: "Ashwin", last_name: "Smith", email: "ashwin@email.com", password: "12341234", company: "Grab", job_title: "Director of Marketing")
+ashwin = User.new(first_name: "Ankita", last_name: "Smith", email: "ashwin@email.com", password: "12341234", company: "Grab", job_title: "Director of Marketing")
 ashwin.save
 
-peter = User.new(first_name: "Peter", last_name: "Lee", email: "peter@email.com", password: "12341234", company: "Le Wagon", job_title: "Teaching Assistant")
+peter = User.new(first_name: "Patricia", last_name: "Lee", email: "peter@email.com", password: "12341234", company: "Le Wagon", job_title: "Teaching Assistant")
 peter.save
 
-george = User.new(first_name: "George", last_name: "Balls", email: "george@email.com", password: "12341234", company: "Heroleads", job_title: "Chief Technology Officer")
+george = User.new(first_name: "Jessica", last_name: "Ballard", email: "george@email.com", password: "12341234", company: "Heroleads", job_title: "Chief Technology Officer")
 george.save
 
-lorenzo = User.new(first_name: "Lorenzo", last_name: "Curley", email: "lorenzo@email.com", password: "12341234", company: "The World", job_title: "Chief Marketing Officer")
+lorenzo = User.new(first_name: "Laura", last_name: "Curley", email: "lorenzo@email.com", password: "12341234", company: "The World", job_title: "Chief Marketing Officer")
 lorenzo.save
 
 nancy = User.new(first_name: "Nancy", last_name: "Flores", email: "nancy@email.com", password: "12341234", company: "Google", job_title: "Chief Operating Officer")
@@ -59,7 +59,7 @@ susan.save
 joyce = User.new(first_name: "Joyce", last_name: "Allen", email: "joyce@email.com", password: "12341234", company: "Airbnb", job_title: "Financial Analyst")
 joyce.save
 
-jane = User.new(first_name: "Jane", last_name: "De Vos", email: "jane@email.com", password: "12341234", company: "Apple", job_title: "Director of Marketing")
+jane = User.new(first_name: "Sheryl", last_name: "Sandberg", email: "jane@email.com", password: "12341234", company: "Facebook", job_title: "Chief Operating Officer")
 jane.save
 
 lilian = User.new(first_name: "Lilian", last_name: "Perez", email: "lilian@email.com", password: "12341234", company: "Ernst and Young", job_title: "Chief Auditor")
@@ -94,8 +94,6 @@ aisha.save
 
 elane = User.new(first_name: "Elane", last_name: "Proctor", email: "elane@email.com", password: "12341234", company: "Procter and Gamble", job_title: "Customer Intelligence Analyst")
 elane.save
-
-
 
 puts "Users created"
 
@@ -354,10 +352,10 @@ puts "Messages created"
 
 puts "Creating goals"
 
-lorenzo_jane_goal1 = Goal.new(description: "Win the lottery every week of the year", connection: jane_lorenzo_connection)
+lorenzo_jane_goal1 = Goal.new(description: "Get a job in Product Management", connection: jane_lorenzo_connection)
 lorenzo_jane_goal1.save
 
-lorenzo_jane_goal2 = Goal.new(description: "Get jacked for the summer holidays", connection: jane_lorenzo_connection)
+lorenzo_jane_goal2 = Goal.new(description: "Improve my work-life balance", connection: jane_lorenzo_connection)
 lorenzo_jane_goal2.save
 
 lorenzo_jane_goal3 = Goal.new(description: "Ride a motorcycle like a king on wheels", connection: jane_lorenzo_connection)
@@ -373,23 +371,23 @@ puts "Goals created"
 
 puts "Creating milestones"
 
-lorenzo_jane_goal1_ms1 = Milestone.new(description: "Buy lottery tickets", goal: lorenzo_jane_goal1, is_completed: true)
+lorenzo_jane_goal1_ms1 = Milestone.new(description: "Sign up to a training course in Product Management", goal: lorenzo_jane_goal1, is_completed: true)
 lorenzo_jane_goal1_ms1.save
 
-lorenzo_jane_goal1_ms2 = Milestone.new(description: "Make a spreadsheet with historical winning numbers", goal: lorenzo_jane_goal1, is_completed: false)
+lorenzo_jane_goal1_ms2 = Milestone.new(description: "Complete the training course in Product Management", goal: lorenzo_jane_goal1, is_completed: false)
 lorenzo_jane_goal1_ms2.save
 
-lorenzo_jane_goal1_ms3 = Milestone.new(description: "Build a crazy algorithm to predict winning numbers", goal: lorenzo_jane_goal1, is_completed: false)
+lorenzo_jane_goal1_ms3 = Milestone.new(description: "Read Inspired: How to Create Products People Love", goal: lorenzo_jane_goal1, is_completed: false)
 lorenzo_jane_goal1_ms3.save
 
-george_peter_goal1_ms1 = Milestone.new(description: "Sign-up for Le Wagon Bootcamp", is_completed: true, goal: george_peter_goal1)
-george_peter_goal1_ms1.save
+lorenzo_jane_goal2_ms1 = Milestone.new(description: "Leave the office at 6pm at least 1 time per week", is_completed: true, goal: george_peter_goal1)
+lorenzo_jane_goal2_ms1.save
 
-george_peter_goal1_ms2 = Milestone.new(description: "Complete Le Wagon Bootcamp", is_completed: true, goal: george_peter_goal1)
-george_peter_goal1_ms2.save
+lorenzo_jane_goal2_ms2 = Milestone.new(description: "Commit to specific office hours on google calendar ", is_completed: true, goal: george_peter_goal1)
+lorenzo_jane_goal2_ms2.save
 
-george_peter_goal1_ms3 = Milestone.new(description: "Do 50 hours of freelancing", is_completed: true, goal: george_peter_goal1)
-george_peter_goal1_ms3.save
+lorenzo_jane_goal2_ms3 = Milestone.new(description: "Hold a meeting with my boss", is_completed: true, goal: george_peter_goal1)
+lorenzo_jane_goal2_ms3.save
 
 
 puts "Milestones created"
