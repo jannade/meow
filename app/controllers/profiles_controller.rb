@@ -75,7 +75,7 @@ class ProfilesController < ApplicationController
       end
       match_percentage = 0
       match_percentage = (matched_interest.count.to_f / current_user.interests.count.to_f) * 100
-      recommended << profile if match_percentage >= 70
+      recommended << profile if match_percentage >= 80
     end
     recommended
   end
