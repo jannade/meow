@@ -1,57 +1,46 @@
 <div class="sign-up-container">
   <div class="sign-up-form">
 
+    <h4 class="text-center"><strong>Sign up for Mentee Profile</strong></h4>
 
-<h4 class="text-center"><strong>Sign up for Mentee Profile</strong></h4>
-
-
-
-<%= simple_form_for @profile do |f| %>
-        <div class="skip-mentor">
+    <%= simple_form_for @profile do |f| %>
+      <div class="skip-mentor">
         <div class="signup-skip-button">
-          <%= link_to "I don't want to be a Mentee", mentors_path, class: "btn btn-primary" %>
+          <% if @user.profiles.present? %>
+            <%= link_to "I don't want to be a Mentee", mentors_path, class: "btn btn-primary" %>
+          <% end %>
+        </div>
+      </div>
+      <%= f.input :description,
+                  label: "Tell us why you love to be a Mentee",
+                  as: :text %>
+
+      <br>
+      <h4>Please select your preferred interests </h4>
+      <div class="both-interests">
+        <div>
+          <%= f.input :interests,
+                      label: 'Professional interests',
+                      style: "display:inline",
+                      as: :check_boxes,
+                      collection: Interest.where(category: 'professional'),
+                      input_html: { multiple: true },
+                      include_blank: false,
+                      include_hidden: false %>
+        </div>
+        <div>
+          <%= f.input :interests,
+                      label: 'Personal interests',
+                      item_wrapper_class: 'inline',
+                      as: :check_boxes,
+                      collection: Interest.where(category: 'personal'),
+                      input_html: { multiple: true },
+                      include_blank: false,
+                      include_hidden: false %>
         </div>
       </div>
 
-  <%= f.input :description,
-              label: "Tell us why you love to be a Mentee",
-              as: :text %>
-  <br>
-  <h4>Select your :-</h4>
-  <div class="both-interests">
-    <div>
-  <%= f.input :interests,
-              label: 'Professional interests',
-              style: "display:inline",
-              as: :check_boxes,
-              collection: Interest.where(category: 'professional'),
-              input_html: { multiple: true },
-              include_blank: false,
-              include_hidden: false %>
-    </div>
-    <div>
-  <%= f.input :interests,
-              label: 'Personal interests',
-              item_wrapper_class: 'inline',
-              as: :check_boxes,
-              collection: Interest.where(category: 'personal'),
-              input_html: { multiple: true },
-              include_blank: false,
-              include_hidden: false %>
-    </div>
-  </div>
-
-  <% unless current_user.company.present? && current_user.job_title.present? %>
-    <br><h5><strong>Work details</strong></h5>
-    <%= simple_fields_for @user do |f| %>
-      <%= f.input :company, label: 'Company' %>
-      <%= f.input :job_title, label: 'Job Title' %>
-      <%= f.input :photo %>
-      <%= f.input :photo_cache, as: :hidden %>
+      <%= f.button :submit, class: "btn btn-primary" %>
     <% end %>
-  <% end %>
-
-    <%= f.button :submit, class: "btn btn-primary" %>
-  <% end %>
   </div>
 </div>

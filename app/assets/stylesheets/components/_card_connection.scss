@@ -65,20 +65,20 @@ $pink: #fc407c;
   width: 70vw;
   height: 100%;
   background: $lightgrey;
-  display: flex
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 2fr 2fr 1fr;
 }
 
 .card-connection-progress > h1 {
-  margin: 10px;
-  font-size: 16px;
-  margin-left: 30px;
-  position: absolute
+  font-size: 14px;
+  grid-row: 1 / span 1;
+  grid-column: 1 / span 1;
 }
 
 .card-connection-progress .card-connection-btn {
-  position: relative;
-  top: 210px;
-  left: 460px;
+  grid-row: 4 / span 1;
+  grid-column: 3 / span 1;
 }
 
 

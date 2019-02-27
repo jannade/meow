@@ -1,4 +1,7 @@
 $lightgrey: #C4C4C4;
+$blue: #1b4e88;
+$cream: #faf0e4;
+$pink: #fc407c;
 
 .card-goal {
   min-height: 100px;
@@ -20,8 +23,7 @@ $lightgrey: #C4C4C4;
 }
 
 .card-goal .card-goal-descr {
-  padding: 16px;
-  height: 45px;
+  padding: 16px 20px 16px 20px;
 }
 
 .empty-milestones {
@@ -34,12 +36,16 @@ $lightgrey: #C4C4C4;
 .card-goal-descr {
   border-bottom: 2px solid $lightgrey;
   width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
 .card-milestones {
   width: 100%;
-  overflow: scroll;
-  max-height: 220px;
+  overflow-y: scroll;
+  max-height: 250px;
+  border-bottom: 1px solid $lightgrey;
 }
 
 .card-ms {
@@ -77,11 +83,16 @@ $lightgrey: #C4C4C4;
 
 .add-ms-btn {
   font-size: 14px;
-  width: 100%;
-  text-align: right;
-  padding-right: 16px;
+  border: none;
+  justify-content: flex-end;
+  margin-right: 25px;
+}
+
+.goal-bottom-box {
   height: 45px;
-  padding-top: 10px;
+  width: 100%;
+  display: flex;
+  flex-direction: row-reverse;
 }
 
 .new-goal-btn {
@@ -95,6 +106,20 @@ $lightgrey: #C4C4C4;
 
 .new-goal-container {
   font-size: 14px;
+}
+
+.progress {
+  width: 40%;
+  margin: 0px 12px 0px 0px;
+  height: 18px;
+}
+
+.progress-bar {
+  height: 30px;
+}
+
+.progress-bar-success {
+  background: $blue;
 }
 
 

@@ -4,8 +4,15 @@ class Profile < ApplicationRecord
   has_many :interests, through: :profile_interests
   has_many :mentees, class_name: "Connection", foreign_key: "mentor_id"
   has_many :mentors, class_name: "Connection", foreign_key: "mentee_id"
-
+  after_save :nil_to_false
   # validates :description, presence: true, length: { maximum: 140 }
+
+  def nil_to_false
+    if self.is_mentor.nil?
+      self.is_mentor = false
+      self.save
+    end
+  end
 
   def all_my_mentees
     self.mentees.map do |connection|
@@ -26,7 +33,5 @@ class Profile < ApplicationRecord
   def self.find_mentor_by_interests(first_interest, second_interest)
     Profile.joins(:interests).where(interests: { name: first_interest}).or(Profile.joins(:interests).where(interests: {name: second_interest })).where(is_mentor: true)
   end
-
-
 
 end

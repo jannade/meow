@@ -2,6 +2,10 @@ class ConnectionsController < ApplicationController
   def index
     @mentor_connections = Connection.where(mentee: current_user.mentee_profile, status: "confirmed")
     @mentee_connections = Connection.where(mentor: current_user.mentor_profile, status: "confirmed")
+
+
+
+
   end
 
   def show
@@ -44,4 +48,6 @@ class ConnectionsController < ApplicationController
   def connection_params
     params.require(:connection).permit(:status)
   end
+
+
 end

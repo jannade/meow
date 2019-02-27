@@ -6,6 +6,8 @@ class ProfilesController < ApplicationController
     else
       current_user ? @profiles = recommended_profiles : @profiles = Profile.where(is_mentor: true)
     end
+    @pro_interests = Interest.where(category: 'professional')
+    @personal_interests = Interest.where(category: 'personal')
   end
 
   def new
@@ -26,7 +28,6 @@ class ProfilesController < ApplicationController
       @user.photo = params[:user][:photo]
       @user.update(user_params)
     end
-
     is_mentor_flow = params[:profile][:is_mentor]
 
     onboard_redirect = is_mentor_flow ? new_mentee_path : mentors_path
@@ -108,8 +109,6 @@ class ProfilesController < ApplicationController
     end
   end
 end
-
-
 
 
 
