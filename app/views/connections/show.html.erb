@@ -6,10 +6,7 @@
       <div class="card-goal-descr">
         <h2><%= goal.description %></h2>
         <% if goal.milestones.count > 0 %>
-         <div class="progress">
-            <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="<%= goal.perc_completed %>" aria-valuemin="0" aria-valuemax="100" style="width: <%= goal.perc_completed %>%">
-            </div>
-          </div>
+          <%= render "progressbar", goal:goal %>
         <% end %>
       </div>
       <div class="card-milestones goal-<%= goal.id%>">
