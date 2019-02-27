@@ -1,18 +1,39 @@
 <div class="container narrow-container">
   <h1>Your goals with <%= @mentor.first_name %></h1>
 
+  <div class="card-new-goal">
+    <button type="button" class="btn btn-default" data-toggle="modal" data-target="#add_goal">Add new goal</button>
+  </div>
+
+  <div class="modal fade" id="add_goal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">Describe your new goal</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <%= simple_form_for([@connection, @goal]) do |f| %>
+            <%=f.input :description, label: false %>
+            <%=f.submit "Add" %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <% @goals.each do |goal| %>
     <div class="card-goal">
       <div class="card-goal-descr">
         <h2><%= goal.description %></h2>
-        <% if goal.milestones.count > 0 %>
-          <%= render "progressbar", goal:goal %>
-        <% end %>
+        <%= render "progressbar", goal:goal %>
       </div>
       <div class="card-milestones goal-<%= goal.id%>">
         <% if goal.milestones.empty? %>
           <div class="empty-milestones">
-            <p>Oops! Looks like you don't have any milestones yet. Milestones can help you achieve your goals step by step.</br> Go ahead and add some below</p>
+            <p>Oops! Looks like you don't have any milestones yet. Milestones can help you achieve your goals step by step.</br> Add some below to start your goal path.</p>
           </div>
         <% end %>
         <% goal.milestones.each do |milestone| %>
@@ -40,7 +61,7 @@
         <% end %>
       </div>
       <div class="goal-bottom-box">
-        <button type="button" class="add-ms-btn" data-toggle="modal" data-target="#milestone-modal-<%=goal.id  %>">Add a milestone</button>
+        <button type="button" class="add-ms-btn" data-toggle="modal" data-target="#milestone-modal-<%=goal.id  %>">Add milestone</button>
       </div>
 
       <div class="modal fade" id="milestone-modal-<%=goal.id  %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
@@ -63,18 +84,8 @@
       </div>
     </div>
   <% end %>
+</div>s
 
-  <div class="card-new-goal">
-    <div class="new-goal-btn btn btn-default">Add a new goal</div>
-    <div class="card-goal hidden">
-      <div class="new-goal-container">
-        <%= simple_form_for([@connection, @goal]) do |f| %>
-          <%=f.input :description, label: "Describe your new goal", class:"goal-input"%>
-          <%=f.submit "Submit", class:"add-goal-btn" %>
-        <% end %>
-      </div>
-    </div>
-  </div>
-</div>
+
 
 

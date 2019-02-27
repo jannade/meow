@@ -13,11 +13,6 @@ square.classList.toggle('fa-check-square');
 square.classList.toggle('fas');
 
 progressBar = document.querySelector(".progress-<%=@goal.id%> .progress-bar");
-// get the new percentage by @goal
 newPerc = "<%= @goal.perc_completed %>%";
-// update the style width of the 'progressBar'
 progressBar.style.width = newPerc;
 
-// progressBarUpdate = '<%# j render "connections/_progressbar" %>';
-
-console.log(progressBar);
