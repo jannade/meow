@@ -358,9 +358,6 @@ lorenzo_jane_goal1.save
 lorenzo_jane_goal2 = Goal.new(description: "Improve my work-life balance", connection: jane_lorenzo_connection)
 lorenzo_jane_goal2.save
 
-lorenzo_jane_goal3 = Goal.new(description: "Ride a motorcycle like a king on wheels", connection: jane_lorenzo_connection)
-lorenzo_jane_goal3.save
-
 george_peter_goal1 = Goal.new(description: "Win the lottery", connection: george_peter_connection)
 george_peter_goal1.save
 
@@ -380,13 +377,13 @@ lorenzo_jane_goal1_ms2.save
 lorenzo_jane_goal1_ms3 = Milestone.new(description: "Read Inspired: How to Create Products People Love", goal: lorenzo_jane_goal1, is_completed: false)
 lorenzo_jane_goal1_ms3.save
 
-lorenzo_jane_goal2_ms1 = Milestone.new(description: "Leave the office at 6pm at least 1 time per week", is_completed: true, goal: george_peter_goal1)
+lorenzo_jane_goal2_ms1 = Milestone.new(description: "Leave the office at 6pm at least 1 time per week", is_completed: true, goal: lorenzo_jane_goal2)
 lorenzo_jane_goal2_ms1.save
 
-lorenzo_jane_goal2_ms2 = Milestone.new(description: "Commit to specific office hours on google calendar ", is_completed: true, goal: george_peter_goal1)
+lorenzo_jane_goal2_ms2 = Milestone.new(description: "Commit to specific office hours on google calendar ", is_completed: true, goal: lorenzo_jane_goal2)
 lorenzo_jane_goal2_ms2.save
 
-lorenzo_jane_goal2_ms3 = Milestone.new(description: "Hold a meeting with my boss", is_completed: true, goal: george_peter_goal1)
+lorenzo_jane_goal2_ms3 = Milestone.new(description: "Hold a meeting with my boss", is_completed: true, goal: lorenzo_jane_goal2)
 lorenzo_jane_goal2_ms3.save
 
 
