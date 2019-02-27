@@ -9,3 +9,6 @@ newMilestone = '<%= j render "milestones/newmilestone", milestone: @milestone %>
 
 milestoneList.insertAdjacentHTML('afterbegin', newMilestone);
 
+noMsMsg = document.querySelector('.empty-milestones');
+noMsMsg.remove();
+
