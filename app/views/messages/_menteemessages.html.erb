@@ -26,7 +26,7 @@
       <div id="connection-<%=connection.id%>" class="tab-pane">
     <% end %>
 
-  <div class="new-mentor-request">
+  <div class="new-mentor-request-<%=connection.id%>">
     <% if connection.status == "Pending" %>
       <div class="flash flash-success">
            <span> You have a new connection request from <%= connection.mentee.user.first_name %></span>
@@ -56,7 +56,7 @@
       </div>
       <div class="new-message-box">
         <%= simple_form_for([connection, @message], remote: true) do |f| %>
-          <%= f.input :content, label: false, placeholder: "Type your message here", as: :text, autofocus: true, input_html: {style: 'width: 100%; font-size: 10px', rows: 4, class: 'response-project'} %>
+          <%= f.input :content, label: false, placeholder: "Type your message here", as: :text, autofocus: true, input_html: {style: 'width: 100%; font-size: 15px', rows: 4, class: 'response-project'} %>
           <%#= f.input :is_read, as: :hidden, value: "go" %>
           <%#= f.input :connection, as: :hidden %>
           <%= f.submit "Reply", class: "new-message-btn" %>
