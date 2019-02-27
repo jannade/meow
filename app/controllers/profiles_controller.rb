@@ -5,6 +5,7 @@ class ProfilesController < ApplicationController
       @profiles = find_mentor_by_interests((params[:professional_interests]), (params[:personal_interests]))
     else
       current_user ? @profiles = recommended_profiles : @profiles = Profile.where(is_mentor: true)
+      # raise
     end
     @pro_interests = Interest.where(category: 'professional')
     @personal_interests = Interest.where(category: 'personal')
@@ -74,7 +75,7 @@ class ProfilesController < ApplicationController
       end
       match_percentage = 0
       match_percentage = (matched_interest.count.to_f / current_user.interests.count.to_f) * 100
-      recommended << profile if match_percentage >= 70
+      recommended << profile if match_percentage >= 80
     end
     recommended
   end
