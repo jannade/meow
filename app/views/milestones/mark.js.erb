@@ -1,6 +1,3 @@
-
-console.log('mark')
-
 doneBtn = document.querySelector(".card-<%=@milestone.id%> .markBtn");
 
 <% if @milestone.is_completed %>
@@ -15,16 +12,7 @@ square.classList.toggle('far');
 square.classList.toggle('fa-check-square');
 square.classList.toggle('fas');
 
-
-
-
-// acceptBtn = document.querySelector(".accept-request");
-// flashBar = document.querySelector(".flash-success");
-// acceptBtn.remove();
-// flashBar.remove()
-
-// acceptBox = document.querySelector(".new-mentor-request");
-// acceptedMsg = '<%= j render "messages/connection_accept" %>';
-
-// acceptBox.insertAdjacentHTML('afterbegin', acceptedMsg);
+progressBar = document.querySelector(".progress-<%=@goal.id%> .progress-bar");
+newPerc = "<%= @goal.perc_completed %>%";
+progressBar.style.width = newPerc;
 

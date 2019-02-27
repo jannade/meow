@@ -26,9 +26,11 @@ class MilestonesController < ApplicationController
   end
 
   def mark
-    @milestone = Milestone.find(params[:format])
+    @milestone = Milestone.find(params[:id])
     @milestone.is_completed = !@milestone.is_completed
     @milestone.save
+
+    @goal = @milestone.goal
   end
 
   private
@@ -36,5 +38,4 @@ class MilestonesController < ApplicationController
   def milestone_params
     params.require(:milestone).permit(:description, :is_completed)
   end
-
 end
