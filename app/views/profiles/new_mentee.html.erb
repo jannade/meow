@@ -1,7 +1,7 @@
 <div class="sign-up-container">
   <div class="sign-up-form">
 
-    <h4 class="text-center"><strong>Sign up for Mentee Profile</strong></h4>
+    <h3 class="text-center"><strong>Sign up for Mentee Profile</strong></h3>
 
     <%= simple_form_for @profile do |f| %>
       <div class="skip-mentor">
@@ -11,14 +11,16 @@
           <% end %>
         </div>
       </div>
+      <div class="signup-form-desc">
       <%= f.input :description,
                   label: "Tell us why you love to be a Mentee",
                   as: :text %>
+      </div>
 
-      <br>
-      <h4>Please select your preferred interests </h4>
+      <hr>
+      <h5><strong>Please select your preferred interests</strong></h5>
       <div class="both-interests">
-        <div>
+        <div class="interest-item">
           <%= f.input :interests,
                       label: 'Professional interests',
                       style: "display:inline",
@@ -28,7 +30,7 @@
                       include_blank: false,
                       include_hidden: false %>
         </div>
-        <div>
+        <div class="interest-item">
           <%= f.input :interests,
                       label: 'Personal interests',
                       item_wrapper_class: 'inline',
@@ -39,8 +41,11 @@
                       include_hidden: false %>
         </div>
       </div>
+      <hr>
 
+      <div style="text-align:center;">
       <%= f.button :submit, class: "btn btn-primary" %>
+      </div>
     <% end %>
   </div>
 </div>

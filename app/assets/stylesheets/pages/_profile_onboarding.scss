@@ -1,16 +1,29 @@
 .both-interests {
   display: flex;
   justify-content: space-between;
+  font-size: x-large;
+  .interest-item {
+    border: 2px solid black;
+    padding: 25px 60px;
+    box-shadow: 10px 10px 8px #888888;
+  }
+  .form-group label {
+    font-size: 15px;
+    font-weight: lighter;
+  }
 }
 
 .sign-up-container {
   display: flex;
   justify-content: center;
   legend {
-    font-size: 23px;
+    font-size: 15px;
   }
   label {
   font-size: 12px;
+  }
+  .signup-form-desc label {
+    font-size: 17px;
   }
 }
 
@@ -25,3 +38,6 @@
   margin: 35px;
 }
 
+// .profilebutton {
+//   padding-left: 290px;
+// }
