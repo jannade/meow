@@ -10,13 +10,15 @@
         </div>
       </div>
 
+      <div class="signup-form-desc">
       <%= f.input :description,
                   label: "Tell us why you love to be a Mentor",
                   as: :text %>
-                  <br>
-      <h4>Please select your preferred interests </h4>
+      </div>
+      <hr>
+      <h5><strong>Please select your preferred interests</strong></h5>
       <div class="both-interests">
-        <div>
+        <div class="interest-item">
           <%= f.input :interests,
                       label: 'Professional interests',
                       style: "display:inline",
@@ -26,7 +28,7 @@
                       include_blank: false,
                       include_hidden: false %>
         </div>
-        <div>
+        <div class="interest-item">
           <%= f.input :interests,
                       label: 'Personal interests',
                       item_wrapper_class: 'inline',
@@ -37,9 +39,12 @@
                       include_hidden: false %>
         </div>
       </div>
+      <hr>
 
       <%= f.input :is_mentor, :as => :hidden, :input_html => { :value => true } %>
+      <div style="text-align:center;">
       <%= f.button :submit, class: "btn btn-primary" %>
+      </div>
     <% end %>
   </div>
 </div>
