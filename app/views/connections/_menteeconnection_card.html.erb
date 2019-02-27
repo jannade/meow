@@ -12,14 +12,18 @@
     </div>
   <% end %>
     <div class="card-connection-progress">
-      <h2>Goal progress</h2>
+      <!-- <h2>Goal progress</h2> -->
       <div class="progress-card">
-        <%= connection.goals.count %>
+
       </div>
       <div class="progress-card">
         <%#connection.goals.each do |goal| %>
-      </div>
-      <p class="card-connection-btn"><%= link_to "See Goal",connection_path(connection.id) %></p>
+      <% if connection.goals.present? %>
+        <p class="card-connection-btn"><%= link_to "See all Goals",connection_path(connection.id) %></p>
+      <% else %>
+        <p class="card-connection-btn"><%= link_to "Start setting Goals",connection_path(connection.id) %></p>
+      <% end %>
+       </div>
     </div>
   </div>
 <% end %>
