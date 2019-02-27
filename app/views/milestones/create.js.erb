@@ -12,3 +12,6 @@ milestoneList.insertAdjacentHTML('afterbegin', newMilestone);
 noMsMsg = document.querySelector('.empty-milestones');
 noMsMsg.remove();
 
+progressBar = document.querySelector('.hide-prg-bar progress-<%=@milestone.goal.id%>');
+progressBar.remove('hidden');
+
