@@ -130,10 +130,10 @@ tiffany_mentor_profile.save
 madeline_mentor_profile = Profile.new(user: madeline, is_mentor: true, description: "I have 8 years of experience in the management field and currently working as the head of supply chain development of Volkswagen. I have passion in helping other women achieve success in whatever they do either personally or professionally." )
 madeline_mentor_profile.save
 
-julia_mentor_profile = Profile.new(user: julia, is_mentor: true, description: "I have 8 years of experience in the management field and currently working as the head of supply chain development of Volkswagen. I have passion in helping other women achieve success in whatever they do either personally or professionally." )
+julia_mentor_profile = Profile.new(user: julia, is_mentor: true, description: "I have 7 years of experience in the animation field and currently working as the lead animator of Disney. I have passion in helping other women achieve success in whatever they do either personally or professionally." )
 julia_mentor_profile.save
 
-alice_mentor_profile = Profile.new(user: alice, is_mentor: true, description: "I have 7 years of experience in the animation field and currently working as the lead animator of Disney. I have passion in helping other women achieve success in whatever they do either personally or professionally." )
+alice_mentor_profile = Profile.new(user: alice, is_mentor: true, description: "I have 7 years of experience in the education field and currently working as economics professor of University of Paris. I have passion in helping other women achieve success in whatever they do either personally or professionally." )
 alice_mentor_profile.save
 
 minji_mentor_profile = Profile.new(user: minji, is_mentor: true, description: "I have 12 years of experience in the IT field and currently working as the senior software engineer of Samsung. I have passion in helping other women achieve success in whatever they do either personally or professionally." )
