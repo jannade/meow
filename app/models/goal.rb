@@ -11,4 +11,8 @@ class Goal < ApplicationRecord
       0
     end
   end
+
+  def completed?
+    self.perc_completed == 100
+  end
 end
