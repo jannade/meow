@@ -1,6 +1,14 @@
+$lightgrey: #F6F6F6;
+
+
 .new-connection-btn {
   padding: 10px 20px;
   border-radius: 50px;
   opacity: 0.9;
-  border: 1px solid black;
+  margin-top: 20px;
+
+}
+
+.new-connection-btn:hover {
+  background: $lightgrey;
 }

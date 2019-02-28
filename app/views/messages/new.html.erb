@@ -1,12 +1,19 @@
 <div class="container narrow-container body-container">
-  <h1>Connect with <%= @mentor.user.first_name %> </h1>
-  <p class="request-to-connect" style="margin-bottom: 30px;
-  margin-top: 20px;
-  font-size: 20px;"">Send a little message with your request to connect. In this message, you can tell a bit more about yourself, why you want to connect and what you hope to gain from your mentorship.
-    </p>
+  <h1 class="header_pink_line">Connect with <span style="color: #fc407c"><%= @mentor.user.first_name %></span></h1>
+  <p class="request-to-connect"> Send a little message with your request to connect. In this message, you can tell a bit more about yourself, why you want to connect and what you hope to gain from your mentorship.</p>
   <%= simple_form_for(@message) do |f| %>
     <%= f.input :content, label: false, placeholder: "Type your message here", as: :text, autofocus: true, input_html: {style: 'width: 100%; font-size: 20px', rows: 4 } %>
     <%= f.submit "Request to connect", class: "new-connection-btn" %>
   <% end %>
+
+  <div class="new-connection-img">
+    <img src="https://static1.squarespace.com/static/5864075746c3c414e5f54b7f/t/5b24287b8a922d85e21188aa/1529096325522/mentors-v2.jpg?format=2500w">
+  </div>
+
+
+
+
 </div>
+
+
 
