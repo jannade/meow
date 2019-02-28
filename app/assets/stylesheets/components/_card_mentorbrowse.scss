@@ -8,21 +8,20 @@ $lightgrey: #F6F6F6;
   box-shadow: 0 0 15px rgba(0,0,0,1);
   margin-bottom: 40px;
   padding: 10px;
-  height: 320px;
+  height: 360px;
 }
 
 .card-browse h2 {
-  font-size: 16px;
+  font-size: 20px;
   font-weight: bold;
   margin-top: 20px;
   border-bottom: 2px solid $pink;
 }
 
 .card-browse h4 {
-  font-size: 15px;
+  font-size: 16px;
   opacity: 0.9;
 }
-
 
 .card-browse p {
   font-size: 12px;
@@ -48,13 +47,22 @@ $lightgrey: #F6F6F6;
 }
 
 .card-browse-btm {
-  margin: 10px;
-  margin-top: 10px;
-  background: $lightgrey;
+  margin: 0px 10px 10px 10px;
   padding: 12px;
-  height: 100px;
+  height: 150px;
   overflow: scroll;
+  display: flex;
+  flex-wrap: wrap;
 }
+
+.interest-tag {
+  border-radius: 50px;
+  border: 1px solid #4A4A4A;
+  padding: 8px 24px;
+  border-radius: 50px;
+  margin: 3px;
+}
+
 .browse-connect-btn {
   display: flex;
   justify-content: center;
@@ -62,7 +70,7 @@ $lightgrey: #F6F6F6;
 }
 
 .header-browse {
-  margin: 50px 0px;
+  margin: 55px 0px;
   text-align: center;
 }
 

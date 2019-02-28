@@ -5,6 +5,7 @@ $lightgrey: #F8F8F8;
 
 .search-bar-container {
   display: flex;
+  justify-content: space-between;
   padding: 10px;
   color: white;
   font-style: bold;
@@ -19,6 +20,7 @@ $lightgrey: #F8F8F8;
 
 .search-btn {
   color: black;
+  border-radius: 50px;
 }
 
 .filter-box {

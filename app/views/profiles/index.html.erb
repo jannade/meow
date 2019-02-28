@@ -14,7 +14,7 @@
         <% @personal_interests.each do |personalinterest|  %>
           <% personal_interests << personalinterest.name  %>
         <%end  %>
-        <%= select_tag :personal_interests, options_for_select(personal_interests.push("All"), :selected=>params[:personal_interests]), {prompt: "Select personal interest"}%>
+        <%= select_tag :personal_interests, options_for_select(personal_interests.push("All"), :selected=>params[:personal_interests]), {prompt: "Select personal interest"} %>
         <%= submit_tag 'Search', class:"search-btn"%>
         <% end %>
       </div>
@@ -44,11 +44,15 @@
                   </div>
                 </div>
                 <div class="card-browse-btm">
-                  <p><%= profile.description %></p>
+                  <% @pro_interests.each do |interest| %>
+                    <div class="interest-tag">
+                      <p><%= interest.name %></p>
+                    </div>
+                  <% end %>
                 </div>
                 <div class="browse-connect-btn">
                   <p>
-                    <%= link_to "View profile", profile_path(profile.id), class:"btn btn-default btn-pink-border" %>
+                    <%= link_to "View profile", profile_path(profile.id), class:"btn" %>
                   </p>
                 </div>
               </div>
