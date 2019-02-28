@@ -7,7 +7,9 @@ const showNewGoal = () => {
 };
 
 const newGoalBtn = document.querySelector('.new-goal-btn');
-newGoalBtn.addEventListener('click', showNewGoal);
+if (newGoalBtn != null){
+  newGoalBtn.addEventListener('click', showNewGoal);
+}
 
 export { showNewGoal };
 
