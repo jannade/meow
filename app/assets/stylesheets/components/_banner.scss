@@ -1,0 +1,32 @@
+.banner {
+  background-size: cover;
+  background-position: center;
+  padding: 150px 0;
+  height: 35vw;
+}
+
+.banner-container {
+  text-align: center;
+  margin-top: -110px;
+}
+
+.banner h1 {
+  margin: 0;
+  color: white !important;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  font-size: 75px !important;
+  font-weight: bold;
+}
+
+.banner p {
+  font-size: 20px;
+  color: white;
+  opacity: .7;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
+
+.btn-homepage {
+  padding: 10px 20px;
+  border-radius: 50px;
+  opacity: 0.9;
+}

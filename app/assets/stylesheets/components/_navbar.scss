@@ -44,12 +44,14 @@ $pink: #fc407c;
 
 /* Navbar link */
 .navbar-wagon-link {
-  color: $blue;
+  color: black;
   font-size: 15px;
+  text-transform: uppercase;
 }
 .navbar-wagon-link:hover {
   color: $pink;
   text-decoration: none;
+  text-transform: uppercase;
 }
 
 /* Dropdown menu */
@@ -57,14 +59,16 @@ $pink: #fc407c;
   margin-top: 15px;
   box-shadow: 1px 1px 4px #E6E6E6;
   border-color: #E6E6E6;
+  text-transform: uppercase;
 }
 .navbar-wagon-dropdown-menu li > a {
   transition: color 0.3s ease;
   font-weight: lighter !important;
-  color: $blue !important;
+  color: black !important;
   font-size: 15px !important;
   line-height: 22px !important;
   padding: 10px 20px;
+  text-transform: uppercase;
 }
 .navbar-wagon-dropdown-menu li > a:hover {
   background: transparent !important;

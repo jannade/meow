@@ -4,7 +4,7 @@ flashBar = document.querySelector(".flash-success");
 acceptBtn.remove();
 flashBar.remove()
 
-acceptBox = document.querySelector(".new-mentor-request");
+acceptBox = document.querySelector(".new-mentor-request-<%=@connection.id%>");
 acceptedMsg = '<%= j render "messages/connection_accept" %>';
 
 acceptBox.insertAdjacentHTML('afterbegin', acceptedMsg);

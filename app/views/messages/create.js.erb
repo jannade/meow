@@ -4,6 +4,9 @@ newMessage = '<%= j render "messages/show", message: @message %>';
 console.log(newMessage);
 
 messageBox.insertAdjacentHTML('beforeend', newMessage);
+document.querySelectorAll("new-message-box").reset();
+
+console.log(hello)
 
 // function refreshForm(innerHTML) {
 //   const newReviewForm = document.getElementById('new_review');
