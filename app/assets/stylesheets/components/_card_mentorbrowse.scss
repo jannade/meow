@@ -11,6 +11,7 @@ $lightgrey: #F6F6F6;
   height: 360px;
   max-width: 430px;
   border-radius: 3px;
+  transition: all 500ms ease-in;
 }
 
 .card-browse a {
@@ -18,8 +19,21 @@ $lightgrey: #F6F6F6;
 }
 
 .card-browse-link:hover {
-    text-decoration: none;
+  text-decoration: none;
+  .card-browse {
+    box-shadow: 0px 0px 15px #000000;
+    z-index: 2;
+    -webkit-transition: all 200ms ease-in-out;
+    -webkit-transform: scale(1.05);
+    -ms-transition: all 200ms ease-in-out;
+    -ms-transform: scale(1.05);
+    -moz-transition: all 200ms ease-in-out;
+    -moz-transform: scale(1.05);
+    transition: all 200ms ease-in-out;
+    transform: scale(1.05);
   }
+}
+
 .card-browse-link:active {
     text-decoration: none;
   }
