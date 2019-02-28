@@ -3,6 +3,17 @@ $red: #8c0714;
 $lightgrey: #F8F8F8;
 $pink: #fc407c;
 
+#goal-container {
+  display: flex;
+}
+
+.circle-goal {
+  position: relative;
+  width: 300px;
+  justify-content:space-around;
+  padding-left: 30px;
+  margin-top: 30px;
+}
 
 .card-connection {
   overflow: hidden;
@@ -62,7 +73,7 @@ $pink: #fc407c;
 }
 
 .card-connection-progress {
-  width: 70vw;
+  width: 100vw;
   height: 100%;
   background: $lightgrey;
   white-space:nowrap;
@@ -85,10 +96,13 @@ $pink: #fc407c;
   list-style-type: none;
 }
 
-.card-connection-progress .card-connection-btn {
-  grid-row: 4 / span 1;
-  grid-column: 3 / span 1;
-  border-radius: 50px;
+.btn-goal {
+  border: 2px solid $lightgrey;
+  border-radius: 5px;
+  background-color: $pink;
+  color: white;
+  margin-left: 30px;
+  margin-top: 30px;
 }
 
 .progress-circle {

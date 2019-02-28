@@ -11,31 +11,41 @@
       </div>
     </div>
   <% end  %>
-    <div class="card-connection-progress">
-      <!-- <h1>Goal progress</h1> -->
-      <div class="progress-card">
+  <div class="scrolling-container">
+      <div class="card-connection-progress">
+        <% if connection.goals.present? %>
+          <div id="goal-container">
+            <% connection.goals.each do |goal| %>
+              <div class="circle-goal">
+                  <% if goal.perc_completed < 50 %>
+                    <p><%= goal.description %></p>
+                    <div class="progress-circle p<%= goal.perc_completed.to_i %>">
+                      <span><%= goal.perc_completed.to_i %>%</span>
+                      <div class="left-half-clipper">
+                    <div class="first50-bar"></div>
+                    <div class="value-bar"></div>
+                      </div>
+                    </div>
+                  <% else  %>
+                    <p><%= goal.description %></p>
+                    <div class="progress-circle over50 p<%= goal.perc_completed.to_i %>">
+                      <span><%= goal.perc_completed.to_i %>%</span>
+                      <div class="left-half-clipper">
+                    <div class="first50-bar"></div>
+                    <div class="value-bar"></div>
+                      </div>
+                    </div>
+                  <% end  %>
+                </div>
 
-      <% if connection.goals.present? %>
-        <p class="card-connection-btn"><%= link_to "See all Goals",connection_path(connection.id) %></p>
-          <% connection.goals.each do |goal| %>
-            <li><%= goal.description %></li>
-              <div class="progress progress-<%= goal.id %>" >
-                <div class="progress-bar progress-bar-success" role="progressbar" style="width: <%= goal.perc_completed %>%">
-                </div>
-              </div>
-            <% else %>
-              <div class="progress progress-<%= goal.id %> hidden" >
-                <div class="progress-bar progress-bar-success" role="progressbar" style="width: <%= goal.perc_completed %>%">
-                </div>
-              </div>
-          <% end %>
-      <% else %>
-        <p class="card-connection-btn"><%= link_to "Start setting Goals",connection_path(connection.id) %></p>
-      <% end %>
+            <% end %>
+          </div>
+          <%= link_to 'See all goals', connection_path(connection.id), class: 'btn btn-goal'%>
+        <% else %>
+          <%= link_to 'Start setting Goals!', connection_path(connection.id), class: 'btn btn-goal'%>
+        <% end %>
+        </div>
       </div>
     </div>
-  </div>
-<% end %>
-
-
+  <% end %>
 
