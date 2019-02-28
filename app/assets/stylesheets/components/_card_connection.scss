@@ -65,6 +65,14 @@ $pink: #fc407c;
   width: 70vw;
   height: 100%;
   background: $lightgrey;
+  white-space:nowrap;
+}
+
+.scrolling-container {
+  width: 70vw;
+  height: 100%;
+  overflow-x: scroll;
+  overflow-y: hidden;
 }
 
 .card-connection-progress > h1 {
@@ -581,5 +589,6 @@ $pink: #fc407c;
 .progress-circle.p100 .value-bar {
   transform: rotate(360deg);
 }
+
 
 
