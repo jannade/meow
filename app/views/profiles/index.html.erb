@@ -1,6 +1,6 @@
 <div class="container">
   <div class="body-container">
-    <h1>Super talenter <span style="color: #fc407c">me</span>ntors</h1>
+    <h1>Super talented <span style="color: #fc407c">me</span>ntors</h1>
 
     <div class="search-bar-container">
       <div class="search-bar">
@@ -9,12 +9,12 @@
         <% @pro_interests.each do |professionalinterest|  %>
           <% professional_interests << professionalinterest.name  %>
         <%end  %>
-        <%= select_tag :professional_interests, options_for_select(professional_interests.push("All"), :selected=>params[:professional_interests]), {prompt: "Select professional interest"} %>
+        <%= select_tag :professional_interests, options_for_select(professional_interests.push("All"), :selected=>params[:professional_interests]), {prompt: "professional interest", class: 'interest_select'} %>
         <% personal_interests = [] %>
         <% @personal_interests.each do |personalinterest|  %>
           <% personal_interests << personalinterest.name  %>
         <%end  %>
-        <%= select_tag :personal_interests, options_for_select(personal_interests.push("All"), :selected=>params[:personal_interests]), {prompt: "Select personal interest"} %>
+        <%= select_tag :personal_interests, options_for_select(personal_interests.push("All"), :selected=>params[:personal_interests]), {prompt: " personal interest", class: 'interest_select'} %>
         <%= submit_tag 'Search', class:"search-btn"%>
         <% end %>
       </div>
@@ -25,7 +25,7 @@
         <h2>Filtered Profiles</h2>
       <% elsif @current_user.present? %>
         <h2>Recommended Profiles</h2>
-        <p>Yay! We've found mentors who share common interests with you. Start browsing below </p>
+        <p>It’s time to kick it up a gear. We've found mentors who share common interests with you. Start a conversation today. </p>
       <% else %>
         <h2>All Profiles</h2>
       <% end %>
@@ -52,7 +52,7 @@
                 </div>
                 <div class="browse-connect-btn">
                   <p>
-                    <%= link_to "View profile", profile_path(profile.id), class:"btn" %>
+                    <%= link_to "View profile", profile_path(profile.id), class:"btn browse-connect-btn" %>
                   </p>
                 </div>
               </div>

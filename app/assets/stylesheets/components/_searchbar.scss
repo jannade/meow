@@ -16,16 +16,25 @@ $lightgrey: #F8F8F8;
 .search-bar {
   margin-left: 40px;
   color: black;
+  display: flex;
 }
 
 .search-btn {
   color: black;
   border-radius: 50px;
+  opacity: 0.7;
 }
 
 .filter-box {
   margin-left: 10px;
   margin-bottom: 0;
+}
+
+.interest_select {
+  border: none;
+  background: none;
+  color: black;
+  opacity: 0.7;
 }
 
 
