@@ -4,8 +4,6 @@ $lightgrey: #F8F8F8;
 
 
 .search-bar-container {
-  display: flex;
-  justify-content: space-between;
   padding: 10px;
   color: white;
   font-style: bold;
@@ -14,15 +12,16 @@ $lightgrey: #F8F8F8;
 }
 
 .search-bar {
-  margin-left: 40px;
   color: black;
   display: flex;
+  width: 100%
 }
 
 .search-btn {
   color: black;
   border-radius: 50px;
-  opacity: 0.7;
+  opacity: 0.5;
+  margin: 0px 20px;
 }
 
 .filter-box {
@@ -34,7 +33,14 @@ $lightgrey: #F8F8F8;
   border: none;
   background: none;
   color: black;
-  opacity: 0.7;
+  opacity: 0.5;
+  margin: 0px 20px;
+}
+
+.search_form_box {
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
 
