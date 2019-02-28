@@ -40,7 +40,7 @@
 
               <div class="card-browse">
                 <div class="card-browse-top">
-                  <img src='https://cdn.lynda.com/authors/12077467_200x200_thumb.jpg' class="card-browse-user"/>
+                  <%= cl_image_tag(profile.user.photo, :cloud_name => 'dcdffiepx', height: 300, width: 400, crop: :fill)%>
                   <div class="card-browse-infos">
                     <h2><%= profile.user.first_name %> <%= profile.user.last_name %></h2>
                     <h4><%= profile.user.job_title %> at <%= profile.user.company %></h4>
