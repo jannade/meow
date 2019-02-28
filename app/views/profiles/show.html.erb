@@ -20,7 +20,9 @@
 
     <div class="card-mentor card-mentor-profile-body">
       <div class="card-mentor-header">
-        <h4>About me</h4>
+        <div class="width-about">
+          <h4>About me</h4>
+        </div>
       </div>
       <div class="card-mentor-description">
         <p><%= @profile.description %></p>
@@ -30,7 +32,9 @@
       <div class="card-mentor-all-interests">
         <div class="interest">
           <div class="card-mentor-header">
-            <h4>Professional Interests</h4>
+            <div class="width-pro">
+              <h4>Professional Interests</h4>
+            </div>
           </div>
           <div class="interest-box">
             <% @profile_interests.each do |profile_i| %>
@@ -44,7 +48,9 @@
         </div>
         <div class="interest">
           <div class="card-mentor-header">
-            <h4>Personal Interests</h4>
+            <div class="width-per">
+              <h4>Personal Interests</h4>
+            </div>
           </div>
           <div class="interest-box">
             <% @profile_interests.each do |profile_i| %>
