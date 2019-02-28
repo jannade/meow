@@ -1,19 +1,15 @@
 $lightgrey: #F6F6F6;
 $pink: #fc407c;
 
-.profile-full-container {
-  width: 60vw;
-  margin: auto;
-}
 .card-mentor-profile {
   overflow: hidden;
-  background: linear-gradient(to bottom, #1b4e88 50%, white 50% );
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  background: linear-gradient(to bottom, black 50%, white 50% );
+  box-shadow: 0 0 15px rgba(0,0,0,1);
   display: flex;
   padding: 20px;
   position: relative;
-  border-radius: 5px 5px 0px 0px;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
+  height: 300px;
 }
 
 .card-mentor h2 {
@@ -23,9 +19,8 @@ $pink: #fc407c;
 }
 
 .card-mentor p {
-  font-size: 14px;
-  opacity: .7;
-  margin: 0;
+  font-size: 20px;
+  margin: 0px 0px 10px 0px;
 }
 
 .card-mentor .card-mentor-infos {
@@ -38,11 +33,17 @@ $pink: #fc407c;
 
 .card-mentor-info {
   text-align: center;
+  margin-top: 30px;
+  margin-left: 40px;
+  p {
+    font-size: 23px;
+  }
 }
 
 .card-mentor-info h3 {
   border-bottom: 3px solid $pink;
   margin-top: 120px;
+  font-size: 40px;
 }
 
 .card-mentor-infos .card-mentor-user {
@@ -54,8 +55,8 @@ $pink: #fc407c;
 
 .card-mentor-img {
   border-radius: 50%;
-  height: 200px;
-  width: 200px;
+  height: 250px;
+  width: 250px;
   margin-right: 20px;
 }
 
@@ -66,15 +67,15 @@ $pink: #fc407c;
 }
 
 .card-mentor-header h4 {
-  font-size: 17px;
-  margin-left: 10px
+  font-size: 25px;
+  margin-left: 10px;
+  font-weight: bold;
 }
 
 .card-mentor-description {
-  background: $lightgrey;
+  background: white;
   margin: 10px;
   max-height: 200px;
-  padding: 20px;
   font-size: 14px;
   border-radius: 5px;
   overflow: scroll;
@@ -85,17 +86,17 @@ $pink: #fc407c;
   flex-direction: column;
   overflow: hidden;
   background: white;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  box-shadow: 0 0 15px rgba(0,0,0,1);
   display: flex;
   padding: 20px;
   position: relative;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
 }
 
 .card-mentor-all-interests {
   display: flex;
   justify-content: space-between;
-  background: $lightgrey;
+  background: white;
   height: 100px;
   font-size: 10px;
   height: 100%;
@@ -103,8 +104,9 @@ $pink: #fc407c;
   .interest {
     width:48%;
     background: white;
-    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    box-shadow: 0 0 15px rgba(0,0,0,1);
     margin-bottom: 20px;
+    padding: 20px;
   }
   .interest:first-child {
     margin-right: 10px;
@@ -114,24 +116,9 @@ $pink: #fc407c;
   }
 }
 
-.card-more-details {
-  background: $lightgrey;
-  margin: 20px;
-  height: 100px;
-}
 
 .last_body {
   border-radius: 0px 0px 5px 5px;
-}
-
-.card-mt-interest {
-  border-style: solid;
-  border-width: 2px;
-  border-radius: 10px;
-  background-color: #8c0714;
-  color: white;
-  margin-top: 3px;
-  margin-bottom: 3px;
 }
 
 .card-mt-interest p{
@@ -139,5 +126,16 @@ $pink: #fc407c;
   margin-bottom: 10px;
   margin-left: 5px;
   font-size: 15px;
+}
+
+.interest-box {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 10px 0px;
+}
+
+.interest-box p {
+  font-size: 16px;
+  margin: 0px;
 }
 

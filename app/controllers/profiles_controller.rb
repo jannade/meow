@@ -55,6 +55,7 @@ class ProfilesController < ApplicationController
 
     @mentee_profile = Profile.find_by(user: current_user, is_mentor: false)
     @profile_interests = ProfileInterest.where(profile: @profile)
+    @message = Message.new
   end
 
   def update
