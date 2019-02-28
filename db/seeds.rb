@@ -39,60 +39,79 @@ puts "Interests created"
 puts "Creating users"
 
 ashwin = User.new(first_name: "Ankita", last_name: "Smith", email: "ashwin@email.com", password: "12341234", company: "Grab", job_title: "Director of Marketing")
+ashwin.remote_photo_url = 'https://www.takarabio.com/assets/images/900-Special_Topics/910-BioView_Blog/FF-Photos/Laurel_headshot_P_200.jpg'
 ashwin.save
 
 peter = User.new(first_name: "Patricia", last_name: "Lee", email: "peter@email.com", password: "12341234", company: "Le Wagon", job_title: "Teaching Assistant")
+peter.remote_photo_url = 'https://format-com-cld-res.cloudinary.com/image/private/s--LmDveIEe--/c_fill,g_rek_faces,h_200,w_200/a_auto,fl_keep_iptc.progressive,q_95/Grey_background_headshot_of_a_female_employee_in_Hong_Kong_photographed_by_l_Atelier_Photo_umvbow.jpg'
 peter.save
 
 george = User.new(first_name: "Jessica", last_name: "Ballard", email: "george@email.com", password: "12341234", company: "Heroleads", job_title: "Chief Technology Officer")
+george.remote_photo_url = 'https://assets.entrepreneur.com/content/1x1/300/20160713155734-headshots-kristina-libby-37-final-large.jpeg?width=200&crop=1:1'
 george.save
 
 lorenzo = User.new(first_name: "Laura", last_name: "Curley", email: "lorenzo@email.com", password: "12341234", company: "The World", job_title: "Chief Marketing Officer")
+lorenzo.remote_photo_url = 'https://businesstalentgroup.com/wp-content/uploads/2018/02/jennifer-posner-napier_gray2_500x500-200x200.jpg'
 lorenzo.save
 
 nancy = User.new(first_name: "Nancy", last_name: "Flores", email: "nancy@email.com", password: "12341234", company: "Google", job_title: "Chief Operating Officer")
+nancy.remote_photo_url = 'https://thumbor.forbes.com/thumbor/200x200/filters%3Aformat%28jpg%29/https%3A%2F%2Fblogs-images.forbes.com%2Fzackfriedman%2Ffiles%2F2018%2F08%2FDJG-headshot.jpg'
 nancy.save
 
 susan = User.new(first_name: "Susan", last_name: "Cooper", email: "susan@email.com", password: "12341234", company: "FaceBook", job_title: "Senior Technical Supervisor")
+susan.remote_photo_url = 'https://i.pinimg.com/236x/15/76/4b/15764bccfcdb985c3583904c49cfcd68--corporate-headshots-headshot-ideas.jpg'
 susan.save
 
 joyce = User.new(first_name: "Joyce", last_name: "Allen", email: "joyce@email.com", password: "12341234", company: "Airbnb", job_title: "Financial Analyst")
+joyce.remote_photo_url = 'https://format-com-cld-res.cloudinary.com/image/private/s---8bz5ra9--/c_crop,h_451,w_667,x_0,y_280/c_fill,g_center,h_200,w_200/a_auto,fl_keep_iptc.progressive,q_95/v1/389c2634877e005c6949f36ad5276e9d/Cincinnati-Headshot-Photographer-The-Breathe-Studio-7086-Edit-WEB.jpg'
 joyce.save
 
 jane = User.new(first_name: "Sheryl", last_name: "Sandberg", email: "jane@email.com", password: "12341234", company: "Facebook", job_title: "Chief Operating Officer")
+jane.remote_photo_url = 'https://cdn.lynda.com/authors/12077467_200x200_thumb.jpg'
 jane.save
 
 lilian = User.new(first_name: "Lilian", last_name: "Perez", email: "lilian@email.com", password: "12341234", company: "Ernst and Young", job_title: "Chief Auditor")
+lilian.remote_photo_url = 'https://alexstudio.ch/wp-content/uploads/2017/03/photo-for-cv-linkedin-resume-geneva-testimonials-08.jpg'
 lilian.save
 
 erica = User.new(first_name: "Erica", last_name: "Webb", email: "erica@email.com", password: "12341234", company: "Deloitte", job_title: "Actuarial Supervisor")
+erica.remote_photo_url = 'https://static1.squarespace.com/static/51171438e4b0c59967aa52ab/t/585d3866d2b857186d55da3c/1423279427763/'
 erica.save
 
 tiffany = User.new(first_name: "Tiffany", last_name: "Young", email: "tiffany@email.com", password: "12341234", company: "Louis Vuitton", job_title: "Designer")
+tiffany.remote_photo_url = 'https://format-com-cld-res.cloudinary.com/image/private/s--R8JBElU---/c_fill,g_rek_faces,h_200,w_200/a_auto,fl_keep_iptc.progressive,q_95/v1/821c5bc27e1af61d1a20b0ff36ff57c6/Business-Headshots-New-York-NYC-Katherine.jpg'
 tiffany.save
 
 madeline = User.new(first_name: "Madeline", last_name: "Fultz", email: "madeline@email.com", password: "12341234", company: "Volkswagen", job_title: "Head of Supply Chain Development")
+madeline.remote_photo_url = 'https://format-com-cld-res.cloudinary.com/image/private/s--BlAgK8Ru--/c_fill,g_rek_faces,h_200,w_200/a_auto,fl_keep_iptc.progressive,q_95/v1/ee12edf654158e0df229c7efabe95fe4/accounting-technician-montreal-headshot-formal-yvon-huynh_JPG.jpg'
 madeline.save
 
 julia = User.new(first_name: "Julia", last_name: "De Jong", email: "julia@email.com", password: "12341234", company: "Disney", job_title: "Lead Animator")
+julia.remote_photo_url = 'https://businesstalentgroup.com/wp-content/uploads/2018/02/jennifer-posner-napier_gray2_500x500-200x200.jpg'
 julia.save
 
 alice = User.new(first_name: "Alice", last_name: "Laurent", email: "alice@email.com", password: "12341234", company: "University of Paris", job_title: "Economics Professor")
+alice.remote_photo_url = 'https://nicholas.duke.edu/sites/default/files/styles/square_200x200/public/thumbnails/image/EricaHeadshot_1413.jpg?itok=yNyyEgKf'
 alice.save
 
 minji = User.new(first_name: "Min Ji", last_name: "Kim", email: "minji@email.com", password: "12341234", company: "Samsung", job_title: "Senior Software Engineer")
+minji.remote_photo_url = 'https://cdn.goodgallery.com/ee7da294-044f-4a50-b8dc-ff63b0946418/s/0200/2au9j1lz/simple-corporate-headshot-grey-studio.jpg'
 minji.save
 
 jihye = User.new(first_name: "Ji Hye", last_name: "Song", email: "jihye@email.com", password: "12341234", company: "KIA", job_title: "Chief Technology Officer")
+jihye.remote_photo_url = 'https://img.huffingtonpost.com/asset/5a50bc5b1c0000f98768ee73.jpg?ops=200_200'
 jihye.save
 
 xuying = User.new(first_name: "Xu Ying", last_name: "Xian", email: "xuying@email.com", password: "12341234", company: "Xian Beijing Florist", job_title: "Owner")
+xuying.remote_photo_url = 'https://images.freeimages.com/images/premium/large-thumbs/2334/23342765-asian-businesswoman-portrait.jpg'
 xuying.save
 
 aisha = User.new(first_name: "A'isha", last_name: "Maalouf", email: "aisha@email.com", password: "12341234", company: "Emirates", job_title: "Pilot")
+aisha.remote_photo_url = 'https://www.womenforwomen.org/sites/default/files/styles/200x200/public/Zainab_Salbi%20headshot_2017_0.jpeg?itok=jjTzlks_'
 aisha.save
 
 elane = User.new(first_name: "Elane", last_name: "Proctor", email: "elane@email.com", password: "12341234", company: "Procter and Gamble", job_title: "Customer Intelligence Analyst")
+elane.remote_photo_url = 'https://www.businessboutique.com/wp/uploads/2018/03/AmyJoHeadshot_.jpg'
 elane.save
 
 puts "Users created"
