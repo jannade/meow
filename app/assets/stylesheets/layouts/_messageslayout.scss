@@ -1,0 +1,13 @@
+$lightgrey: #F6F6F6;
+
+.messages-header-img{
+  display: flex;
+  justify-content: center;
+  margin: 50px 0px;
+  background: $lightgrey;
+}
+
+.messages-image > img {
+  margin: 50px 0px;
+}
+

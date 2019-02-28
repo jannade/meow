@@ -1,22 +1,29 @@
 <div class="inbox-container">
-  <ul class= "nav nav-tabs tab-horizontal">
-    <% connections.each_with_index do |connection, index| %>
-      <% if index == 0 %>
-        <li class="active">
-      <% else %>
-        <li>
+
+  <div class="left-inbox-container">
+    <div class="search-bar-box">
+      <p class="search-bar-inner">Search</p>
+    </div>
+    <ul class= "nav nav-tabs tab-horizontal">
+      <% connections.each_with_index do |connection, index| %>
+        <% if index == 0 %>
+          <li class="active">
+        <% else %>
+          <li>
+        <% end %>
+          <a href="#connection-<%=connection.id%>" data-toggle="tab" class="inbox_chat">
+            <div class="chat_img">
+              <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg">
+            </div>
+            <div class="chat_ib">
+              <h5><%= connection.mentor.user.first_name %> <%= connection.mentor.user.last_name %></h5>
+            </div>
+          </a>
+        </li>
       <% end %>
-        <a href="#connection-<%=connection.id%>" data-toggle="tab" class="inbox_chat">
-          <div class="chat_img">
-            <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg">
-          </div>
-          <div class="chat_ib">
-            <h5><%= connection.mentor.user.first_name %> <%= connection.mentor.user.last_name %></h5>
-          </div>
-        </a>
-      </li>
-    <% end %>
-  </ul>
+    </ul>
+  </div>
+
 
   <div class="tab-content messages-container">
     <% connections.each_with_index do |connection, index| %>
@@ -25,15 +32,13 @@
       <% else %>
         <div id="connection-<%=connection.id%>" class="tab-pane">
       <% end %>
-
-    <% if connection.status == "Pending" %>
-      <div class="flash flash-warning">
-        <span><strong>Request pending!</strong> 🤓 looks like your mentor needs a little more time to respond to your request </span>
-      </div>
-    <% end %>
-
-        <div class="message-box" data-message-id=<%= connection.id %>>
-          <% connection.messages.each do |message| %>
+      <% if connection.status == "Pending" %>
+        <div class="flash flash-warning">
+          <span><strong>Request pending!</strong> 🤓 looks like your mentor needs a little more time to respond to your request </span>
+        </div>
+      <% end %>
+      <div class="message-box" data-message-id=<%= connection.id %>>
+        <% connection.messages.each do |message| %>
           <div class="one-message-box">
             <% if message.user == current_user %>
               <div class="right-message">
@@ -47,11 +52,11 @@
               </div>
             <% end %>
           </div>
-          <% end  %>
-        </div>
+        <% end  %>
+      </div>
         <div class="new-message-box">
           <%= simple_form_for([connection, @message], remote: true) do |f| %>
-            <%= f.input :content, label: false, placeholder: "Type your message here", as: :text, autofocus: true, input_html: {style: 'width: 100%; font-size: 15px', rows: 4, id: 'mentor-msg-form'} %>
+            <%= f.input :content, label: false, placeholder: "Type your message here", as: :text, autofocus: true, input_html: {style: 'width: 100%; font-size: 20px', rows: 4, id: 'mentor-msg-form'} %>
             <%= f.submit "Reply", class: "new-message-btn" %>
           <% end %>
         </div>

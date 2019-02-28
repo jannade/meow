@@ -3,24 +3,42 @@ $blue: #1b4e88;
 $cream: #faf0e4;
 $pink: #fc407c;
 
+
+
 .inbox-container {
   width: 100%;
-  background: $lightgrey;
   display: flex;
-  margin-top: 20px;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  border-radius: 5px;
+  margin: 55px 0px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.5);
   max-height: 80vw;
+  min-height: 400px;
   overflow: scroll;
+}
+
+.left-inbox-container {
+  display: flex;
+  flex-direction: column;
+  background: #E8E8E8;
+  width: 33%;
+}
+
+.search-bar-box {
+  margin: 20px 0px 15px 20px;
+}
+
+.search-bar-inner {
+  padding: 5px;
+  background: white;
+  margin-right: 20px;
+  opacity: 0.7;
+  border-radius: 5px;
 }
 
 .nav-tabs.tab-horizontal {
   display: flex;
   flex-direction: column;
   width: 30vw;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  border-right: 3px solid $pink;
+  margin-top: 15px;
 }
 
 .nav-tabs.tab-horizontal > li.active > a, .nav-tabs.tab-horizontal > li.active > a:hover {
@@ -30,10 +48,10 @@ $pink: #fc407c;
 
 .nav-tabs.tab-horizontal > a:hover {
   border: none;
+  border-bottom: 2px solid black
 }
 
 .nav-tabs.tab-horizontal > li.active > a {
-  background: $lightgrey !important;
 }
 
 .inbox-container a.inbox_chat {
@@ -45,16 +63,19 @@ $pink: #fc407c;
 }
 
 .inbox_chat img {
-  height: 30px;
-  width: 30px;
+  height: 50px;
+  width: 50px;
   object-fit: cover;
   border-radius: 50%;
   border: 2px solid $lightgrey;
   margin-top: 6px;
 }
 
+.inbox_chat {
+}
+
 .chat_ib h5 {
-  font-size: 15px;
+  font-size: 20px;
   margin-left: 10px;
 }
 
@@ -65,6 +86,7 @@ $pink: #fc407c;
   padding-top: 20px;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   border-radius: 0px 5px 5px 0px;
   position: relative;
 }
@@ -78,6 +100,7 @@ $pink: #fc407c;
 .one-message-box {
   position: relative;
   height: 100px;
+  margin-bottom: 50px;
 }
 
 .message-box .right-message {
@@ -102,23 +125,25 @@ $pink: #fc407c;
   background: rgba(27,78,136,0.2);
   padding: 10px;
   border-radius: 3px;
-  font-size: 15px;
+  font-size: 20px;
 }
 
 .message-box .left-message .message-content {
-  background: $cream;
+  background: $lightgrey;
   padding: 10px;
   border-radius: 3px;
-  font-size: 15px;
+  font-size: 20px;
 }
 
 .message-box .message-time {
-  font-size: 8px;
+  font-size: 11px;
 }
 
 .new-message-box {
   height: 150px;
   width: 100%;
+  margin-bottom: 30px;
+  margin-top: auto;
 }
 
 .new-message-btn {
@@ -172,6 +197,11 @@ $pink: #fc407c;
 .flash-warning a {
   color: #FFC65A;
 }
+
+.messages-header {
+  margin-top: 0px !important;
+}
+
 
 
 
