@@ -5,16 +5,16 @@ $lightgrey: #F8F8F8;
 
 .search-bar-container {
   display: flex;
-  background: $red;
   padding: 10px;
   color: white;
   font-style: bold;
-  border-radius: 5px;
+  border-bottom: 1px solid black;
+  margin: 45px 0px;
 }
 
 .search-bar {
   margin-left: 40px;
-  color: $red;
+  color: black;
 }
 
 .search-btn {

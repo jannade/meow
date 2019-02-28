@@ -6,7 +6,7 @@
 // General style
 $font-family-sans-serif:  $body-font;
 $headings-font-family:    $headers-font;
-$body-bg:                 #F7F7F7;
+$body-bg:                 white;
 $font-size-base: 18px;
 
 // Colors
@@ -53,10 +53,12 @@ $border-radius-small: 2px;
 // Override other variables below!
 
 h1 {
-  font-size: 30px !important;
+  font-size: 45px !important;
   margin-top: 30px !important;
   margin-bottom: 15.5px !important;
-  color: #1b4e88 !important;
+  text-transform: uppercase;
+  font-weight: bold !important;
+  text-align: center !important;
 }
 
 
