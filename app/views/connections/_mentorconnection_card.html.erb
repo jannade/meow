@@ -17,6 +17,18 @@
 
       <% if connection.goals.present? %>
         <p class="card-connection-btn"><%= link_to "See all Goals",connection_path(connection.id) %></p>
+          <% connection.goals.each do |goal| %>
+            <li><%= goal.description %></li>
+              <div class="progress progress-<%= goal.id %>" >
+                <div class="progress-bar progress-bar-success" role="progressbar" style="width: <%= goal.perc_completed %>%">
+                </div>
+              </div>
+            <% else %>
+              <div class="progress progress-<%= goal.id %> hidden" >
+                <div class="progress-bar progress-bar-success" role="progressbar" style="width: <%= goal.perc_completed %>%">
+                </div>
+              </div>
+          <% end %>
       <% else %>
         <p class="card-connection-btn"><%= link_to "Start setting Goals",connection_path(connection.id) %></p>
       <% end %>
@@ -24,3 +36,6 @@
     </div>
   </div>
 <% end %>
+
+
+
