@@ -9,13 +9,16 @@ $red: #8c0714;
 }
 
 .nav-tabs.tab-vertical {
-  border-bottom: none !important;
+  border-bottom: 1px solid black;
   margin-bottom: 30px;
+  text-transform: uppercase;
+  h2 {
+    font-size: 30px;
+  }
 }
 
 .nav-tabs.tab-vertical > li.active > a, .nav-tabs > li.active > a:hover {
   border: none;
-  border-bottom: 3px solid $pink;
 }
 
 .nav-tabs.tab-vertical > li > a {
@@ -26,6 +29,12 @@ $red: #8c0714;
 }
 
 .nav-tabs.tab-vertical > li.active > a {
-  color: $blue !important;
+  color: black !important;
+  h2 {
+    font-weight: bold;
+  }
 }
 
+.nav-tabs > li.active > a {
+  background-color: none;
+}

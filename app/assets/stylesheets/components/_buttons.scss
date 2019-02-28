@@ -6,11 +6,17 @@ $lightgrey: #F6F6F6;
   border-radius: 50px;
   opacity: 0.9;
   margin-top: 20px;
-
 }
 
 .new-connection-btn:hover {
   background: $lightgrey;
+}
+
+.new-message-btn {
+  padding: 5px 20px;
+  border-radius: 50px;
+  opacity: 0.9;
+  font-size: 15px;
 }
 
 .btn-default {
