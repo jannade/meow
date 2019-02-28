@@ -64,12 +64,26 @@ $pink: #fc407c;
   position: absolute;
   bottom: 20px;
   right: 20px;
+  border-radius: 50px;
 }
 
 .card-mentor-header h4 {
   font-size: 25px;
   margin-left: 10px;
   font-weight: bold;
+  border-bottom: 3px solid #fc407c
+}
+
+.card-mentor-header .width-pro {
+  width: 250px;
+}
+
+.card-mentor-header .width-per {
+  width: 210px;
+}
+
+.card-mentor-header .width-about {
+  width: 120px;
 }
 
 .card-mentor-description {
