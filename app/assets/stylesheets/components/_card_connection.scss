@@ -38,6 +38,7 @@ $pink: #fc407c;
   opacity: .7;
   margin-bottom: 0;
   margin-top: 8px;
+  text-align: center;
 }
 
 .card-connection-profile {
@@ -106,7 +107,6 @@ $pink: #fc407c;
 }
 
 .progress-circle {
-  font-size: 20px;
   margin: 20px;
   position: relative;
   /* so that children can be absolutely positioned */
@@ -116,6 +116,7 @@ $pink: #fc407c;
   background-color: #F2E9E1;
   border-radius: 50%;
   line-height: 5em;
+  margin-left: 90px;
 }
 
 .progress-circle:after {
