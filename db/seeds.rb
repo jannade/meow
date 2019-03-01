@@ -38,8 +38,8 @@ puts "Interests created"
 
 puts "Creating users"
 
-ashwin = User.new(first_name: "Ankita", last_name: "Smith", email: "ashwin@email.com", password: "12341234", company: "Grab", job_title: "Director of Marketing")
-ashwin.remote_photo_url = 'https://www.takarabio.com/assets/images/900-Special_Topics/910-BioView_Blog/FF-Photos/Laurel_headshot_P_200.jpg'
+ashwin = User.new(first_name: "Celina", last_name: "Chew", email: "ashwin@email.com", password: "12341234", company: "Bayer, Greater China", job_title: "President")
+ashwin.remote_photo_url = 'https://www.webit.org/files/images/articles/medium/841f3fbc6dfa56492e00088d5cc49eb7.jpeg'
 ashwin.save
 
 peter = User.new(first_name: "Patricia", last_name: "Lee", email: "peter@email.com", password: "12341234", company: "Le Wagon", job_title: "Teaching Assistant")
@@ -114,25 +114,30 @@ elane = User.new(first_name: "Elane", last_name: "Proctor", email: "elane@email.
 elane.remote_photo_url = 'https://www.businessboutique.com/wp/uploads/2018/03/AmyJoHeadshot_.jpg'
 elane.save
 
+janna = User.new(first_name: "Janna", last_name: "De Vos", email: "janna@email.com", password: "12341234", company: "Grab", job_title: "Product Manager")
+janna.remote_photo_url = 'https://media.licdn.com/dms/image/C5103AQH-XFCY7Vbvnw/profile-displayphoto-shrink_200_200/0?e=1556755200&v=beta&t=kpN1_njpvDZON2QKXbSlDMFUG9pu_PnyUZK01QFoum4'
+janna.save
+
+
 puts "Users created"
 
 puts "Creating profiles"
 
 puts "Creating users that are just mentors"
 
-ashwin_mentor_profile = Profile.new(user: ashwin, is_mentor: true, description: "I have more than 15 years of experience in Marketing and Product, and have lead teams across the world. I was lucky enough to have a mentor at the start of my career. I wish to give the same to my mentees as my mentor gave to me")
+ashwin_mentor_profile = Profile.new(user: ashwin, is_mentor: true, description: "Currently, I am the President of Bayer Greater China and Chairman of Bayer (China) Limited, based in Shanghai. I'm interested in connections, in particular connecting people, connecting ideas, and connecting seemingly unrelated topics and trends. I find great enjoyment in mentoring women, and mentoring in general.")
 ashwin_mentor_profile.save
 
 george_mentor_profile = Profile.new(user: george, is_mentor: true, description: "Chief Technology Officer of Heroleads" )
 george_mentor_profile.save
 
-nancy_mentor_profile = Profile.new(user: nancy, is_mentor: true, description: "I have 2 years of experience in the IT field and currently working as the COO of Google. I have passion in helping other women achieve success in whatever they do either personally or professionally." )
+nancy_mentor_profile = Profile.new(user: nancy, is_mentor: true, description: "I have 12 years of experience in the IT field and currently working as the COO of Google. I have passion in helping other women achieve success in whatever they do either personally or professionally." )
 nancy_mentor_profile.save
 
-susan_mentor_profile = Profile.new(user: susan, is_mentor: true, description: "I have 6 years of experience in the IT field and currently working as the Senior Technical Supervisor of FaceBook. I have passion in helping other women achieve success in whatever they do either personally or professionally." )
+susan_mentor_profile = Profile.new(user: susan, is_mentor: true, description: "I have 16 years of experience in the IT field and currently working as the Senior Technical Supervisor of FaceBook. I have passion in helping other women achieve success in whatever they do either personally or professionally." )
 susan_mentor_profile.save
 
-joyce_mentor_profile = Profile.new(user: joyce, is_mentor: true, description: "I have 2 years of experience in the Finance field and currently working as the financial analyst of Airbnb. I have passion in helping other women achieve success in whatever they do either personally or professionally." )
+joyce_mentor_profile = Profile.new(user: joyce, is_mentor: true, description: "I have 20 years of experience in the Finance field and currently working as the financial analyst of Airbnb. I have passion in helping other women achieve success in whatever they do either personally or professionally." )
 joyce_mentor_profile.save
 
 lilian_mentor_profile = Profile.new(user: lilian, is_mentor: true, description: "I have 5 years of experience in the finance field and currently working as the chief auditor of Ernst and Young. I have passion in helping other women achieve success in whatever they do either personally or professionally." )
@@ -141,7 +146,7 @@ lilian_mentor_profile.save
 erica_mentor_profile = Profile.new(user: erica, is_mentor: true, description: "I have 10 years of experience in the finance field and currently working as the actuarial supervisor of Deloitte. I have passion in helping other women achieve success in whatever they do either personally or professionally." )
 erica_mentor_profile.save
 
-tiffany_mentor_profile = Profile.new(user: tiffany, is_mentor: true, description: "I have 2 years of experience in the design field and currently working as the designer of Louis Vuitton. I have passion in helping other women achieve success in whatever they do either personally or professionally." )
+tiffany_mentor_profile = Profile.new(user: tiffany, is_mentor: true, description: "I have 9 years of experience in the design field and currently working as the designer of Louis Vuitton. I have passion in helping other women achieve success in whatever they do either personally or professionally." )
 tiffany_mentor_profile.save
 
 madeline_mentor_profile = Profile.new(user: madeline, is_mentor: true, description: "I have 8 years of experience in the management field and currently working as the head of supply chain development of Volkswagen. I have passion in helping other women achieve success in whatever they do either personally or professionally." )
@@ -173,19 +178,25 @@ puts "Creating users that are just mentees"
 peter_mentee_profile = Profile.new(user: peter, is_mentor: false)
 peter_mentee_profile.save
 
-
 lorenzo_mentee_profile = Profile.new(user: lorenzo, is_mentor: false)
 lorenzo_mentee_profile.save
 
+xuying_mentee_profile = Profile.new(user: xuying, is_mentor: false, description: "I have 15 years of experience in the IT field and I currently runa business called Xian Beijing Florist. I have passion in helping other women achieve success in whatever they do either personally or professionally." )
+xuying_mentee_profile.save
 
-puts "Creating users that are both mentee and mentor"
+aisha_mentee_profile = Profile.new(user: aisha, is_mentor: false, description: "I have 6 years of experience as a pilot and currently working as the pilot of Emirates. I have passion in helping other women achieve success in whatever they do either personally or professionally." )
+aisha_mentee_profile.save
 
-jane_mentor_profile = Profile.new(user: jane, is_mentor: true, description: "I have 8 years of experience in the marketing field and currently working as the Director of marketing of Apple. I have passion in helping other women achieve success in whatever they do either personally or professionally.")
+elane_mentee_profile = Profile.new(user: elane, is_mentor: false, description: "I have 8 years of experience in the finance field and currently working as the customer intelligence analyst of Procter and Gamble. I have passion in helping other women achieve success in whatever they do either personally or professionally." )
+elane_mentee_profile.save
+
+janna_mentee_profile = Profile.new(user: janna, is_mentor: false, description: "I have 5 years experience in")
+janna_mentee_profile.save
+
+puts "Creating Sheryl profile"
+
+jane_mentor_profile = Profile.new(user: jane, is_mentor: true, description: "I am the chief operating officer of Facebook and am the author of Lean In: Women, Work, and the Will to Lead. I am a strong advocate of increasing diversity in the work place, and believe mentoring is one way we can promote that. Mentoring is not only the right thing to do, but its also the smart thing to do. The data is super clear that more diverse organizations perform better. And we want a world that is safe, that is productive, and it’s going to take using the full talent of the population. I have met many inspiring mentees on Me-oW, and hope to continue to meet more aspiring career-driven women from across the world")
 jane_mentor_profile.save
-
-jane_mentee_profile = Profile.new(user: jane, is_mentor: false)
-jane_mentee_profile.save
-
 
 puts "Profiles created"
 
@@ -225,13 +236,6 @@ jane_mentor_i3 = ProfileInterest.create(profile: jane_mentor_profile, interest: 
 jane_mentor_i4 = ProfileInterest.create(profile: jane_mentor_profile, interest: pr3)
 jane_mentor_i5 = ProfileInterest.create(profile: jane_mentor_profile, interest: pr4)
 jane_mentor_i6 = ProfileInterest.create(profile: jane_mentor_profile, interest: pr7)
-
-jane_mentee_i1 = ProfileInterest.create(profile: jane_mentee_profile, interest: pe5)
-jane_mentee_i2 = ProfileInterest.create(profile: jane_mentee_profile, interest: pe6)
-jane_mentee_i3 = ProfileInterest.create(profile: jane_mentee_profile, interest: pe7)
-jane_mentee_i4 = ProfileInterest.create(profile: jane_mentee_profile, interest: pe5)
-jane_mentee_i5 = ProfileInterest.create(profile: jane_mentee_profile, interest: pe6)
-jane_mentee_i6 = ProfileInterest.create(profile: jane_mentee_profile, interest: pe7)
 
 nancy_mentor_i1 = ProfileInterest.create(profile: nancy_mentor_profile, interest: pe2)
 nancy_mentor_i2 = ProfileInterest.create(profile: nancy_mentor_profile, interest: pe4)
@@ -333,82 +337,103 @@ elane_mentor_i6 = ProfileInterest.create(profile: elane_mentor_profile, interest
 
 puts "profiles interests created created"
 
-puts "Creating connections"
+puts "Creating Sheryl's mentee connections"
 
-ashwin_peter_connection = Connection.new(mentor: ashwin_mentor_profile, mentee: peter_mentee_profile, status: "Pending")
-ashwin_peter_connection.save
-
-jane_lorenzo_connection = Connection.new(mentor: jane_mentor_profile, mentee: lorenzo_mentee_profile, status: "Pending")
+jane_lorenzo_connection = Connection.new(mentor: jane_mentor_profile, mentee: lorenzo_mentee_profile, status: "confirmed")
 jane_lorenzo_connection.save
 
-george_jane_connection = Connection.new(mentor: george_mentor_profile, mentee: jane_mentee_profile, status: "confirmed")
-george_jane_connection.save
+jane_xuying_connection = Connection.new(mentor: jane_mentor_profile, mentee: xuying_mentee_profile, status: "confirmed")
+jane_xuying_connection.save
 
-george_peter_connection = Connection.new(mentor: george_mentor_profile, mentee: peter_mentee_profile, status: "confirmed")
-george_peter_connection.save
+jane_aisha_connection = Connection.new(mentor: jane_mentor_profile, mentee: aisha_mentee_profile, status: "Pending")
+jane_aisha_connection.save
+
+jane_elane_connection = Connection.new(mentor: jane_mentor_profile, mentee: elane_mentee_profile, status: "Pending")
+jane_elane_connection.save
 
 jane_peter_connection = Connection.new(mentor: jane_mentor_profile, mentee: peter_mentee_profile, status: "Pending")
 jane_peter_connection.save
 
-ashwin_jane_connection = Connection.new(mentor: ashwin_mentor_profile, mentee: jane_mentee_profile, status: "Pending")
-ashwin_jane_connection.save
+puts "Sheryl's mentee Connections created"
 
-puts "Connections created"
+puts "Creating Sheryl's messages"
 
-puts "Creating messages"
-
-lorenzo_jane_message = Message.new(content: "Hi Sheryl, I want to connect with you and learn all about your experience at Facebook. Would you like to connect?", user: lorenzo, is_read: true, connection: jane_lorenzo_connection)
+lorenzo_jane_message = Message.new(content: "Hi Sheryl, I am super excited to see your profile on the platform. I'd to connect with you and get your advise on working in the tech industry as well as how to handle your work-life balance. Hope to hear from you soon. Laura", user: lorenzo, is_read: true, connection: jane_lorenzo_connection)
 lorenzo_jane_message.save
 
-lorenzo_jane_message2 = Message.new(content: "Hi Laura, great. I am available tomorrow evening at 8pm. Does that work for you?", user: jane, is_read: true, connection: jane_lorenzo_connection)
+lorenzo_jane_message2 = Message.new(content: "Hi Laura, pleasure to e-meet you. I am available for our first call for Wednesday at 8pm. Does that work for you?", user: jane, is_read: true, connection: jane_lorenzo_connection)
 lorenzo_jane_message2.save
 
-george_jane_message = Message.new(content: "Hi Jane, your profile looks amazing. I wanna be just like you", user: george, is_read: true, connection: george_jane_connection)
-george_jane_message.save
+xuying_jane_message = Message.new(content: "Hi Sheryl, I'm struggle with being assertive during salary negotiations with my manager. Would love to get your advise on how to negotiate and take these conversations forward. Hope to hear from you. ", user: xuying, is_read: true, connection: jane_xuying_connection)
+xuying_jane_message.save
 
-peter_ashwin_message = Message.new(content: "Hi Ashwin, will you be my mentor?", user: peter, is_read: false, connection: ashwin_peter_connection)
-peter_ashwin_message.save
+jane_aisha_connection = Message.new(content: "Dear Sheryl, I'd love for you to be my mentor. Please accept my invite. Thanks!", user: aisha, is_read: false, connection: jane_aisha_connection)
+jane_aisha_connection.save
 
+puts "Sheryl's messages created"
 
-puts "Messages created"
+puts "Creating janna's connections"
 
-puts "Creating goals"
+janna_minji_connection = Connection.new(mentor: minji_mentor_profile, mentee: janna_mentee_profile, status: "confirmed")
+janna_minji_connection.save
 
-lorenzo_jane_goal1 = Goal.new(description: "Get a job in Product Management", connection: jane_lorenzo_connection)
-lorenzo_jane_goal1.save
+janna_susan_connection = Connection.new(mentor: susan_mentor_profile, mentee: janna_mentee_profile, status: "confirmed")
+janna_susan_connection.save
 
-lorenzo_jane_goal2 = Goal.new(description: "Improve my work-life balance", connection: jane_lorenzo_connection)
-lorenzo_jane_goal2.save
+janna_ashwin_connection = Connection.new(mentor: ashwin_mentor_profile, mentee: janna_mentee_profile, status: "confirmed")
+janna_ashwin_connection.save
 
-george_peter_goal1 = Goal.new(description: "Win the lottery", connection: george_peter_connection)
-george_peter_goal1.save
+puts "Creating Janna's goals"
 
-george_peter_goal2 = Goal.new(description: "Get as fit as dede the bootcamp trainer", connection: george_peter_connection)
-george_peter_goal2.save
+janna_minji_goal1 = Goal.new(description: "Become a full-stack web developer", connection: janna_minji_connection)
+janna_minji_goal1.save
 
-puts "Goals created"
+  janna_minji_goal1_ms1 = Milestone.new(description: "Sign up for the Le Wagon Bali full-stack bootcamp", goal: janna_minji_goal1, is_completed: true)
+  janna_minji_goal1_ms1.save
 
-puts "Creating milestones"
+  janna_minji_goal1_ms2 = Milestone.new(description: "Complete all prep work before starting the bootcamp", goal: janna_minji_goal1, is_completed: true)
+  janna_minji_goal1_ms2.save
 
-lorenzo_jane_goal1_ms1 = Milestone.new(description: "Sign up to a training course in Product Management", goal: lorenzo_jane_goal1, is_completed: true)
-lorenzo_jane_goal1_ms1.save
+  janna_minji_goal1_ms3 = Milestone.new(description: "Make it through the 8 week bootcamp", goal: janna_minji_goal1, is_completed: false)
+  janna_minji_goal1_ms3.save
 
-lorenzo_jane_goal1_ms2 = Milestone.new(description: "Complete the training course in Product Management", goal: lorenzo_jane_goal1, is_completed: false)
-lorenzo_jane_goal1_ms2.save
+  janna_minji_goal1_ms4 = Milestone.new(description: "Get a first job as a freelance web-developer", goal: janna_minji_goal1, is_completed: false)
+  janna_minji_goal1_ms4.save
 
-lorenzo_jane_goal1_ms3 = Milestone.new(description: "Read Inspired: How to Create Products People Love", goal: lorenzo_jane_goal1, is_completed: false)
-lorenzo_jane_goal1_ms3.save
+janna_minji_goal2 = Goal.new(description: "Understand the basics of Advanced Analytics", connection: janna_minji_connection)
+janna_minji_goal2.save
 
-lorenzo_jane_goal2_ms1 = Milestone.new(description: "Leave the office at 6pm at least 1 time per week", is_completed: true, goal: lorenzo_jane_goal2)
-lorenzo_jane_goal2_ms1.save
+  janna_minji_goal2_ms1 = Milestone.new(description: "Attend an advanced analytics conference", goal: janna_minji_goal2, is_completed: true)
+  janna_minji_goal2_ms1.save
 
-lorenzo_jane_goal2_ms2 = Milestone.new(description: "Commit to specific office hours on google calendar ", is_completed: true, goal: lorenzo_jane_goal2)
-lorenzo_jane_goal2_ms2.save
+  janna_minji_goal2_ms2 = Milestone.new(description: "Read Industries of the Future", goal: janna_minji_goal2, is_completed: true)
+  janna_minji_goal2_ms2.save
 
-lorenzo_jane_goal2_ms3 = Milestone.new(description: "Hold a meeting with my boss", is_completed: true, goal: lorenzo_jane_goal2)
-lorenzo_jane_goal2_ms3.save
+  janna_minji_goal2_ms3 = Milestone.new(description: "Take a Data Visualization course", goal: janna_minji_goal2, is_completed: false)
+  janna_minji_goal2_ms3.save
 
+puts "Janna's Goals and milestones created"
 
-puts "Milestones created"
+# puts "Creating milestones"
+
+# lorenzo_jane_goal1_ms1 = Milestone.new(description: "Sign up to a training course in Product Management", goal: lorenzo_jane_goal1, is_completed: true)
+# lorenzo_jane_goal1_ms1.save
+
+# lorenzo_jane_goal1_ms2 = Milestone.new(description: "Complete the training course in Product Management", goal: lorenzo_jane_goal1, is_completed: false)
+# lorenzo_jane_goal1_ms2.save
+
+# lorenzo_jane_goal1_ms3 = Milestone.new(description: "Read Inspired: How to Create Products People Love", goal: lorenzo_jane_goal1, is_completed: false)
+# lorenzo_jane_goal1_ms3.save
+
+# lorenzo_jane_goal2_ms1 = Milestone.new(description: "Leave the office at 6pm at least 1 time per week", is_completed: true, goal: lorenzo_jane_goal2)
+# lorenzo_jane_goal2_ms1.save
+
+# lorenzo_jane_goal2_ms2 = Milestone.new(description: "Commit to specific office hours on google calendar ", is_completed: true, goal: lorenzo_jane_goal2)
+# lorenzo_jane_goal2_ms2.save
+
+# lorenzo_jane_goal2_ms3 = Milestone.new(description: "Hold a meeting with my boss", is_completed: true, goal: lorenzo_jane_goal2)
+# lorenzo_jane_goal2_ms3.save
+
+# puts "Milestones created"
 
 

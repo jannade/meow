@@ -75,8 +75,14 @@ $pink: #fc407c;
   margin-left: 10px;
 }
 
+.nav-tabs.tab-horizontal > li {
+  position: relative;
+}
+
 .chat-notification {
-  margin: 17px 0px 0px 17px;
+  position: absolute;
+  right: 7px;
+  top: 27px;
 }
 
 .notification {
@@ -96,14 +102,13 @@ $pink: #fc407c;
   justify-content: space-between;
   border-radius: 0px 5px 5px 0px;
   position: relative;
-  height: 450px;
-  overflow: scroll;
+  min-height: 480px;
+  overflow: scroll
 }
 
 .message-box {
   margin: 10px;
   margin-bottom: 30px;
-  display: flex;
   flex-direction: column;
 }
 

@@ -13,7 +13,7 @@
       <%= link_to "Find your mentor", mentors_path, class: "navbar-wagon-item navbar-wagon-link" %>
       <div class="conver-nav-box">
         <%= link_to "Conversations", messages_path, class: "navbar-wagon-item navbar-wagon-link" %>
-        <% if current_user.profiles.where(is_mentor: true).first.mentees.where(status: "Pending").present? || current_user.profiles.where(is_mentor: false).first.mentors.where(status: "Pending").present? %>
+        <% if current_user.mentor_pending_connections || current_user.mentee_pending_connections %>
           <div class="chat-notification notif-banner">
             <div class="notification"></div>
           </div>
