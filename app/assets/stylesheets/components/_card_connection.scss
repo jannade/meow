@@ -5,7 +5,7 @@ $pink: #fc407c;
 
 #goal-container {
   display: flex;
-  height: 72%;
+  height: 65%;
 }
 
 .circle-goal {
@@ -101,7 +101,11 @@ $pink: #fc407c;
 
 .see-goal-btn {
   float: right;
+}
 
+.start-goal-btn {
+  float: right;
+  margin-top: 180px;
 }
 
 .card-connection-progress li {
