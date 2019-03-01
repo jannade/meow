@@ -1,16 +1,20 @@
 <% connections.each do |connection| %>
-
-    <div class="card-profile">
-        <div class="card-connection-profile">
-          <%= link_to profile_path(connection.mentee) do  %>
-          <div class="image-container">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTq33nn-Cg4QzFVnqOcBWv9Jd3LsGbt3FQ92-JNhDjryHpG9_BSdw">
-          </div>
-          <div class="card-connection-infos">
-            <h2><%= connection.mentee.user.first_name %> <%=connection.mentee.user.last_name %></h2>
-            <p><%= connection.mentee.user.job_title%> at <%=connection.mentee.user.company %></p>
-          </div>
-          <% end %>
+  <div class="card-connection">
+  <%= link_to profile_path(connection.mentee) do  %>
+    <div class="card-connection-profile">
+      <div class="image-container">
+        <%= cl_image_tag(connection.mentee.user.photo, :cloud_name => 'dcdffiepx', height: 300, width: 400, crop: :fill)%>
+      </div>
+      <div class="card-connection-infos">
+        <h2><%= connection.mentee.user.first_name %> <%=connection.mentee.user.last_name %></h2>
+        <p><%= connection.mentee.user.job_title%> at <%=connection.mentee.user.company %></p>
+      </div>
+    </div>
+  <% end %>
+  <div class="scrolling-container">
+      <div class="card-connection-progress">
+        <div class="progress-header">
+          <h4>Goal summary</h4>
         </div>
         <div class="scrolling-container">
             <div class="card-connection-progress">

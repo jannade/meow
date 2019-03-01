@@ -1,9 +1,10 @@
 
 acceptBtn = document.querySelector(".accept-request");
 flashBar = document.querySelector(".flash-success");
-newNotification = document.querySelector(".chat-notification");
 acceptBtn.remove();
 flashBar.remove();
+
+newNotification = document.querySelector(".notif-<%=@connection.id%>");
 newNotification.remove();
 
 acceptBox = document.querySelector(".new-mentor-request-<%=@connection.id%>");

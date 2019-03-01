@@ -4,18 +4,17 @@ newMessage = '<%= j render "messages/show", message: @message %>';
 console.log(newMessage);
 
 messageBox.insertAdjacentHTML('beforeend', newMessage);
-messageFormMentor = document.querySelector("#mentor-msg-form");
-messageFormMentee = document.querySelector("#mentee-msg-form");
+console.log("hello");
 
-messageFormMentor.innerHTML = "";
-messageFormMentee.innerHTML = "";
+function refreshForm() {
+  textareas = document.querySelectorAll("textarea");
 
-console.log(hello)
+  textareas.forEach(textarea => {
+    textarea.value = '';
+  })
+};
 
-// function refreshForm(innerHTML) {
-//   const newReviewForm = document.getElementById('new_review');
-//   newReviewForm.innerHTML = innerHTML;
-// }
+refreshForm();
 
 // function addReview(reviewHTML) {
 //   const reviews = document.getElementById('reviews');

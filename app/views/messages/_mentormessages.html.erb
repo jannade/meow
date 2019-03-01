@@ -4,7 +4,7 @@
     <div class="search-bar-box">
       <p class="search-bar-inner">Search</p>
     </div>
-    <ul class= "nav nav-tabs tab-horizontal">
+    <ul class= "nav nav-tabs tab-horizontal" id="left-panel">
       <% connections.each_with_index do |connection, index| %>
         <% if index == 0 %>
           <li class="active">
@@ -13,7 +13,7 @@
         <% end %>
           <a href="#connection-<%=connection.id%>" data-toggle="tab" class="inbox_chat">
             <div class="chat_img">
-              <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg">
+              <%= cl_image_tag(connection.mentor.user.photo, :cloud_name => 'dcdffiepx', height: 300, width: 400, crop: :fill)%>
             </div>
             <div class="chat_ib">
               <h5><%= connection.mentor.user.first_name %> <%= connection.mentor.user.last_name %></h5>
@@ -61,7 +61,7 @@
       </div>
         <div class="new-message-box">
           <%= simple_form_for([connection, @message], remote: true) do |f| %>
-            <%= f.input :content, label: false, placeholder: "Type your message here", as: :text, autofocus: true, input_html: {style: 'width: 100%; font-size: 20px', rows: 4, id: 'mentor-msg-form'} %>
+            <%= f.input :content, label: false, placeholder: "Type your message here", as: :text, autofocus: true, input_html: {style: 'width: 100%; font-size: 20px', rows: 3, id: 'mentor-msg-form'} %>
             <%= f.submit "Reply", class: "new-message-btn" %>
           <% end %>
         </div>

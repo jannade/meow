@@ -8,7 +8,7 @@ $pink: #fc407c;
 .navbar-wagon {
   background: white;
   transition: all 0.3s ease;
-  height: 55px;
+  height: 65px;
   padding: 0px 30px;
   display: flex;
   align-items: center;
@@ -45,7 +45,7 @@ $pink: #fc407c;
 /* Navbar link */
 .navbar-wagon-link {
   color: black;
-  font-size: 15px;
+  font-size: 18px;
   text-transform: uppercase;
 }
 .navbar-wagon-link:hover {
@@ -86,3 +86,16 @@ $pink: #fc407c;
   border-left: 1px solid #E6E6E6;
   border-top: 1px solid #E6E6E6;
 }
+
+.notif-banner {
+  position: absolute;
+  top: -19px;
+  right: 4px;
+}
+
+.conver-nav-box {
+  display: flex;
+  position: relative;
+}
+
+

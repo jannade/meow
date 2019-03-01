@@ -1,10 +1,9 @@
 <div class="container narrow-container body-container">
   <% if flash[:notice] %>
-    <div class="notice"><%= flash[:notice] %></div>
+    <div class="message-sent-notice"><%= flash[:notice] %></div>
   <% end %>
 
   <div class="card-mentor-profile">
-      <img src='https://cdn.lynda.com/authors/12077467_200x200_thumb.jpg' class="card-mentor-img avatar-bordered"/>
       <div class="card-mentor-info">
         <h3><%= @profile.user.first_name %> <%= @profile.user.last_name %></h3>
         <p><%= @profile.user.job_title %> at <%= @profile.user.company %></p>
