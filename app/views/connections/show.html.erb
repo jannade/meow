@@ -23,13 +23,12 @@
         <div class="modal-body">
           <%= simple_form_for([@connection, @goal]) do |f| %>
             <%=f.input :description, label: false %>
-            <%=f.submit "Add" %>
+            <%=f.submit "Add", class: "btn btn-default add-goal-btn" %>
           <% end %>
         </div>
       </div>
     </div>
   </div>
-
   <% @goals.each do |goal| %>
     <div class="card-goal">
       <div class="card-goal-descr">
@@ -91,7 +90,7 @@
             <div class="modal-body">
               <%= simple_form_for([@connection, goal, @milestone], remote: true) do |f| %>
                 <%= f.input :description, label: false %>
-                <%= f.submit "Add" %>
+                <%= f.submit "Add", class: "btn btn-default add-goal-btn" %>
               <% end %>
             </div>
           </div>
