@@ -1,5 +1,6 @@
 <div class="container narrow-container body-container">
   <div class="card-mentor-profile">
+    <%= cl_image_tag(@profile.user.photo, :cloud_name => 'dcdffiepx', height: 200, width: 200, crop: :fill, class: "card-mentor-img avatar-bordered")%>
       <div class="card-mentor-info">
         <h3><%= @profile.user.first_name %> <%= @profile.user.last_name %></h3>
         <p><%= @profile.user.job_title %> at <%= @profile.user.company %></p>
