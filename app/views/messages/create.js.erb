@@ -4,7 +4,11 @@ newMessage = '<%= j render "messages/show", message: @message %>';
 console.log(newMessage);
 
 messageBox.insertAdjacentHTML('beforeend', newMessage);
-document.querySelectorAll("new-message-box").reset();
+messageFormMentor = document.querySelector("#mentor-msg-form");
+messageFormMentee = document.querySelector("#mentee-msg-form");
+
+messageFormMentor.innerHTML = "";
+messageFormMentee.innerHTML = "";
 
 console.log(hello)
 

@@ -1,6 +1,10 @@
 <div class="container narrow-container body-container">
   <h1 class="messages-header">Your goals with <span style="color: #fc407c"><%= @mentor.first_name %></span></h1>
 
+  <div class="messages-header-img">
+    <%= image_tag "mentee-grid-2.jpg" %>
+    </div>
+
   <div class="card-new-goal">
     <button type="button" class="btn btn-default" data-toggle="modal" data-target="#add_goal">Add new goal</button>
   </div>
