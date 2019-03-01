@@ -19,7 +19,7 @@
               <h5><%= connection.mentee.user.first_name %> <%= connection.mentee.user.last_name %></h5>
             </div>
             <% if connection.status == "Pending" %>
-              <div class="chat-notification">
+              <div class="chat-notification notif-<%=connection.id%>">
                 <div class="notification"></div>
               </div>
             <% end %>

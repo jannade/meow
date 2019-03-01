@@ -338,7 +338,7 @@ puts "Creating connections"
 ashwin_peter_connection = Connection.new(mentor: ashwin_mentor_profile, mentee: peter_mentee_profile, status: "Pending")
 ashwin_peter_connection.save
 
-jane_lorenzo_connection = Connection.new(mentor: jane_mentor_profile, mentee: lorenzo_mentee_profile, status: "confirmed")
+jane_lorenzo_connection = Connection.new(mentor: jane_mentor_profile, mentee: lorenzo_mentee_profile, status: "Pending")
 jane_lorenzo_connection.save
 
 george_jane_connection = Connection.new(mentor: george_mentor_profile, mentee: jane_mentee_profile, status: "confirmed")
