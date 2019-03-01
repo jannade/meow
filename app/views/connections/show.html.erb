@@ -52,8 +52,8 @@
             <p class="ms-descr"><%= milestone.description %></p>
             <% if current_user == @mentee %>
               <div class="ms-edits">
-                <a href="" class="edit-ms">Edit</a>
                 <div class="ms-undone">
+                  <a href="" class="edit-ms">Edit</a>
                   <% if milestone.is_completed == true %>
                     <%= link_to "Undo", mark_path(milestone),
                     method: :patch, remote: true, class: "markBtn", data: { milestone_id: milestone.id } %>
