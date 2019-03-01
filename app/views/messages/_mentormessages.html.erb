@@ -4,7 +4,7 @@
     <div class="search-bar-box">
       <p class="search-bar-inner">Search</p>
     </div>
-    <ul class= "nav nav-tabs tab-horizontal">
+    <ul class= "nav nav-tabs tab-horizontal" id="left-panel">
       <% connections.each_with_index do |connection, index| %>
         <% if index == 0 %>
           <li class="active">
@@ -61,7 +61,7 @@
       </div>
         <div class="new-message-box">
           <%= simple_form_for([connection, @message], remote: true) do |f| %>
-            <%= f.input :content, label: false, placeholder: "Type your message here", as: :text, autofocus: true, input_html: {style: 'width: 100%; font-size: 20px', rows: 4, id: 'mentor-msg-form'} %>
+            <%= f.input :content, label: false, placeholder: "Type your message here", as: :text, autofocus: true, input_html: {style: 'width: 100%; font-size: 20px', rows: 3, id: 'mentor-msg-form'} %>
             <%= f.submit "Reply", class: "new-message-btn" %>
           <% end %>
         </div>

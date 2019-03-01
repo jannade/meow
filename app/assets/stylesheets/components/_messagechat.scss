@@ -10,15 +10,14 @@ $pink: #fc407c;
   display: flex;
   margin: 55px 0px;
   box-shadow: 0 0 15px rgba(0,0,0,0.5);
-  max-height: 80vw;
+  max-height: 500px;
   min-height: 400px;
-  overflow: scroll;
+  background: #E8E8E8
 }
 
 .left-inbox-container {
   display: flex;
   flex-direction: column;
-  background: #E8E8E8;
   width: 33%;
 }
 
@@ -37,13 +36,13 @@ $pink: #fc407c;
 .nav-tabs.tab-horizontal {
   display: flex;
   flex-direction: column;
-  width: 30vw;
   margin-top: 15px;
 }
 
 .nav-tabs.tab-horizontal > li.active > a, .nav-tabs.tab-horizontal > li.active > a:hover {
   border: none;
   background: white;
+  border-right: 3px solid $pink;
 }
 
 .nav-tabs.tab-horizontal > a:hover {
@@ -81,8 +80,8 @@ $pink: #fc407c;
 }
 
 .notification {
-  height: 15px;
-  width: 15px;
+  height: 12px;
+  width: 12px;
   border-radius: 50%;
   background: $pink;
 }
@@ -97,10 +96,13 @@ $pink: #fc407c;
   justify-content: space-between;
   border-radius: 0px 5px 5px 0px;
   position: relative;
+  height: 450px;
+  overflow: scroll;
 }
 
 .message-box {
   margin: 10px;
+  margin-bottom: 30px;
   display: flex;
   flex-direction: column;
 }
@@ -108,7 +110,7 @@ $pink: #fc407c;
 .one-message-box {
   position: relative;
   height: 100px;
-  margin-bottom: 50px;
+  margin-bottom: 20px;
 }
 
 .message-box .right-message {
@@ -150,8 +152,6 @@ $pink: #fc407c;
 .new-message-box {
   height: 150px;
   width: 100%;
-  margin-bottom: 30px;
-  margin-top: auto;
 }
 
 .new-message-btn {
@@ -172,7 +172,7 @@ $pink: #fc407c;
   box-shadow: 0 0 8px rgba(0,0,0,0.2);
   border-radius: 4px;
   margin-bottom: 8px;
-  font-size: 14px;
+  font-size: 20px;
   margin-bottom: 20px;
 }
 
