@@ -7,6 +7,8 @@
 
   <div class="card-new-goal">
     <button type="button" class="btn btn-default" data-toggle="modal" data-target="#add_goal">Add new goal</button>
+    <%= link_to 'Back to Connections', connections_path, class: "btn btn-default back-to-connection"%>
+
   </div>
 
   <div class="modal fade" id="add_goal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
@@ -97,7 +99,6 @@
       </div>
     </div>
   <% end %>
-  <%= link_to 'Back to Connections', connections_path, class: "btn btn-default"%>
 
 </div>
 
