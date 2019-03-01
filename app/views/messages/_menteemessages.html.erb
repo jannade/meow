@@ -47,7 +47,14 @@
       </div>
     <% end %>
   </div>
-
+      <div class="new-message-box">
+        <%= simple_form_for([connection, @message], remote: true) do |f| %>
+          <%= f.input :content, label: false, placeholder: "Type your message here", as: :text, autofocus: true, input_html: {style: 'width: 100%; font-size: 20px', rows: 3, class: 'response-project'} %>
+          <%#= f.input :is_read, as: :hidden, value: "go" %>
+          <%#= f.input :connection, as: :hidden %>
+          <%= f.submit "Reply", class: "new-message-btn" %>
+        <% end %>
+      </div>
       <div class="message-box" data-message-id=<%= connection.id %>>
         <% connection.messages.each do |message| %>
         <div class="one-message-box">
@@ -64,14 +71,6 @@
           <% end %>
         </div>
         <% end  %>
-      </div>
-      <div class="new-message-box">
-        <%= simple_form_for([connection, @message], remote: true) do |f| %>
-          <%= f.input :content, label: false, placeholder: "Type your message here", as: :text, autofocus: true, input_html: {style: 'width: 100%; font-size: 20px', rows: 3, class: 'response-project'} %>
-          <%#= f.input :is_read, as: :hidden, value: "go" %>
-          <%#= f.input :connection, as: :hidden %>
-          <%= f.submit "Reply", class: "new-message-btn" %>
-        <% end %>
       </div>
     </div>
   <% end %>

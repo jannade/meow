@@ -42,4 +42,20 @@ class User < ApplicationRecord
   def mentors
     self.mentee_profile.all_my_mentors
   end
+
+  def mentor_pending_connections
+    if self.profiles.where(is_mentor: true).first
+      return self.profiles.where(is_mentor: true).first.mentees.where(status: "Pending").any?
+    else
+      return false
+    end
+  end
+
+  def mentee_pending_connections
+    if self.profiles.where(is_mentor: false).first
+      return self.profiles.where(is_mentor: false).first.mentees.where(status: "Pending").any?
+    else
+      return false
+    end
+  end
 end
