@@ -71,12 +71,20 @@ $pink: #fc407c;
   margin-top: 6px;
 }
 
-.inbox_chat {
-}
-
 .chat_ib h5 {
   font-size: 20px;
   margin-left: 10px;
+}
+
+.chat-notification {
+  margin: 17px 0px 0px 17px;
+}
+
+.notification {
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+  background: $pink;
 }
 
 .messages-container {
