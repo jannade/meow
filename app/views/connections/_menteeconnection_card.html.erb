@@ -1,56 +1,56 @@
 <% connections.each do |connection| %>
-  <div class="card-connection">
-  <%= link_to profile_path(connection.mentee) do  %>
-    <div class="card-connection-profile">
-      <div class="image-container">
-        <%= cl_image_tag(connection.mentee.user.photo, :cloud_name => 'dcdffiepx', height: 300, width: 400, crop: :fill)%>
-      </div>
-      <div class="card-connection-infos">
-        <h2><%= connection.mentee.user.first_name %> <%=connection.mentee.user.last_name %></h2>
-        <p><%= connection.mentee.user.job_title%> at <%=connection.mentee.user.company %></p>
-      </div>
-    </div>
-  <% end %>
-  <div class="scrolling-container">
-      <div class="card-connection-progress">
-        <div class="progress-header">
-          <h4>Goal summary</h4>
+    <div class="card-profile">
+        <div class="card-connection-profile">
+          <%= link_to profile_path(connection.mentee) do  %>
+          <div class="image-container">
+            <%= cl_image_tag(connection.mentee.user.photo, :cloud_name => 'dcdffiepx', height: 300, width: 400, crop: :fill)%>
+          </div>
+          <div class="card-connection-infos">
+            <h2><%= connection.mentee.user.first_name %> <%=connection.mentee.user.last_name %></h2>
+            <p><%= connection.mentee.user.job_title%> at <%=connection.mentee.user.company %></p>
+          </div>
+          <% end %>
         </div>
-        <% if connection.goals.present? %>
-          <div id="goal-container">
-            <% connection.goals.each do |goal| %>
-              <div class="circle-goal">
-                  <% if goal.perc_completed < 50 %>
-                    <p><%= goal.description %></p>
-                    <div class="progress-circle p<%= goal.perc_completed.to_i %>">
-                      <span><%= goal.perc_completed.to_i %>%</span>
-                      <div class="left-half-clipper">
-                    <div class="first50-bar"></div>
-                    <div class="value-bar"></div>
+        <div class="scrolling-container">
+            <div class="card-connection-progress">
+              <% if connection.goals.present? %>
+              <div class="progress-header">
+                <h4>Goal summary</h4>
+              </div>
+                <div id="goal-container">
+                  <% connection.goals.each do |goal| %>
+                    <div class="circle-goal">
+                        <% if goal.perc_completed < 50 %>
+                          <p><%= goal.description %></p>
+                          <div class="progress-circle p<%= goal.perc_completed.to_i %>">
+                            <span><%= goal.perc_completed.to_i %>%</span>
+                            <div class="left-half-clipper">
+                          <div class="first50-bar"></div>
+                          <div class="value-bar"></div>
+                            </div>
+                          </div>
+                        <% else  %>
+                          <p><%= goal.description %></p>
+                          <div class="progress-circle over50 p<%= goal.perc_completed.to_i %>">
+                            <span><%= goal.perc_completed.to_i %>%</span>
+                            <div class="left-half-clipper">
+                          <div class="first50-bar"></div>
+                          <div class="value-bar"></div>
+                            </div>
+                          </div>
+                        <% end  %>
                       </div>
-                    </div>
-                  <% else  %>
-                    <p><%= goal.description %></p>
-                    <div class="progress-circle over50 p<%= goal.perc_completed.to_i %>">
-                      <span><%= goal.perc_completed.to_i %>%</span>
-                      <div class="left-half-clipper">
-                    <div class="first50-bar"></div>
-                    <div class="value-bar"></div>
-                      </div>
-                    </div>
-                  <% end  %>
+                  <% end %>
                 </div>
-            <% end %>
-          </div>
-          <%= link_to 'See all goals', connection_path(connection.id), class: 'btn btn-default see-goal-btn'%>
-        <% else %>
-          <div class="goal-container">
-            <p>Oops! Looks like your mentee has not set any goals yet.</p>
-          </div>
-            <%= link_to 'Start setting Goals!', connection_path(connection.id), class: 'btn btn-default start-goal-btn'%>
-        <% end %>
+                <%= link_to 'See all goals', connection_path(connection.id), class: 'btn btn-default see-goal-btn'%>
+              <% else %>
+                <div class="progress-header">
+                  <p>Oops! Looks like your mentee has not set any goals yet.</p>
+                </div>
+                  <%= link_to 'Start setting Goals!', connection_path(connection.id), class: 'btn btn-default start-goal-btn'%>
+              <% end %>
+            </div>
         </div>
-      </div>
     </div>
   <% end %>
 

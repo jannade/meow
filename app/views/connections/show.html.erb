@@ -23,13 +23,12 @@
         <div class="modal-body">
           <%= simple_form_for([@connection, @goal]) do |f| %>
             <%=f.input :description, label: false %>
-            <%=f.submit "Add" %>
+            <%=f.submit "Add", class: "btn btn-default add-goal-btn" %>
           <% end %>
         </div>
       </div>
     </div>
   </div>
-
   <% @goals.each do |goal| %>
     <div class="card-goal">
       <div class="card-goal-descr">
@@ -53,8 +52,8 @@
             <p class="ms-descr"><%= milestone.description %></p>
             <% if current_user == @mentee %>
               <div class="ms-edits">
-                <a href="" class="edit-ms">Edit</a>
                 <div class="ms-undone">
+                  <a href="" class="edit-ms">Edit</a>
                   <% if milestone.is_completed == true %>
                     <%= link_to "Undo", mark_path(milestone),
                     method: :patch, remote: true, class: "markBtn", data: { milestone_id: milestone.id } %>
@@ -91,7 +90,7 @@
             <div class="modal-body">
               <%= simple_form_for([@connection, goal, @milestone], remote: true) do |f| %>
                 <%= f.input :description, label: false %>
-                <%= f.submit "Add" %>
+                <%= f.submit "Add", class: "btn btn-default add-goal-btn" %>
               <% end %>
             </div>
           </div>
