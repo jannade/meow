@@ -1,6 +1,8 @@
 /* -------------------------------------
  * Your CSS code for flash notices and alerts
 * ------------------------------------- */
+$lightgrey: #F6F6F6;
+$pink: #fc407c;
 
 .alert {
   margin: 0;
@@ -8,7 +10,11 @@
   color: white;
 }
 .alert-info {
-  background: $green;
+  background: $pink;
+  color: white;
+  font-weight: bold;
+  box-shadow: 0 0 8px rgba(0,0,0,0.2);
+  border: 1px solid $pink;
 }
 .alert-warning {
   background: $red;
