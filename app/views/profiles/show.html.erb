@@ -1,8 +1,4 @@
 <div class="container narrow-container body-container">
-  <% if flash[:notice] %>
-    <div class="message-sent-notice"><%= flash[:notice] %></div>
-  <% end %>
-
   <div class="card-mentor-profile">
       <div class="card-mentor-info">
         <h3><%= @profile.user.first_name %> <%= @profile.user.last_name %></h3>

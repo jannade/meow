@@ -44,9 +44,10 @@ $pink: #fc407c;
 .card-connection-profile {
   grid-row: 1 / span 1;
   grid-column: 1 / span 1;
-  box-shadow: 0 0 15px rgba(0,0,0,1);
+  box-shadow: 0 0 15px rgba(0,0,0,0.5);
   float:left;
   margin-right: 10px;
+  padding: 10px;
 }
 
 .card-connection-profile a {
@@ -99,7 +100,7 @@ $pink: #fc407c;
   grid-column: 2 / span 1;
   overflow-x: scroll;
   overflow-y: hidden;
-  box-shadow: 0 0 15px rgba(0,0,0,1);
+  box-shadow: 0 0 15px rgba(0,0,0,0.5);
   background: white;
 
 }
