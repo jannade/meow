@@ -13,7 +13,7 @@
         <% end %>
           <a href="#connection-<%=connection.id%>" data-toggle="tab" class="inbox_chat">
             <div class="chat_img">
-              <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg">
+              <%= cl_image_tag(connection.mentee.user.photo, :cloud_name => 'dcdffiepx', height: 300, width: 400, crop: :fill)%>
             </div>
             <div class="chat_ib">
               <h5><%= connection.mentee.user.first_name %> <%= connection.mentee.user.last_name %></h5>
