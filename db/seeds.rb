@@ -422,6 +422,45 @@ janna_minji_goal2.save
   janna_minji_goal2_ms3 = Milestone.new(description: "Take a Data Visualization course", goal: janna_minji_goal2, is_completed: false)
   janna_minji_goal2_ms3.save
 
+janna_ashwin_goal1 = Goal.new(description: "Work smart instead of working hard", connection: janna_ashwin_connection)
+janna_ashwin_goal1.save
+
+  janna_ashwin_goal1_ms1 = Milestone.new(description: "done", goal: janna_ashwin_goal1, is_completed: true)
+  janna_ashwin_goal1_ms1.save
+
+  janna_ashwin_goal1_ms2 = Milestone.new(description: "done", goal: janna_ashwin_goal1, is_completed: false)
+  janna_ashwin_goal1_ms2.save
+
+  janna_ashwin_goal1_ms3 = Milestone.new(description: "done", goal: janna_ashwin_goal1, is_completed: false)
+  janna_ashwin_goal1_ms3.save
+
+janna_ashwin_goal2 = Goal.new(description: "Embrace mindfullness", connection: janna_ashwin_connection)
+janna_ashwin_goal2.save
+
+  janna_ashwin_goal_ms1 = Milestone.new(description: "done", goal: janna_ashwin_goal2, is_completed: true)
+  janna_ashwin_goal_ms1.save
+
+  janna_ashwin_goal_ms2 = Milestone.new(description: "done", goal: janna_ashwin_goal2, is_completed: false)
+  janna_ashwin_goal_ms2.save
+
+janna_susan_goal1 = Goal.new(description:"Find an empowering workplace", connection: janna_susan_connection)
+janna_susan_goal1.save
+
+  janna_susan_goal1_ms1 = Milestone.new(description: "done", goal: janna_susan_goal1, is_completed: true)
+  janna_susan_goal1_ms1.save
+
+janna_susan_goal2 = Goal.new(description: "Become comfortable with presenting" , connection: janna_susan_connection)
+janna_susan_goal2.save
+
+  janna_susan_goal2_ms1 = Milestone.new(description: "done", goal: janna_susan_goal2, is_completed: true)
+  janna_susan_goal2_ms1.save
+
+  janna_susan_goal2_ms2 = Milestone.new(description: "done", goal: janna_susan_goal2, is_completed: false)
+  janna_susan_goal2_ms2.save
+
+  janna_susan_goal2_ms3 = Milestone.new(description: "done", goal: janna_susan_goal2, is_completed: false)
+  janna_susan_goal2_ms3.save
+
 puts "Janna's Goals and milestones created"
 
 # puts "Creating milestones"
