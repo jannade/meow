@@ -1,23 +1,18 @@
 <% connections.each do |connection| %>
-  <div class="card-connection">
-  <%= link_to profile_path(connection.mentee) do  %>
-    <div class="card-connection-profile">
-      <div class="image-container">
-        <%= cl_image_tag(connection.mentor.user.photo, :cloud_name => 'dcdffiepx', height: 300, width: 400, crop: :fill)%>
-      </div>
-      <div class="card-connection-infos">
-        <h2><%= connection.mentor.user.first_name %> <%=connection.mentor.user.last_name %></h2>
-        <p><%= connection.mentor.user.job_title%> at <%=connection.mentor.user.company %></p>
-      </div>
-    </div>
-  <% end  %>
+<div class="card-profile">
+        <div class="card-connection-profile">
+          <%= link_to profile_path(connection.mentor) do  %>
+          <div class="image-container">
+            <%= cl_image_tag(connection.mentor.user.photo, :cloud_name => 'dcdffiepx', height: 300, width: 400, crop: :fill)%>
+          </div>
+          <div class="card-connection-infos">
+            <h2><%= connection.mentor.user.first_name %> <%=connection.mentor.user.last_name %></h2>
+            <p><%= connection.mentor.user.job_title%> at <%=connection.mentor.user.company %></p>
+          </div>
+          <% end %>
 
-
-  <div class="scrolling-container">
-      <div class="card-connection-progress">
-        <div class="progress-header">
-          <h4>Goal summary</h4>
         </div>
+
         <div class="scrolling-container">
             <div class="card-connection-progress">
               <% if connection.goals.present? %>
