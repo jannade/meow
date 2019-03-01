@@ -355,20 +355,17 @@ jane_lorenzo_connection.save
 jane_xuying_connection = Connection.new(mentor: jane_mentor_profile, mentee: xuying_mentee_profile, status: "confirmed")
 jane_xuying_connection.save
 
-jane_aisha_connection = Connection.new(mentor: jane_mentor_profile, mentee: aisha_mentee_profile, status: "Pending")
+jane_aisha_connection = Connection.new(mentor: jane_mentor_profile, mentee: aisha_mentee_profile, status: "confirmed")
 jane_aisha_connection.save
 
-jane_elane_connection = Connection.new(mentor: jane_mentor_profile, mentee: elane_mentee_profile, status: "Pending")
-jane_elane_connection.save
-
-jane_peter_connection = Connection.new(mentor: jane_mentor_profile, mentee: peter_mentee_profile, status: "Pending")
+jane_peter_connection = Connection.new(mentor: jane_mentor_profile, mentee: peter_mentee_profile, status: "confirmed")
 jane_peter_connection.save
 
 puts "Sheryl's mentee Connections created"
 
 puts "Creating Sheryl's messages"
 
-lorenzo_jane_message = Message.new(content: "Hi Sheryl, I am super excited to see your profile on the platform. I'd to connect with you and get your advise on working in the tech industry as well as how to handle your work-life balance. Hope to hear from you soon. Laura", user: lorenzo, is_read: true, connection: jane_lorenzo_connection)
+lorenzo_jane_message = Message.new(content: "Hi Sheryl, I am super excited to see your profile on Me-oW. I'd to connect with you and get your advise on working in the tech industry", user: lorenzo, is_read: true, connection: jane_lorenzo_connection)
 lorenzo_jane_message.save
 
 lorenzo_jane_message2 = Message.new(content: "Hi Laura, pleasure to e-meet you. I am available for our first call for Wednesday at 8pm. Does that work for you?", user: jane, is_read: true, connection: jane_lorenzo_connection)
