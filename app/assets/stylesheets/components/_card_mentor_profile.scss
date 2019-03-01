@@ -10,7 +10,7 @@ $pink: #fc407c;
 
 
   //background: linear-gradient(to bottom, black 50%, white 50% );
-  box-shadow: 0 0 15px rgba(0,0,0,1);
+  box-shadow: 0 0 15px rgba(0,0,0,0.5);
   display: flex;
   padding: 20px;
   position: relative;
@@ -107,7 +107,7 @@ $pink: #fc407c;
   flex-direction: column;
   overflow: hidden;
   background: white;
-  box-shadow: 0 0 15px rgba(0,0,0,1);
+  box-shadow: 0 0 15px rgba(0,0,0,0.5);
   display: flex;
   padding: 20px;
   position: relative;
@@ -125,7 +125,7 @@ $pink: #fc407c;
   .interest {
     width:48%;
     background: white;
-    box-shadow: 0 0 15px rgba(0,0,0,1);
+    box-shadow: 0 0 15px rgba(0,0,0,0.5);
     margin-bottom: 20px;
     padding: 20px;
   }
