@@ -10,15 +10,14 @@ $pink: #fc407c;
   display: flex;
   margin: 55px 0px;
   box-shadow: 0 0 15px rgba(0,0,0,0.5);
-  max-height: 80vw;
+  max-height: 500px;
   min-height: 400px;
-  overflow: scroll;
+  background: #E8E8E8
 }
 
 .left-inbox-container {
   display: flex;
   flex-direction: column;
-  background: #E8E8E8;
   width: 33%;
 }
 
@@ -37,13 +36,13 @@ $pink: #fc407c;
 .nav-tabs.tab-horizontal {
   display: flex;
   flex-direction: column;
-  width: 30vw;
   margin-top: 15px;
 }
 
 .nav-tabs.tab-horizontal > li.active > a, .nav-tabs.tab-horizontal > li.active > a:hover {
   border: none;
   background: white;
+  border-right: 3px solid $pink;
 }
 
 .nav-tabs.tab-horizontal > a:hover {
@@ -97,10 +96,13 @@ $pink: #fc407c;
   justify-content: space-between;
   border-radius: 0px 5px 5px 0px;
   position: relative;
+  height: 400px;
+  overflow: scroll;
 }
 
 .message-box {
   margin: 10px;
+  margin-bottom: 30px;
   display: flex;
   flex-direction: column;
 }
@@ -108,7 +110,6 @@ $pink: #fc407c;
 .one-message-box {
   position: relative;
   height: 100px;
-  margin-bottom: 50px;
 }
 
 .message-box .right-message {
@@ -151,7 +152,6 @@ $pink: #fc407c;
   height: 150px;
   width: 100%;
   margin-bottom: 30px;
-  margin-top: auto;
 }
 
 .new-message-btn {
