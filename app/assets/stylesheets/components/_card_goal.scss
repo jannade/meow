@@ -13,7 +13,7 @@ $pink: #fc407c;
   align-items: center;
   margin-top: 20px;
   // border-radius: 5px;
-  margin-bottom: 20px;
+  margin-bottom: 50px;
 }
 
 .card-goal h2 {
@@ -119,6 +119,10 @@ $pink: #fc407c;
 
 .progress-bar-success {
   background: #fc407c;
+}
+
+.card-new-goal {
+  margin: 50px 0px;
 }
 
 .card-new-goal .btn {

@@ -5,35 +5,35 @@ $pink: #fc407c;
 
 #goal-container {
   display: flex;
+  height: 72%;
 }
 
 .circle-goal {
   position: relative;
   width: 300px;
-  justify-content:space-around;
+  justify-content: space-around;
   padding-left: 30px;
   margin-top: 30px;
 }
 
 .card-connection {
   overflow: hidden;
-  height: 300px;
+  height: 350px;
   background: white;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  box-shadow: 0 0 15px rgba(0,0,0,1);
   display: flex;
   align-items: center;
-  margin-top: 20px;
-  border-radius: 5px;
+  margin: 50px 0px;
 }
 
 .card-connection h2 {
-  font-size: 20px;
+  font-size: 25px;
   font-weight: bold;
   margin: 0;
 }
 
 .card-connection p {
-  font-size: 14px;
+  font-size: 18px;
   line-height: 1.4;
   opacity: .7;
   margin-bottom: 0;
@@ -42,11 +42,13 @@ $pink: #fc407c;
 }
 
 .card-connection-profile {
-  width: 25vw;
-  height: 250px;
+  width: 22vw;
+  height: 258px;
   margin: 0 auto;
+}
+
+.card-connection-profile a {
   text-decoration: none;
-  border-right: 3px solid $pink;
 }
 
 .image-container {
@@ -55,8 +57,8 @@ $pink: #fc407c;
 }
 
 .image-container img {
-  height: 140px;
-  width: 140px;
+  height: 160px;
+  width: 160px;
   object-fit: cover;
   border-radius: 50%;
   border: 2px solid $lightgrey;
@@ -66,18 +68,28 @@ $pink: #fc407c;
 .card-connection-infos {
   height: 40%;
   text-align: center;
+  width: 65%;
+  margin: auto;
+  color: black;
+  h2 {
+    border-bottom: 2px solid $pink;
+  }
 }
 
 .card-connection .card-connection-infos {
-  padding: 16px;
+  padding: 10px;
   margin-top: 10px;
 }
 
 .card-connection-progress {
-  width: 100vw;
   height: 100%;
   background: $lightgrey;
   white-space:nowrap;
+  padding: 20px 20px 20px 40px;
+  border-left: 2px dotted black;
+  h4 {
+  text-transform: uppercase;
+  }
 }
 
 .scrolling-container {
@@ -87,24 +99,24 @@ $pink: #fc407c;
   overflow-y: hidden;
 }
 
-.card-connection-progress > h1 {
-  font-size: 14px;
-  grid-row: 1 / span 1;
-  grid-column: 1 / span 1;
+.see-goal-btn {
+  float: right;
+
 }
 
 .card-connection-progress li {
   list-style-type: none;
 }
 
-.btn-goal {
-  border: 2px solid $lightgrey;
-  border-radius: 5px;
-  background-color: $pink;
-  color: white;
-  margin-left: 30px;
-  margin-top: 30px;
-}
+// .btn-goal {
+//   border: 2px solid $lightgrey;
+//   border-radius: 5px;
+//   background-color: $pink;
+//   color: white;
+//   margin-left: 30px;
+//   margin-top: 30px;
+// }
+
 
 .progress-circle {
   margin: 20px;

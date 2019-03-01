@@ -11,8 +11,13 @@
       </div>
     </div>
   <% end  %>
+
+
   <div class="scrolling-container">
       <div class="card-connection-progress">
+        <div class="progress-header">
+          <h4>Goal summary</h4>
+        </div>
         <% if connection.goals.present? %>
           <div id="goal-container">
             <% connection.goals.each do |goal| %>
@@ -37,15 +42,19 @@
                     </div>
                   <% end  %>
                 </div>
-
             <% end %>
           </div>
-          <%= link_to 'See all goals', connection_path(connection.id), class: 'btn btn-goal'%>
+          <%= link_to 'See all goals', connection_path(connection.id), class: 'btn btn-default see-goal-btn'%>
         <% else %>
-          <%= link_to 'Start setting Goals!', connection_path(connection.id), class: 'btn btn-goal'%>
+          <div class="goal-container">
+            <p>Oops! Looks like you have not set any goals yet. Click below to start your goal path.</p>
+          </div>
+          <%= link_to 'Start setting Goals!', connection_path(connection.id), class: 'btn btn-default see-goal-btn'%>
         <% end %>
         </div>
       </div>
     </div>
+
+
   <% end %>
 

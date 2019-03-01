@@ -1,5 +1,5 @@
 <div class="container narrow-container body-container">
-  <h1 class="messages-header">Messages</h1>
+  <h1 class="messages-header">Conversations</h1>
 
   <div class="messages-header-img">
     <%= image_tag "mentee-grid-3.jpg" %>
@@ -7,12 +7,12 @@
 
   <ul class="nav nav-tabs tab-vertical">
     <% if @mentor_connections.exists? && @mentee_connections.exists? %>
-      <li class="active"><a href="#mentor-inbox" data-toggle="tab"><h2>From <span style="color: #fc407c">Me</span>ntors</h2></a></li>
-      <li><a href="#mentee-inbox" data-toggle="tab"><h2>From <span style="color: #fc407c">Me</span>ntees</h2></a></li>
+      <li class="active"><a href="#mentor-inbox" data-toggle="tab"><h2>with <span style="color: #fc407c">Me</span>ntors</h2></a></li>
+      <li><a href="#mentee-inbox" data-toggle="tab"><h2>with <span style="color: #fc407c">Me</span>ntees</h2></a></li>
     <% elsif @mentor_connections.exists? && @mentee_connections.blank? %>
-      <li class="active"><a href="#mentor-inbox" data-toggle="tab"><h2>From <span style="color: #fc407c">Me</span>ntors</h2></a></li>
+      <li class="active"><a href="#mentor-inbox" data-toggle="tab"><h2>with <span style="color: #fc407c">Me</span>ntors</h2></a></li>
     <% elsif @mentee_connections.exists? && @mentor_connections.blank? %>
-      <li><a href="#mentee-inbox" data-toggle="tab"><h2>From <span style="color: #fc407c">Me</span>ntees</h2></a></li>
+      <li><a href="#mentee-inbox" data-toggle="tab"><h2>with <span style="color: #fc407c">Me</span>ntees</h2></a></li>
     <% end %>
   </ul>
 
