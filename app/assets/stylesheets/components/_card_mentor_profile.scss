@@ -4,7 +4,7 @@ $pink: #fc407c;
 .card-mentor-profile {
   overflow: hidden;
 
-  background-image: linear-gradient(to top, #ffffff 50%, rgba(117, 76, 255, 0) 100%, rgba(150, 150, 150, 0.2) 50%), url(profile_background.jpg);
+  background-image: linear-gradient(to top, #ffffff 50%, rgba(117, 76, 255, 0) 100%, rgba(150, 150, 150, 0.2) 50%), asset_url('profile_background.jpg');
 
   background-size: cover;
 
