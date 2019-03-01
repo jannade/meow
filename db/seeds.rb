@@ -337,6 +337,16 @@ elane_mentor_i6 = ProfileInterest.create(profile: elane_mentor_profile, interest
 
 puts "profiles interests created created"
 
+puts "creating janna's interests"
+
+janna_mentee_i1 = ProfileInterest.create(profile: janna_mentee_profile, interest: pe2)
+janna_mentee_i2 = ProfileInterest.create(profile: janna_mentee_profile, interest: pe3)
+janna_mentee_i3 = ProfileInterest.create(profile: janna_mentee_profile, interest: pe4)
+janna_mentee_i4 = ProfileInterest.create(profile: janna_mentee_profile, interest: pr1)
+janna_mentee_i5 = ProfileInterest.create(profile: janna_mentee_profile, interest: pr6)
+janna_mentee_i6 = ProfileInterest.create(profile: janna_mentee_profile, interest: pr7)
+
+
 puts "Creating Sheryl's mentee connections"
 
 jane_lorenzo_connection = Connection.new(mentor: jane_mentor_profile, mentee: lorenzo_mentee_profile, status: "confirmed")
